@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .mini-custom-radio input,
+        .big-custom-radio input,
+        .boost-custom-radio input {
+            display: none;
+        }
+
+        .mini-radio-btn {
+            margin: 2px;
+
+            display: block !important;
+            height: 40px;
+            border: 3px solid transparent;
+            display: inline-block;
+            padding: 10px 86px;
+            position: relative;
+            text-align: center;
+
+            cursor: pointer;
+            border: .5px solid lightgray;
+        }
+
+        .mini-radio-btn>i,
+        .big-radio-btn>i,
+        .boost-radio-btn>i {
+            color: #ffffff;
+            background-color: black;
+            font-size: 20px;
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%) scale(4);
+            border-radius: 50px;
+            padding: 3px;
+            transition: 0.2s;
+            pointer-events: none;
+            opacity: 0;
+        }
+
+        .mini-radio-btn .hobbies-icon,
+        .boost-radio-btn .hobbies-icon {
+            width: 50px;
+            height: 20px;
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+
+
+        .mini-radio-btn .hobbies-icon i {
+            color: black;
+            line-height: 80px;
+            font-size: 60px;
+        }
+
+
+        .mini-radio-btn .hobbies-icon h3 {
+            color: black;
+            font-family: "Raleway", sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+
+        .mini-custom-radio input:checked+.mini-radio-btn {
+            border: 1px solid lightgreen;
+            background: lightgreen;
+            color: black;
+        }
+
+        .mini-custom-radio input:checked+h3 {
+            color: pink;
+        }
+
+
+        #myModal1 .modal-content {
+            padding: 30px;
+        }
+
+        .req-yn-row {
+            display: flex;
+            justify-content: center;
+        }
+
+        .req-yn-row label {
+            margin: 0 5px;
+            margin-bottom: 15px;
+        }
+
+        .req-yn-row label .mini-radio-btn .nex-card-text {
+            margin: 0px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>JS Practice</h1>
+    <input type="radio" id="lev-yes" name="lev-req" value="">
+    <input type="radio" id="lev-no" name="lev-req" value="">
+    <div class="row req-yn-row">
+        <label class="mini-custom-radio" for="lev-yes">
+            <input type="radio" id="lev-yes" name="lev-req" value="">
+            <span class="mini-radio-btn">
+                <h6 class="nex-card-text">Yes</h6>
+            </span>
+        </label>
+
+        <label class="mini-custom-radio" for="lev-no">
+            <input type="radio" id="lev-no" name="lev-req" value="">
+            <span class="mini-radio-btn">
+                <h6 class="nex-card-text">No</h6>
+            </span>
+        </label>
+    </div>
+
+    <script>
+        var s = 10;
+        console.log(s);
+        const name = 'John';
+        const age = '30';
+        const hobbies =
+            'reading, movies, cricket, football';
+        console.log(`His name is ${name} he is ${age} years old.`);
+        const l = 'Hello it\'s me';
+        console.log(l);
+        //console.log(l.length);
+        const length = l.length;
+        console.log(length);
+        console.log(`${l.substring(0, 3).toUpperCase()}${l.substring(3, length).toLowerCase()} `);
+        //      console.log(l.substring(0, 3).toLowerCase())
+        console.log(hobbies.split(','));
+        const nh = hobbies.split(',');
+        console.log(nh.length);
+
+        const fruits = ['apple', 'orange', 'banana'];
+        console.log(fruits);
+        fruits.push('pears');
+        fruits.unshift('Mango');
+        console.log(fruits);
+        s = Array.isArray(fruits);
+        console.log(fruits.indexOf('pears'));
+
+        const person = {
+            name: 'John',
+            age: 30,
+            hobbies: ['movies', 'painting', 'sports'],
+            address: {
+                street: '50 main st',
+                city: 'Dhaka',
+                country: 'BD'
+            }
+        }
+        const { address: { country } } = person;
+        person.gender = 'M';
+        console.log(country);
+
+        const mularray = [
+            {
+                id: 1,
+                text: 'Cycle',
+                isComplted: true
+            },
+            {
+                id: 2,
+                text: 'Bus',
+                isComplted: false
+            },
+            {
+                id: 3,
+                text: 'Car',
+                isComplted: false
+            },
+            {
+                id: 4,
+                text: 'Bike',
+                isComplted: true
+            }
+        ]
+
+        console.log(mularray[3].id, mularray[3].text);
+    </script>
+</body>
+
+</html>

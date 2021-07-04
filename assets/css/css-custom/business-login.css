@@ -1,0 +1,76 @@
+/* business-login-part start*/
+
+
+
+.claim-mailBox label a{
+    text-decoration: none;
+    color: gray;
+}
+
+.e-dit a{
+    color: red;
+}
+
+.claim-mailBox label a span h6{
+    display: inline-block;
+    font-size: 10px;
+    color: #F99F1C
+}
+
+.name-group label{
+    font-size: 12px;
+}
+
+.name-group input{
+    
+}
+
+.name-group{
+    display: flex;
+}
+
+
+
+
+@media (max-width:575px){
+    .name-group{
+    display: block;
+}
+    .name-group input{
+    width: 95%
+}
+
+#claim-email{
+    width: 95%
+}
+
+}
+
+@media (max-width:990px){
+      
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

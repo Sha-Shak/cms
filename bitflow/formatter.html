@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.6.0/cleave.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.6.0/addons/cleave-phone.us.js"></script>
+    <link rel="stylesheet" href="assets/css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/fontawesome.min.js"
+        integrity="sha512-KCwrxBJebca0PPOaHELfqGtqkUlFUCuqCnmtydvBSTnJrBirJ55hRG5xcP4R9Rdx9Fz9IF3Yw6Rx40uhuAHR8Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css"
+        integrity="sha512-apX8rFN/KxJW8rniQbkvzrshQ3KvyEH+4szT3Sno5svdr6E/CP0QE862yEeLBMUnCqLko8QaugGkzvWS7uNfFQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <style>
+        .pro-ad-col h3 {
+            display: flex;
+            justify-content: center;
+            justify-items: center;
+
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #d0dfe6;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        .inline {
+            display: inline;
+        }
+
+        .text-center {
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .text-gray {
+            color: #b4b4b4;
+            font-size: 14px;
+        }
+
+        .text-pink {
+            font-size: 16px;
+            text-align: center;
+            color: #00e682;
+        }
+
+        .noSpace {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* RESET STYLES –––––––––––––––––––––––––––––––––––––––––––––––––– */
+        .card--result {
+            width: 270px;
+            max-width: 270px;
+            height: 259px;
+            max-height: 259px;
+            margin: 50px auto;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0px 3px 8.5px 0.5px rgba(0, 0, 0, 0.05);
+        }
+
+        .card--result__chart {
+            padding: 30px 34px 0;
+        }
+
+        .card--result-divider {
+            width: 270px;
+            height: 2px;
+            background-color: #f0f0f0;
+            margin: 10px 0;
+        }
+
+        .card--result__info {
+            margin-top: 30px;
+        }
+
+        .card--result__chart__laylay {
+            margin-top: -20px;
+            font-weight: bold;
+            font-size: 18px;
+            color: #00e682;
+        }
+
+        .result__chart {
+            margin: 0 auto;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .result__chart *,
+        .result__chart::before {
+            box-sizing: border-box;
+        }
+
+        /* result__chart STYLES –––––––––––––––––––––––––––––––––––––––––––––––––– */
+        .result__chart {
+            position: relative;
+            width: 200px;
+            height: 100px;
+            overflow: hidden;
+        }
+
+        .result__chart::before,
+        .result__chart::after {
+            position: absolute;
+        }
+
+        .result__chart::before {
+            content: '';
+            width: inherit;
+            height: inherit;
+            border: 45px solid #f0f0f0;
+            border-bottom: none;
+            border-top-left-radius: 175px;
+            border-top-right-radius: 175px;
+        }
+
+        .result__chart li {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: inherit;
+            height: inherit;
+            border: 45px solid;
+            border-top: none;
+            border-bottom-left-radius: 175px;
+            border-bottom-right-radius: 175px;
+            transform-origin: 50% 0;
+            transform-style: preserve-3d;
+            backface-visibility: hidden;
+            animation-fill-mode: forwards;
+            animation-duration: 0.4s;
+            animation-timing-function: linear;
+        }
+
+        .result__chart li.result__chart__layer_one {
+            border-color: #00e682;
+            z-index: 313;
+        }
+
+        .result__chart li.result__chart__layer_two {
+            border-color: #00e682;
+            animation-delay: 0.4s;
+            z-index: 312;
+        }
+
+        .result__chart li.fillingAll {
+            animation-name: rotate-all;
+        }
+
+        /* ANIMATIONS –––––––––––––––––––––––––––––––––––––––––––––––––– */
+        @keyframes rotate-all {
+            100% {
+                transform: rotate(180deg);
+            }
+        }
+
+        @keyframes fade-in {
+
+            0%,
+            90% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* SASS –––––––––––––––––––––––––––––––––––––––––––––––––– */
+        @keyframes rotate12 {
+            100% {
+                transform: rotate(90deg);
+            }
+        }
+
+        .result__chart li.filling12 {
+            animation-name: rotate12;
+        }
+
+        @keyframes rotate13 {
+            100% {
+                transform: rotate(60deg);
+            }
+        }
+
+        .result__chart li.filling13 {
+            animation-name: rotate13;
+        }
+
+        @keyframes rotate23 {
+            100% {
+                transform: rotate(120deg);
+            }
+        }
+
+        .result__chart li.filling23 {
+            animation-name: rotate23;
+        }
+
+        @keyframes rotate14 {
+            100% {
+                transform: rotate(45deg);
+            }
+        }
+
+        .result__chart li.filling14 {
+            animation-name: rotate14;
+        }
+
+        @keyframes rotate24 {
+            100% {
+                transform: rotate(90deg);
+            }
+        }
+
+        .result__chart li.filling24 {
+            animation-name: rotate24;
+        }
+
+        @keyframes rotate34 {
+            100% {
+                transform: rotate(135deg);
+            }
+        }
+
+        .result__chart li.filling34 {
+            animation-name: rotate34;
+        }
+
+        @keyframes rotate15 {
+            100% {
+                transform: rotate(36deg);
+            }
+        }
+
+        .result__chart li.filling15 {
+            animation-name: rotate15;
+        }
+
+        @keyframes rotate25 {
+            100% {
+                transform: rotate(72deg);
+            }
+        }
+
+        .result__chart li.filling25 {
+            animation-name: rotate25;
+        }
+
+        @keyframes rotate35 {
+            100% {
+                transform: rotate(108deg);
+            }
+        }
+
+        .result__chart li.filling35 {
+            animation-name: rotate35;
+        }
+
+        @keyframes rotate45 {
+            100% {
+                transform: rotate(144deg);
+            }
+        }
+
+        .result__chart li.filling45 {
+            animation-name: rotate45;
+        }
+
+        @keyframes rotate16 {
+            100% {
+                transform: rotate(30deg);
+            }
+        }
+
+        .result__chart li.filling16 {
+            animation-name: rotate16;
+        }
+
+        @keyframes rotate26 {
+            100% {
+                transform: rotate(60deg);
+            }
+        }
+
+        .result__chart li.filling26 {
+            animation-name: rotate26;
+        }
+
+        @keyframes rotate36 {
+            100% {
+                transform: rotate(90deg);
+            }
+        }
+
+        .result__chart li.filling36 {
+            animation-name: rotate36;
+        }
+
+        @keyframes rotate46 {
+            100% {
+                transform: rotate(120deg);
+            }
+        }
+
+        .result__chart li.filling46 {
+            animation-name: rotate46;
+        }
+
+        @keyframes rotate56 {
+            100% {
+                transform: rotate(150deg);
+            }
+        }
+
+        .result__chart li.filling56 {
+            animation-name: rotate56;
+        }
+
+        @keyframes rotate17 {
+            100% {
+                transform: rotate(25.7142857143deg);
+            }
+        }
+
+        .result__chart li.filling17 {
+            animation-name: rotate17;
+        }
+
+        @keyframes rotate27 {
+            100% {
+                transform: rotate(51.4285714286deg);
+            }
+        }
+
+        .result__chart li.filling27 {
+            animation-name: rotate27;
+        }
+
+        @keyframes rotate37 {
+            100% {
+                transform: rotate(77.1428571429deg);
+            }
+        }
+
+        .result__chart li.filling37 {
+            animation-name: rotate37;
+        }
+
+        @keyframes rotate47 {
+            100% {
+                transform: rotate(102.8571428571deg);
+            }
+        }
+
+        .result__chart li.filling47 {
+            animation-name: rotate47;
+        }
+
+        @keyframes rotate57 {
+            100% {
+                transform: rotate(128.5714285714deg);
+            }
+        }
+
+        .result__chart li.filling57 {
+            animation-name: rotate57;
+        }
+
+        @keyframes rotate67 {
+            100% {
+                transform: rotate(154.2857142857deg);
+            }
+        }
+
+        .result__chart li.filling67 {
+            animation-name: rotate67;
+        }
+
+        @keyframes rotate18 {
+            100% {
+                transform: rotate(22.5deg);
+            }
+        }
+
+        .result__chart li.filling18 {
+            animation-name: rotate18;
+        }
+
+        @keyframes rotate28 {
+            100% {
+                transform: rotate(45deg);
+            }
+        }
+
+        .result__chart li.filling28 {
+            animation-name: rotate28;
+        }
+
+        @keyframes rotate38 {
+            100% {
+                transform: rotate(67.5deg);
+            }
+        }
+
+        .result__chart li.filling38 {
+            animation-name: rotate38;
+        }
+
+        @keyframes rotate48 {
+            100% {
+                transform: rotate(90deg);
+            }
+        }
+
+        .result__chart li.filling48 {
+            animation-name: rotate48;
+        }
+
+        @keyframes rotate58 {
+            100% {
+                transform: rotate(112.5deg);
+            }
+        }
+
+        .result__chart li.filling58 {
+            animation-name: rotate58;
+        }
+
+        @keyframes rotate68 {
+            100% {
+                transform: rotate(135deg);
+            }
+        }
+
+        .result__chart li.filling68 {
+            animation-name: rotate68;
+        }
+
+        @keyframes rotate78 {
+            100% {
+                transform: rotate(157.5deg);
+            }
+        }
+
+        .result__chart li.filling78 {
+            animation-name: rotate78;
+        }
+
+        .mini-custom-radio input,
+        .big-custom-radio input,
+        .boost-custom-radio input {
+            display: none;
+        }
+
+        .mini-radio-btn>i,
+        .big-radio-btn>i,
+        .boost-radio-btn>i {
+            color: #ffffff;
+            background-color: black;
+            font-size: 20px;
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%) scale(4);
+            border-radius: 50px;
+            padding: 3px;
+            transition: 0.2s;
+            pointer-events: none;
+            opacity: 0;
+        }
+
+        .mini-radio-btn .hobbies-icon,
+        .boost-radio-btn .hobbies-icon {
+            width: 50px;
+            height: 20px;
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+
+
+        .mini-radio-btn .hobbies-icon i {
+            color: black;
+            line-height: 80px;
+            font-size: 60px;
+        }
+
+
+        .mini-radio-btn .hobbies-icon h3 {
+            color: black;
+            font-family: "Raleway", sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+
+
+        .mini-custom-radio input:checked+.mini-radio-btn {
+            border: 1px solid #00abe3;
+            background: #00abe3;
+            color: black;
+        }
+
+        #myModal1 .modal-content {
+            padding: 30px;
+        }
+
+        .req-yn-row {
+            display: flex;
+            justify-content: center;
+        }
+
+        .req-yn-row label {
+            margin: 0 5px;
+            margin-bottom: 15px;
+        }
+
+        .req-yn-row label .mini-radio-btn .nex-card-text {
+            margin: 0px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <br>
+        <input id="input-phone" type="text" />
+        <select id="select-country">
+            <option value="US">US</option>
+            <option value="GB">GB</option>
+            <option value="SG">SG</option>
+            <option value="TH">TH</option>
+        </select>
+        <input type="text" name="" id="dt">
+
+        <br>
+        <br>
+
+        <!-- <div class="row">
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="card--result">
+
+                            <div class="card--result__chart">
+                                <ul class="result__chart">
+                                    <li class='result__chart__layer_one filling27'></li>
+                                    <li class='result__chart__layer_two filling67'></li>
+                                </ul>
+                                <div class="card--result__chart__laylay text-center"><strong>47</strong></div>
+                            </div>
+
+                            <div class='text-center card--result__info'>
+                                <span><strong>Product Sold</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="c ard--result">
+
+                            <div class="card--result__chart">
+                                <ul class="result__chart">
+                                    <li class='result__chart__layer_one filling27'></li>
+                                    <li class='result__chart__layer_two filling67'></li>
+                                </ul>
+                                <div class="card--result__chart__laylay text-center">12</div>
+                            </div>
+
+                            <div class='text-center card--result__info'>
+                                <span><strong>Active Post</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-sm-6 pro-ad-col">
+
+                <h6 class="text-center"> <i class="fas fa-home fa-3x"></i> </h6>
+                <h6 class="text-center">House:327, Road: 3, Dhaka, Bangladesh</h6>
+                <img src="../assets/images/i3.jpg" alt="">
+
+            </div>
+        </div>
+
+
+    </div> -->
+
+
+        <div class="my-block">
+            <div class="row">
+                <h6><i class="fas fa-box-open"></i> Product Name: </h6>
+            </div>
+            <div class="row">
+                <h6> <i class="fas fa-user"></i> Seller Name: </h6>
+            </div>
+            <div class="row">
+                <h6>Did you received the item?</h6>
+                <input type="radio" name="item-rec" id="y-item-rec" value="1">
+                <label for="y-item-rec"> Yes</label>
+                <input type="radio" name="item-rec" id="n-item-rec" value="2">
+                <label for="n-item-rec">No</label>
+
+            </div>
+            <div class="row">
+                <label for="dt">Received Date</label>
+                <input type="text" name="" id="item-rec-dt">
+            </div>
+
+
+        </div>
+
+
+
+        <script>
+            var cleave = new Cleave('#item-rec-dt', {
+                date: true,
+                delimiter: '-',
+                datePattern: ['m', 'd', 'Y']
+            });
+        </script>
+        <script>
+            var cleave = new Cleave('#input-phone', {
+                phone: true,
+                phoneRegionCode: 'US'
+            });
+
+        </script>
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+
+</html>

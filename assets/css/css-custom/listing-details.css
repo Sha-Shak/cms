@@ -1,0 +1,633 @@
+
+.menu-chart ul,
+.menu-chart-left ul {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* nandos part start */
+.Add-Listing {
+    padding: 22px 5px;
+    display: inline-block;
+
+}
+
+.Add-Listing button {
+    background-color: transparent;
+    border: 1px solid #fff;
+    font-size: 12px;
+    margin-left: 20px;
+}
+
+.Add-Listing button a {
+    color: #fff;
+    text-decoration: none
+}
+
+.pro-img {
+    height: 50px;
+    width: 50px;
+    background-color: gray;
+    border: 2px solid #F99F1C;
+    border-radius: 50%;
+    float: left;
+    margin-top: 15px;
+    position: relative;
+}
+
+.pro-img img {
+    position: absolute;
+    height: 46px;
+    width: 46px;
+    border-radius: 50%;
+
+}
+
+.profile-name h5 {
+    font-size: 12px;
+    float: left;
+    margin-top: 30px;
+    padding-left: 5px;
+    color: #fff;
+   
+
+}
+
+.nandos-part {
+    padding: 0px 60px;
+}
+
+
+
+/* nandos bannar part start */
+
+#nandos-bannar {
+    background: url(../image/nandos-vegan-burgers-livekindly-1.png)fixed center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 160px;
+    position: relative;
+    z-index: 1
+}
+
+
+
+#nandos-bannar:after {
+    position: absolute;
+    content: '';
+    background-color: rgba(20, 12, 0, 0.37);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1
+}
+
+/* nandos bannar part end */
+
+/* nandos heading part start */
+
+#nandos-head {
+    background-color: #EFEFEF;
+}
+
+.nevigation-list ul {
+    padding-left: 60px;
+}
+
+.nevigation-list ul li {
+    display: inline-block;
+
+}
+
+.nevigation-list ul li a {
+    text-decoration: none;
+    font-weight: 400;
+     color: #00b1ff;
+    font-size: 14px;
+}
+
+.nandos-text {
+    float: left;
+}
+
+.nandos-text h4 {
+    font-size: 30px;
+    color: #58585B;
+
+}
+
+.nandos-text span i {
+    color: gray;
+}
+
+.nandos-text span {
+    font-size: 12px;
+    color: #00b1ff;
+    display: inline-block;
+    font-weight: 500;
+    margin-left: 5px;
+
+}
+
+#collapseExample {
+    z-index: 99;
+    position: absolute;
+
+}
+
+#collapseExample h6 {
+    color: black;
+    font-weight: 500;
+}
+
+#collapseExample p {
+    font-size: 12px;
+}
+
+#collapseExample p span {
+    color: red;
+    font-weight: 500;
+}
+
+.nandos-text h6 {
+    font-size: 13px;
+
+}
+
+.nandos-text p {
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.review {
+    margin-left: 10%;
+    padding-top: 15%;
+
+}
+
+.review h5 {
+    font-weight: 100;
+    font-size: 14px;
+}
+
+.review a {
+    color: #F79320;
+    line-height: 3;
+    font-size: 12px;
+}
+
+.nandos-times ul li {
+    font-size: 12px;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+.nandos-times ul li span {
+    margin-left: 30px;
+}
+
+.active {
+    color: #F79320;
+    font-weight: 400;
+}
+
+
+.nandos-mdl ul li {
+    font-size: 12px;
+    line-height: 1.2;
+    font-weight: 400;
+}
+
+
+.nandos-mdl ul li span {
+    color: #F79320;
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.nandos-btn button {
+    padding: 5px 10px;
+    margin: 5px;
+    background-color: transparent;
+    border: none;
+    border: 1px solid #b1aeae;
+    cursor: pointer;
+    transition: 0.4s;
+  
+}
+
+.nandos-btn button:hover {
+    background-color: #F99F1C;
+    color: #fff;
+}
+
+/* nandos heading part end */
+
+/* Recommended Reviews part strat*/
+
+.recommended {
+    padding: 0px 60px;
+}
+
+.recommended-headtext h4 {
+   
+
+}
+
+.recommended-headtext span {
+    color: #F99F1C
+}
+
+.recommended-input input {
+    padding: 5px 15px;
+    border: none;
+    border: 1px solid #d4d4d4;
+}
+
+.input-group-text {
+    border-radius: 0px;
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    background-color: #F99F1C;
+    margin-left: -1px;
+}
+
+.input-group-text a {
+    color: #fff;
+}
+
+.recommended-input {
+    float: left;
+}
+
+
+.sub-drop {
+    float: left;
+}
+
+.dropdown-toggle {
+    background-color: transparent;
+    color: black;
+    border: none;
+    font-size: 12px;
+}
+
+.sub-drop span {
+   
+    font-weight: 400;
+
+}
+
+.cont-bottom {
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.media-left img {
+    height: 50px;
+    width: 50px;
+}
+
+.cont-media h5 {
+    font-size: 12px;
+    font-weight: 400;
+    color: #F99F1C
+}
+
+.cont-media p {
+    margin-top: -5px;
+}
+
+.cont-media ul {
+    margin-top: -10px;
+    margin-left: 10px;
+}
+
+.cont-media ul li a {
+    color: black;
+    text-decoration: none;
+}
+
+.cont-media ul li a i {
+    color: #F99F1C
+}
+
+
+
+.right-review {
+    text-align: center;
+    border: 1px solid #e8e8e8;
+    position: relative;
+}
+
+.right-review img {
+    padding: 10px;
+}
+
+.right-review:after {
+    position: absolute;
+    content: '';
+    height: 1px;
+    width: 80%;
+    background-color: #e8e8e8;
+    left: 10%;
+    top: 55%;
+    text-align: center;
+}
+
+.right-cont img {
+    height: 20px;
+}
+
+.right-cont span {
+    margin-left: 30px;
+}
+
+.right-cont h6 {
+    font-size: 14px;
+    color: black;
+    font-weight: 400;
+}
+
+.right-cont ul li {
+    font-size: 14px;
+    font-weight: 400;
+    padding-top: 3px;
+}
+
+.expt {
+    margin-top: 10px;
+
+}
+
+.img-box1 {
+    height: 180px;
+    width: 180px;
+    background-color: gray;
+    position: relative;
+
+}
+
+.img-box1 img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border: 1px solid #F99F1C
+}
+
+.img-box2 {
+    height: 180px;
+    width: 180px;
+    background-color: gray;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    border: 1px solid #F99F1C
+}
+
+.img-box2 img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+
+
+.right-cont p a {
+    font-size: 12px;
+    color: #F99F1C;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.trd-pro {
+    margin-top: 100%
+}
+
+.media-chart ul li {
+
+    border-bottom: 1px solid #d3d3d3;
+}
+
+.media-chart ul li a {
+    color: #F99F1C;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+
+
+.card-body iframe {
+    width: 100%;
+    height: 200px;
+}
+
+.rest-address ul li {
+    font-size: 12px;
+    padding: 2px 20px;
+    width: 70%;
+    
+}
+
+.rest-address ul li i {
+    margin: 5px;
+    color: #F99F1C
+}
+
+.add-edit {
+    font-size: 12px;
+    position: absolute;
+    top: 60%;
+    right: 5%;
+    color: #F99F1C;
+    font-weight: 800;
+}
+
+.people-fav h4 {
+
+    padding: 10px 0;
+    font-weight: 600;
+    color: #F99F1C;
+    font-size: 21px;
+}
+
+.peri-review h6 {
+   font-size: 16px;
+    font-weight: 400;
+}
+
+.peri-review h5 {
+    font-size: 12px;
+    float: right
+}
+
+.peri-review p {
+    line-height: 1;
+    font-size: 13px;
+    font-weight: 300;
+
+}
+
+.mark {
+    color: #F99F1C;
+    
+}
+
+.peri-review span a {
+    color: #F99F1C
+}
+
+
+.mark,
+mark {
+    background-color: transparent
+}
+
+
+
+
+
+
+/* Recommended Reviews part end */
+
+
+@media (max-width: 575px) {
+
+    .nandos-times ul li,
+    .review h5,
+    .review a,
+    .nandos-mdl ul li {
+        font-size: 12px;
+    }
+
+    .review {
+        margin-top: 20%
+    }
+
+    .img-box1,
+    .img-box2 {
+        height: 100px;
+        width: 100px;
+    }
+
+    .right-cont p {
+        text-align: left;
+
+    }
+
+    .trd-pro {
+        margin-top: 10%
+    }
+
+    .recommended-input input {
+        width: 60%
+    }
+
+    .right-review img {
+        width: 80%
+    }
+
+    .right-review::after {
+        background-color: transparent;
+
+    }
+
+    .cont-bottom {
+        border: none;
+    }
+}
+
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .right-cont p {
+        text-align: left;
+
+    }
+
+    .trd-pro {
+        margin-top: 10%
+    }
+
+
+}
+
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+    .Add-Listing button {
+        margin: 0 auto;
+        height: 30px;
+        width: 90px;
+    }
+
+    .pro-img {
+        height: 35px;
+        width: 35px;
+    }
+
+    .pro-img img {
+        height: 31px;
+        width: 31px;
+    }
+
+    .Add-Listing button a {
+        font-size: 11px;
+    }
+
+    .nandos-times ul li,
+    .review h5,
+    .review a,
+    .nandos-mdl ul li {
+        font-size: 12px;
+    }
+
+    .review {
+        margin-top: 20%
+    }
+
+    .trd-pro {
+        margin-top: 10%
+    }
+    
+    .nandos-part{
+        margin-top: -18%
+    }
+}
+
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .Add-Listing button {
+        margin: 0 auto;
+        height: 30px;
+        width: 90px;
+    }
+
+    .pro-img {
+        height: 35px;
+        width: 35px;
+    }
+
+    .pro-img img {
+        height: 31px;
+        width: 31px;
+    }
+
+    .Add-Listing button a {
+        font-size: 11px;
+    }
+
+    .nandos-times ul li,
+    .review h5,
+    .review a,
+    .nandos-mdl ul li {
+        font-size: 12px;
+    }
+
+    .review {
+        margin-top: 20%
+    }
+}
+
+

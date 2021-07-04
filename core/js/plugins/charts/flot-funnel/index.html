@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Flot Examples: Funnel Charts</title>
+	<link href="css/flot-funnel.css" rel="stylesheet" type="text/css">
+	
+
+</head>
+<body>
+
+	<div id="header">
+		<h2 style='text-align:center'>Funnel Charts</h2>
+	</div>
+
+	<div id="content">
+
+		<h3 id="title"></h3>
+		<div class="demo-container">
+			<div id="flot-funnel" class="demo-placeholder"></div>
+		</div>
+		
+	</div>
+	
+
+	<script language="javascript" type="text/javascript" src="js/jquery.js"></script>
+	<script language="javascript" type="text/javascript" src="js/jquery.flot.js"></script>
+	<script language="javascript" type="text/javascript" src="js/jquery.flot.funnel.js"></script>
+	<script type="text/javascript">
+
+	$(function() {
+
+		// Example Data
+
+
+		var data = [],
+
+			
+//			series = Math.floor(Math.random() * 3) + 3;
+
+		
+/*
+		for (var i = 0; i < series; i++) {
+			var x = Math.floor(Math.random() * 100) + 1;
+			if (x<5) x=10;
+			data[i] = {
+				label: "Series" + (i + 1),
+				data: x
+			};
+		}
+*/
+//alert(data);
+		series = 5;
+		data = [{
+		 "label": "Series 1",
+		 "data": 10
+		},
+		{
+		 "label": "Series 2",
+		 "data": 20
+		},
+		{
+		 "label": "Series 3",
+		 "data": 15
+		},
+		{
+		 "label": "Series 4",
+		 "data": 5
+		},
+		{
+		 "label": "Series 5",
+		 "data": 6
+		}
+		];
+
+
+        var placeholder = $("#flot-funnel");
+		$.plot('#flot-funnel', data, {
+		    series: {
+		        funnel: {
+		            show: true,
+					stem: {
+						height: 0,
+						width: 0
+					},
+					margin: {
+                        //right: 0.15
+					},
+		            label: {
+						show: true,
+						align: "center",
+						threshold: 0.05,
+						formatter: labelFormatter
+                    },
+					highlight: {
+						opacity: 0.2
+					}
+				},
+		    },
+			grid: {
+				hoverable: true,
+				clickable: true
+			}
+		});
+		
+        
+		placeholder.bind("plotclick", function(event, pos, obj) {
+
+			if (!obj) {
+				return;
+			}
+
+			alert(obj.series.label + ": " + obj.series.value);
+		});
+		
+    	function labelFormatter(label, series) {
+    		return "<div style='font-size:11pt; text-align:center; padding:2px; color:#fff;'>"+series.value+"</div>";
+    	}
+    		
+	});
+
+
+	</script>
+</body>
+</html>

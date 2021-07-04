@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li {
+            list-style: none;
+        }
+
+        body {
+            font-family: 'lato', sans-serif;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+
+
+        .responsive-table li {
+
+            border-radius: 3px;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .responsive-table .table-header {
+            background-color: #10ACF5;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            color: white;
+            box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        .responsive-table .table-row {
+            background-color: #ffffff;
+            box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <span class="container">
+
+        <ul class="responsive-table">
+            <li style="list-style: none;" class="table-header">
+                <span class="col ">Status</span>
+                <span class="col ">Effective Date</span>
+                <span class="col ">Department</span>
+                <span class="col ">Designation</span>
+                <span class="col ">Reports To</span>
+                <span class="col ">Location</span>
+                <span class="col ">Remarks</span>
+            </li>
+
+            <li class="table-row">
+                <span class="col " data-label="Job Id">Promoted</span>
+                <span class="col " data-label="Job Id">2-4-21</span>
+                <span class="col " data-label="Customer Name">AJ</span>
+                <span class="col " data-label="Amount">Accountant</span>
+                <span class="col" data-label="Payment Status">Francis</span>
+                <span class="col" data-label="Payment Status">Dhaka</span>
+                <span class="col" data-label="Payment Status"></span>
+            </li>
+            <li class="table-row">
+                <span class="col " data-label="Job Id">Promoted</span>
+                <span class="col " data-label="Job Id">2-4-21</span>
+                <span class="col " data-label="Customer Name">AJ</span>
+                <span class="col " data-label="Amount">Accountant</span>
+                <span class="col" data-label="Payment Status">Francis</span>
+                <span class="col" data-label="Payment Status">Dhaka</span>
+                <span class="col" data-label="Payment Status"></span>
+            </li>
+            <li class="table-row">
+                <span class="col " data-label="Job Id">Promoted</span>
+                <span class="col " data-label="Job Id">2-4-21</span>
+                <span class="col " data-label="Customer Name">AJ</span>
+                <span class="col " data-label="Amount">Accountant</span>
+                <span class="col" data-label="Payment Status">Francis</span>
+                <span class="col" data-label="Payment Status">Dhaka</span>
+                <span class="col" data-label="Payment Status"></span>
+            </li>
+
+        </ul>
+    </span>
+</body>
+
+</html>

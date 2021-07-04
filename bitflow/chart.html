@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./assets/js/chart.min.js"></script>
+    <style>
+        #ratechart {
+            width: 500px !important;
+            height: 350px !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-6">
+            <canvas id="ratechart"></canvas>
+            <script>
+                var ctx = document.getElementById('ratechart');
+                var myChart = new Chart(ctx, {
+                    type: 'horizontalBar',
+                    data: {
+                        labels: ['1 Stars', '2 Stars', '3 Stars', '4 Stars', '5 Stars', 'Orange'],
+                        datasets: [{
+
+                            data: [12, 19, 3, 5, 6, 3],
+                            backgroundColor: [
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(54, 162, 235, 1)',
+                            ],
+                            borderColor: [
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(54, 162, 235, 1)'
+                            ],
+                            borderWidth: 1,
+
+                            label: 'User Reviews'
+                        }]
+                    },
+                    options = {
+                        scales: {
+                            xAxes: [{
+                                gridLines: {
+                                    offsetGridLines: true
+                                }
+                            }]
+                        }
+                    };
+
+                });
+            </script>
+        </div>
+
+        <div class="col-6">
+            <canvas id="piechart">
+
+            </canvas>
+            <script>
+
+                var t = document.getElementById("piechart");
+                var pc = new Chart(t, {
+                    type: 'pie',
+                    data: {
+                        labels: ['Vini', 'Vidi', 'vici'],
+                        datasets: [{
+                            label: 'Test',
+                            data: ['33', '22', '12'],
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                            ]
+                        }]
+                    },
+
+
+                })
+
+            </script>
+        </div>
+    </div>
+
+    <div class="col-6">
+        <canvas id="dc">
+
+        </canvas>
+        <script>
+
+            var d = document.getElementById("dc");
+            var dc = new Chart(d, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Vini', 'Vidi', 'vici'],
+                    datasets: [{
+                        label: 'Test',
+                        data: ['33', '22', '2'],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                        ]
+                    }]
+                },
+
+                options: {
+
+
+                    ticks: {
+                        beginAtZero: true
+                    },
+
+                    scales: {
+                        xAxes: [{
+                            gridLines: {
+                                offsetGridLines: true
+                            }
+                        }]
+                    }
+
+
+                }
+            })
+
+        </script>
+    </div>
+
+
+
+
+
+
+
+</body>
+
+</html>

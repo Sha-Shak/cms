@@ -1,0 +1,205 @@
+/* business-confirm -part start*/
+
+#business-confirm{
+    background-color: #F6F7F7;
+}
+
+#emailSentCheck{
+    background-color: #F6F7F7;
+    height:550px;
+    padding: 50px;
+    
+}
+
+.forbusiness-text p{
+    color: #F99F1C;
+    margin-top: 30px;
+    
+}
+
+.businessList ul li{
+    display: inline-block;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.businessList ul li a{
+    color: #b2b0b0;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.con-mailText{
+    background-color: #F3D5B2;
+}
+
+.con-mailText p{
+    padding: 10px;
+    font-size: 14px;
+    color: black;
+}
+.con-mailText p a{
+    color: #9b5c00;
+    text-decoration: none;
+}
+
+.checkInbox h4{
+    color: gray;
+    
+}
+
+.checkInbox p{
+    font-size: 14px;
+    
+}
+
+.resendEmails{
+    margin-top: 50px;
+}
+
+.resendEmails button{
+    background-color: transparent;
+    border: none;
+    background-color: #F99F1C;
+    padding: 5px 40px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.nandos-mediaBox{
+    background-color: #fff;
+    border: 1px solid #e2e2e2;
+    
+}
+
+.b-review{
+    margin-left: 10px;
+    
+}
+
+.right-mapbottom2 img{
+    height: 120px;
+    width: 120px; 
+    border-radius: 5px;
+    border: 1px solid#F99F1C
+}
+
+.notifica-review a{
+    text-decoration: none;
+    color: black;
+}
+
+
+.footerImage{
+    text-align: left;
+}
+
+.footer-text p{
+    text-align:left;
+    color: #b4b4b4;
+    font-size: 14px;
+    margin-top: 30px;
+}
+
+
+#footer ul.social li a, #footer ul.quick-links li a{
+    transition: 0.3s
+}
+
+#footer ul.social li a, #footer ul.quick-links li a:hover{
+    color:  #F99F1C
+}
+
+.nothing{
+    position: relative;
+}
+
+.loveBox{
+    width: 350px;
+    background-color: red;
+    position: absolute;
+    right: 20px;
+    z-index: 1
+}
+
+.loveBox table{
+    
+    color: white;
+    
+}
+
+
+/* business-confirm -part end*/
+
+/* business-confirm-media-part start*/
+@media (max-width:320px){
+    /* #emailSentCheck{
+    height:700px;
+    } */
+    .resendEmails button{
+        font-size: 12px;
+        padding: 5px
+    }
+    
+    .right-mapbottom2 img{
+    height: 60px;
+    width: 60px; 
+   
+}
+    
+}
+
+@media (max-width:575px){
+    
+        .footerImage{
+    text-align: center;
+}
+    
+    .footer-text p{
+    text-align:center;
+    
+}
+    
+    .forbusiness-text{
+        text-align: center;
+        margin-top: -30px;
+    }
+    
+    .businessList{
+        text-align: center;
+    }
+
+    .profile-name{
+        
+    }
+    
+    .profile-name .pro-img{
+        margin-bottom: 30px
+    }
+
+    .con-mailText{
+        text-align: center;
+    }
+
+    #emailSentCheck{
+        text-align: center;
+    }
+    
+    
+}
+
+@media (max-width:768px){
+     .forbusiness-text{
+        text-align: center;
+        margin-top: -30px;
+    }
+     .businessList{
+        text-align: center;
+    }
+
+    #emailSentCheck{
+        height: auto;
+    }
+
+}
+/* business-confirm-media-part end*/

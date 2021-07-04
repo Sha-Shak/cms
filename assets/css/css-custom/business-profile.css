@@ -1,0 +1,459 @@
+@font-face {
+  font-family: 'Gesta';
+  src: url("../fonts/bsigesta-light-webfont.ttf");
+  font-weight: 300;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Gesta';
+  src: url("../fonts/bsigesta-medium-webfont.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Gesta';
+  src: url("../fonts/bsigesta-webfont.ttf");
+  font-weight: 500;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Gesta';
+}
+
+h1, h2, h3, h4, h5 , p , a {
+   font-family: 'Gesta';
+}
+
+
+
+
+/* business-profile-part start*/
+.busin-nameAdd{
+    border: 1px solid gray;
+    width: 80%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.busin-nameAdd h4{
+    font-weight: 500;
+    padding:10px;
+     
+    
+}
+
+.busin-nameAdd h6{
+    font-weight: 400;
+   
+  
+}
+
+.busin-infoLeft h1{
+  
+   color: black;
+}
+
+.basic-info h4{
+    
+    font-weight: 500;
+}
+
+.basic-edit{
+    text-align: right;
+}
+
+.basic-edit a{
+    padding: 5px 0;
+}
+
+.basic-edit a{
+    color: #F99F1C;
+   
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.address-info h4{
+    
+    color: black;
+    font-weight: 500;
+}
+
+.address-info h6{
+   
+    color:#6d6d6d;
+}
+
+.address-info p{
+    color:#6d6d6d;
+    font-size: 18px;
+}
+
+.address-info p span{
+    
+    color: gray;
+}
+
+.address-info h5 a{
+    color: #F99F1C;
+    
+}
+
+.address-info ul li{
+    color:#6d6d6d;
+}
+
+.address-info ul li span{
+   
+    font-weight: 500;
+}
+
+
+.basic-info ul li{
+    color:#6d6d6d;
+}
+
+
+.basic-info ul li span{
+   
+    font-weight: 500;
+}
+
+.basic-info p{
+    color:#6d6d6d
+}
+
+.busi-proMap{
+    border: 3px solid #ffffff;
+}
+
+.busi-proMap iframe{
+    width: 100%;
+    height:350px;
+    
+}
+
+
+/* business-profile-part end*/
+
+/* activity-part start*/
+
+.activity-menu button{
+    background-color: transparent;
+    border: none;
+    border: 1px solid #d3cece;
+    padding: 0px 10px;
+    background-color: white;
+    margin: 3px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.activity-menu button:hover{
+    background-color:  #F99F1C;
+    border: 1px solid #ffffff;
+}
+
+.activity-tabs{
+    margin: 15px;
+    
+}
+
+.activity-tabs .nav-tabs .nav-link{
+    width: 280px;
+    font-size: 14px;
+    border: 1px solid #eaeaea;
+    border-radius: 0px;
+}
+
+.activity-bottom{
+    background-color: #fff;
+}
+
+.recent-activity{
+    background-color: #fff;
+   
+}
+
+.recent-headText h5{
+   
+}
+
+.acti-icon i{
+    background-color:#49C0B4;
+    padding: 10px;
+    color: #fff;
+    border-radius: 3px;
+    font-size: 30px;
+}
+
+.activity-shortText p{
+    color: black;
+    font-size: 14px;
+    line-height: 1.3;
+}
+
+.activity-shortText p span{
+    font-weight: 500;
+ 
+}
+
+.acti-subcolor{
+    color:  #F99F1C;
+    
+}
+
+.acti-bott-text p{
+    font-size: 12px;
+    float: left;
+}
+
+.acti-bott-text span{
+    font-size: 12px;
+    float: right;
+    color: #d3cfcf;
+    margin-right: 15px;
+    
+}
+
+
+.acti-iconphone i{
+    background-color:#9c77d8;
+    padding: 10px;
+    color: #fff;
+    border-radius: 3px;
+    font-size: 30px;
+}
+
+.acti-iconEye i{
+    background-color:#45b964;
+    padding: 10px;
+    color: #fff;
+    border-radius: 3px;
+    font-size: 30px;
+}
+
+.acti-iconjachi img{
+    background-color: #9a869a;
+    padding: 2px;
+    border-radius: 3px;
+}
+
+.acti-bott-text img{
+    height: 25px;
+}
+
+.acti-iconCamera i{
+    background-color:#7a8e6c;
+    padding: 10px;
+    color: #fff;
+    border-radius: 3px;
+    font-size: 30px;
+}
+
+.acti-bott-text span a{
+    color:  #F99F1C;
+    
+    font-size: 14px;
+    text-decoration: none;
+    
+}
+
+
+#chartContainer{
+   height: 380px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* activity-part end*/
+
+/* review-part start*/
+
+
+.white-bg{
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+}
+
+.businReview-right p{
+    font-size: 14px;
+    color: gray;
+    line-height: 1.3;
+    width: 60%;
+}
+
+.white-bg2{
+    background-color: #fff;
+    width: 90%;
+    float: right;
+    margin-right: 1.8%;
+    border: 1px solid #eaeaea;
+    margin-top: -22px;
+}
+
+.white-bg3{
+    background-color: #fff;
+    width: 85%;
+    float: right;
+    margin-right: 1.8%;
+    border: 1px solid #eaeaea;
+    margin-top: 2px;
+}
+
+.right-cont p{
+    display: inline-block;
+}
+
+.right-cont button{
+    display: inline-block;
+    
+}
+
+.commentReply{
+    text-align: right;
+    margin-right: 1.8%;
+    margin-top: 2px;
+    
+    
+    
+}
+
+.commentReply textarea{
+    resize: none;
+    border: none;
+    border: 1px solid #e2e2e2;
+}
+
+.replyButton{
+    text-align: right;
+    margin-right: 1.8%;
+    margin-bottom: 10px;
+}
+
+.replyButton button{
+    background-color: transparent;
+    border: none;
+    border: 1px solid #e2e2e2;
+    padding: 5px;
+    font-size: 14px;
+    
+    cursor: pointer;
+    background-color: #fff;
+    transition: 0.3s;
+}
+.replyButton button:hover{
+    background-color: #F99F1C;
+    color: #fff;
+}
+
+.buisRevieMdl{
+    background-color: #fff;
+}
+
+.revi-list li{
+    color: gray;
+}
+
+
+@media (max-width:320px){
+    .activity-tabs .nav-tabs .nav-link{
+        width:230px
+    }
+}
+
+
+@media (max-width:575px){
+    .commentReply textarea{
+        width: 50%;
+    }
+    .white-bg2{
+        float: left;
+        width: 92%
+    }
+    
+    .white-bg3{
+        float: left;
+        width: 92%
+    }
+    
+    .commentReply{
+        text-align: center;
+    }
+    .replyButton{
+        text-align: center;
+    }
+    
+    .profile-overviewPart{
+        margin-top: 0;
+    }
+    body{
+        background-color: #F9F7EF;
+    }
+    .recent-activity{
+        background-color: transparent;
+    }
+
+    .acti-bott-text span{
+        color: #494949
+    }
+}
+
+
+@media (max-width:768px){
+    .busin-nameAdd{
+        width: 95%
+    }
+}
+
+@media (max-width:1024px){
+    .busin-nameAdd{
+        width: 97%
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

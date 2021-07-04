@@ -1,0 +1,645 @@
+#profile-head {
+    background-color: #EFEFEF;
+    padding: 0
+}
+
+.test-part {}
+
+.pro-imgbox {
+    width: 100%;
+    background-color: #869698;
+    position: relative;
+    top: 60px;
+    left: -20px;
+
+
+}
+
+.pro-imgbox img {
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.profile-headname h1 {
+    font-weight: 500;
+   
+}
+
+.profile-headname h5 {
+    font-weight: 400;
+}
+
+.profile-headname ul li a {
+    color: gray;
+    text-decoration: none;
+}
+
+.profile-headname ul li i {
+    color: #F99F1C;
+}
+
+.profile-headname ul li {
+    display: inline-block;
+}
+
+.profile-headRight ul li a {
+    color: #F99F1C;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+/* Profile Overview-part start */
+
+.profile-overviewPart {
+    background-color: #F9F7EF;
+    margin-left: -31px;
+    margin-top: -50px;
+
+}
+
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+    background-color: #F9F7EF;
+    color: black;
+    border-radius: 0px;
+    border-left: 1px solid #F99F1C;
+    font-size: 14px;
+}
+
+.nav-link {
+    color: black;
+
+}
+
+.nav-link i {
+    color: #F99F1C
+}
+
+.revimg {
+    margin-left: -3px;
+}
+
+.pro-overName h4 {
+    font-weight: 400;
+   
+
+}
+
+.about-reviews h4 {
+    color: gray;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.about-reviews ul li {
+    color: gray;
+    font-size: 14px;
+}
+
+.about-reviews ul li span {
+    font-weight: 600;
+    
+    color: black;
+}
+
+.about-photos h4 {
+    color: gray;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.about-photos ul li {
+    color: gray;
+    font-size: 14px;
+}
+
+.about-photos ul li span {
+    font-weight: 600;
+  
+    color: black;
+}
+
+.left-first h6 {
+    color: black;
+    font-size: 14px;
+    
+}
+
+.left-first p {
+    margin-top: -7px;
+    font-size: 11px;
+    color: gray;
+   
+}
+
+.left-scend h6 {
+    color: black;
+    font-size: 14px;
+  
+
+}
+
+.left-scend p {
+    margin-top: -7px;
+    font-size: 11px;
+    color: gray;
+   
+}
+
+.notifications h3 {
+    font-weight: 500;
+   
+}
+
+.notifications p {
+    color: black;
+    font-size: 14px;
+}
+
+
+.notifica-box {
+    background-color: #F8F9F7;
+    width: 99%;
+    margin: 0 auto;
+}
+
+.notifica-review h6 {
+  
+    font-weight: 600
+}
+
+.notifica-review h5 {
+   
+    font-size: 14px;
+    color: black;
+}
+
+.notifica-review p {
+    margin-top: -7px;
+    line-height: 1;
+    font-size: 12px;
+}
+
+.notifica-review a span {
+    margin-left: 10px;
+    color: gray;
+    font-size: 10px;
+
+}
+
+
+.notifica-mdl h4 {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 21px;
+}
+
+.notifica-mdl p {
+    color: black;
+    font-size: 14px;
+}
+
+.notifica-date p {
+    font-size: 12px;
+    color: black;
+}
+
+
+.notifica-review ul li a {
+    text-decoration: none;
+    color: gray;
+}
+
+.notifica-review ul li a i {
+    color: #F99F1C;
+}
+
+.notifica-review ul li a img {
+    margin-left: -3px;
+}
+
+.noti-info p {
+    margin-left: 30px;
+    font-size: 12px;
+    color: black;
+  
+
+}
+
+.noti-info p span {
+    color: gray;
+
+}
+
+.regist {
+    margin-top: -15px;
+}
+
+.seeallnoti {
+    text-align: right;
+    margin-right: 40px;
+
+}
+
+.seeallnoti p a {
+    font-size: 12px;
+    color: black;
+    text-decoration: none;
+
+}
+
+
+.activity-mdl p {
+    font-size: 14px;
+    color: gray;
+}
+
+.activity-mdl p span {
+    font-size: 14px;
+    color: black;
+    
+}
+
+.activity-mdl ul li {
+    display: inline-block;
+
+
+}
+
+.activity-mdl ul li a {
+    color: gray;
+    font-size: 14px;
+    text-decoration: none;
+
+}
+
+.activity-mdl ul li a i {
+    color: #F99F1C;
+
+}
+
+
+.activity-mdl ul li a span {
+    color: black;
+   
+}
+
+.activity-mdl h6 {
+    font-size: 12px;
+    color: gray;
+}
+
+
+.activity-mdl span a {
+    color: #F99F1C;
+    text-decoration: none;
+}
+
+
+/* Profile Overview-part end */
+
+.notifica-review p a {
+    color: black;
+    font-weight: 800;
+}
+
+.src-text {
+    font-size: 14px;
+    color: gray;
+  
+}
+
+.cont-listBox {
+    border: 1px solid #d1d1d1;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.noti-info2 p {
+    font-size: 12px;
+    color: black;
+   
+
+}
+
+.noti-info2 p span {
+    color: gray;
+
+}
+
+.next-scrc ul li {
+    font-size: 12px;
+}
+
+.next-scrc ul li a {
+    color: black;
+
+}
+
+
+
+.youLike {
+    text-align: center;
+}
+
+.youLike h4 {
+    color: #3867B1;
+    font-weight: 800;
+}
+
+.youLike p {
+    font-size: 12px;
+    border-bottom: 1px solid gray;
+    padding-bottom: 10px;
+}
+
+
+.fri-subBox {
+    height: 50px;
+    width: 50px;
+    border: 1px solid #F99F1C;
+    background-color: #C6C5C5;
+
+}
+
+.fri-one {
+    font-size: 11px;
+    text-align: center;
+}
+
+.fri-two {
+    padding: 10px 15px;
+}
+
+.friend-rightBox {
+    margin: 0 auto;
+}
+
+.sub-botm {
+    height: 50px;
+    width: 50px;
+    border: 1px solid #F99F1C;
+    background-color: #C6C5C5;
+}
+
+
+.friend-rightBottom {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.bottom-box {
+    padding: 10px 5px;
+
+}
+
+.bottom-box p {
+    font-size: 11px;
+}
+
+
+.right-botmCkbox h5 {
+    font-size: 12px;
+    color: black;
+    
+    font-weight: 400;
+
+}
+
+.right-botmCkbox ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+}
+
+.right-botmCkbox ul li i {
+    color: #F99F1C;
+}
+
+
+.review-text h4 {
+    
+    font-weight: 400;
+}
+
+.review-media p a {
+    color: #F99F1C;
+}
+
+.review-media h5 {
+    color: #F99F1C;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.review-media h6 {
+    color: black;
+    font-size: 14px;
+    font-weight: 800
+}
+
+.rev-para {
+    font-size: 12px;
+    line-height: 1.2;
+    color: black;
+    font-weight: 400;
+}
+
+
+.rev-para span a {
+    text-decoration: none;
+    color: #F99F1C;
+}
+
+
+.card-block h5 {
+    font-size: 11px;
+    
+}
+
+.card-block h5 span {
+    font-size: 11px;
+   
+    float: right;
+    color: black;
+}
+
+.card-block {
+    padding: 3px;
+}
+
+.card-img img {
+    transition: all 2s ease-out
+}
+
+.card-img {
+    position: relative;
+
+}
+
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.51);
+    -webkit-clip-path: polygon(100% 0, 100% 0, 100% 100%, 0% 100%);
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 0% 100%);
+    height: 50%;
+    width: 60%;
+
+}
+
+
+
+.card-overlay a {
+    position: absolute;
+    top: 50%;
+    right: 30%;
+    color: #fff;
+    text-decoration: none
+}
+
+
+.profile-overviewPart2 {
+    background-color: #F9F7EF;
+    margin-left: -31px;
+    margin-top: -50px;
+
+}
+
+.footerImage{
+    text-align: left;
+}
+
+.footer-text p{
+    text-align:left;
+    color: #b4b4b4;
+    font-size: 14px;
+    margin-top: 30px;
+}
+
+
+#footer ul.social li a, #footer ul.quick-links li a{
+    transition: 0.3s
+}
+
+#footer ul.social li a, #footer ul.quick-links li a:hover{
+    color:  #F99F1C
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 575.98px) {
+    .pro-imgbox {
+        width: 50%
+    }
+
+    .left-first h6 {
+        font-size: 12px
+    }
+
+    .left-first p {
+        font-size: 9px
+    }
+
+    .left-scend h6 {
+        font-size: 12px;
+    }
+
+    .left-scend p {
+        font-size: 9px
+    }
+
+    .profile-headname h1 {
+        font-size: 28px;
+        display: inline-block
+    }
+
+    .ph-text {
+        margin-top: 30px;
+    }
+
+    .next-scrc ul {
+        margin-left: -20%
+    }
+
+    .cont-listBox {
+        margin-bottom: 5px;
+    }
+
+    .profile-overviewPart2 {
+        background-color: transparent;
+        
+    }
+    
+    .profile-overviewPart{
+        margin-top: 0
+    }
+    
+            .footerImage{
+    text-align: center;
+}
+    
+    .footer-text p{
+    text-align:center;
+    
+}
+    body{
+        background-color: #F9F7EF
+    }
+
+}
+
+
+
+@media (max-width: 768px){
+    .pro-imgbox {
+        width: 50%
+    }
+
+    .ph-text {
+        margin-top: 30px;
+    }
+
+    .cont-listBox {
+        margin-bottom: 5px;
+    }
+     .profile-overviewPart{
+        margin-top: 0
+    }
+    
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .cont-listBox {
+        margin-bottom: 5px;
+    }
+}
+
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+    .pro-imgbox {
+
+        top: 60px;
+        left: -20px;
+
+    }
+}
+
+
+@media (min-width: 1200px) {}

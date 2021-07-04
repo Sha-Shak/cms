@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css">
+    <style>
+        .row-body {
+            background-color: white;
+
+            padding: 10px;
+        }
+
+        .row-head {
+            background-color: white;
+        }
+
+        .col-md-8,
+        .col-md {
+            border: 1px solid lightgray;
+
+        }
+
+        .col-divider {
+            padding: 0px, 10px;
+            margin: 0px 10px;
+        }
+
+        .big-col,
+            {
+            padding: 10px;
+        }
+
+        .small-col {
+            padding: 0px;
+        }
+
+        .issue-header,
+        .status {
+            margin: 15px;
+
+        }
+
+        .issue-header {
+            margin-bottom: 0px;
+        }
+
+        .status {
+            margin-left: 20px;
+        }
+
+        .cus-hr {
+            margin: 5px;
+        }
+
+        #issue-title {
+            border: none;
+            border-bottom: 0.5px solid lightgray;
+            width: 80%;
+            font-size: 18px;
+            box-shadow: 2px;
+            margin: 15px;
+
+        }
+
+        .originate-img,
+        .res-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .cng-op {
+            float: right;
+            color: gray;
+        }
+
+        .res-block {
+            margin: 5px 0px;
+        }
+
+        .head-bar {
+            color: white;
+            font-size: 16px;
+            padding: 10px;
+            background-color: rgb(81, 185, 255);
+        }
+
+        .add-op {}
+
+        .small-col-op {
+            padding: 10px;
+        }
+
+        .issue-row {
+            background-color: rgb(81, 185, 255);
+            color: white;
+        }
+
+        .issue-details {
+            margin: 15px;
+        }
+
+        .fa-fire {
+            color: orangered;
+            margin-top: 5px;
+            margin-left: 3px;
+        }
+
+
+
+        .priority {
+            float: right;
+            margin-top: 17px;
+        }
+
+        .image-sec img {
+            max-width: 150px;
+            margin: 5px;
+        }
+
+        .button-close {
+            padding: 10px 40px;
+            background-color: greenyellow;
+            color: rgb(44, 44, 44);
+            border: none;
+            margin: 10px;
+        }
+
+        .button-edit {
+            padding: 10px 40px;
+            background-color: white;
+            color: rgb(44, 44, 44);
+            border: 0.5px solid rgb(196, 196, 196);
+            margin: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <br>
+    <br>
+
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-8 big-col row-head">
+                <div class="row issue-row">
+                    <div class="issue-header">
+                        <h1>Bug-45 Pickup isn't working! </h1>
+                    </div>
+                </div>
+                <div class="row-body">
+                    <div class="row">
+                        <div class="status">Status: Pending</div>
+                    </div>
+                    <div class="row priority">
+                        <span>High Priority </span> <i class="fas fa-fire"></i>
+                    </div>
+
+                    <hr class="cus-hr">
+                    <div class="title">
+                        <div id="issue-title">
+                            <h6>This is a title </h6>
+                        </div>
+                    </div>
+
+                    <div class="issue-details">As mentioned S14 issue, that name will be changed.
+                        Now, there should be 2 options here.
+                        <ul>
+                            <li> Pickup from my Location (Once clicked, Location will be displayed retrieved from My
+                                Profile" </li>
+                            <li> Pickup from another Location (have a question mark icon on upper right corner, Click on
+                                that
+                                will have popup message "Have other party pick up from another location, Such as,
+                                warehouse,
+                                cross streets)
+                            </li>
+
+                        </ul>
+
+                        This option will have text edit field and OK button.
+                    </div>
+
+                    <div class="image-sec">
+                        <a href=""><img src="../assets/images/i1.jpg" alt=""> </a>
+                        <a href=""><img src="../assets/images/i1.jpg" alt=""> </a>
+                        <a href=""><img src="../assets/images/i1.jpg" alt=""> </a>
+
+                    </div>
+
+                    <br>
+
+                    <hr class="cus-hr">
+
+                    <div class="action-btn row">
+                        <button type="button" class="button-close">Close</button>
+                        <button type="button" class="button-edit">Edit</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-divider">
+
+            </div>
+            <div class="col-md small-col">
+
+                <div class="head-bar">
+                    Pending Since: 5/3/21
+                </div>
+                <div class="small-col-op">
+                    <div class="prod-title">
+                        <h5>Product</h5>
+                        <div class="cng-op"> Change</div>
+                        <hr class="cus-hr">
+
+                        <span>BitFlow</span>
+                    </div>
+                    <br>
+
+                    <div class="issue-type">
+                        <h5>Issue Type</h5>
+                        <hr class="cus-hr">
+
+                        <span>Bug</span>
+                    </div>
+                    <br>
+
+                    <div class="originate">
+                        <h5>Originated By:</h5>
+
+                        <hr class="cus-hr">
+
+                        <span> <img class="originate-img" src="../assets/images/smith.jpg" alt=""> Sami Huq</span>
+
+                    </div>
+
+                    <br>
+
+                    <div class="reponsible">
+                        <div class="res-block">
+                            <h5>Responsible Person</h5>
+                            <div class="cng-op"> Change</div>
+                            <hr class="cus-hr">
+
+                            <span> <img class="res-img" src="../assets/images/smith2.jpg" alt=""> Ratul</span>
+                        </div>
+                        <div class="add-op">+Add Person</div>
+                    </div>
+
+                    <br>
+
+                    <div class="start-date">
+                        <h5>Created on</h5>
+                        <hr class="cus-hr">
+
+                        <span> 5/3/2021</span>
+                    </div>
+
+                    <br>
+
+                    <div class="end-date">
+                        <h5>Deadline</h5>
+                        <hr class="cus-hr">
+
+                        <span> 8/3/2021</span>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+
+        <script src="../assets/js/jquery.min.js"></script>
+        <script src="../assets/js/bootstrap.min.js"></script>
+        <script src="../assets/js/fontawesome.js"></script>
+
+</body>
+
+</html>

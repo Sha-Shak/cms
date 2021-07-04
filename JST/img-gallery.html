@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://kenwheeler.github.io/slick/slick/slick.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Helevetica, Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 770px;
+        }
+
+        .gallery-slider {
+            position: relative;
+            overflow: hidden;
+            background-color: #e6e6e6;
+        }
+
+        .gallery-slider__images {
+            margin: 0;
+            position: relative;
+        }
+
+        .gallery-slider__images .item {
+            padding: 0;
+        }
+
+        .gallery-slider__images .item .img-fill {
+            text-align: center;
+            padding: 10px;
+            height: 200px;
+        }
+
+        @media screen and (min-width: 576px) {
+            .gallery-slider__images .item .img-fill {
+                height: 300px;
+            }
+        }
+
+        @media screen and (min-width: 720px) {
+            .gallery-slider__images .item .img-fill {
+                height: 450px;
+            }
+        }
+
+        .gallery-slider__images .item .img-fill img {
+            display: inline-block;
+            position: relative;
+            max-width: 100%;
+            max-height: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .gallery-slider__images .next-arrow,
+        .gallery-slider__images .prev-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 47px;
+            height: 47px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.7);
+            border: 0 none;
+            text-align: center;
+            color: #FFF;
+            z-index: 5;
+            opacity: 0;
+            transition: all 0.5s;
+            outline: 0;
+        }
+
+        .gallery-slider__images .next-arrow svg,
+        .gallery-slider__images .prev-arrow svg {
+            top: 4px;
+        }
+
+        .gallery-slider__images .next-arrow {
+            right: 25px;
+        }
+
+        .gallery-slider__images .prev-arrow {
+            left: 25px;
+        }
+
+        .gallery-slider__images:hover .next-arrow,
+        .gallery-slider__images:hover .prev-arrow {
+            opacity: 1;
+        }
+
+        .gallery-slider__images .caption {
+            width: 100%;
+            position: relative;
+            text-align: center;
+            display: block;
+            opacity: 1;
+            transition: opacity 0.15s;
+        }
+
+        .gallery-slider__images .caption.hide {
+            opacity: 0;
+        }
+
+        .gallery-slider__thumbnails {
+            position: relative;
+            top: auto;
+            left: 0px;
+            width: 100%;
+            z-index: 4;
+            transition: all 0.8s;
+            margin: 0;
+            padding: 13px 0;
+        }
+
+        .gallery-slider__thumbnails:before,
+        .gallery-slider__thumbnails:after {
+            content: "";
+            display: block;
+            width: 100px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .gallery-slider__thumbnails:before {
+            left: 0;
+            background: linear-gradient(to right, #e6e6e6 0%, rgba(230, 230, 230, 0) 100%);
+        }
+
+        .gallery-slider__thumbnails:after {
+            right: 0;
+            background: linear-gradient(to right, rgba(230, 230, 230, 0) 0%, #e6e6e6 100%);
+        }
+
+        .gallery-slider__thumbnails .item .img-fill {
+            height: 70px;
+            background: white;
+            cursor: pointer;
+            border: 5px solid white;
+            text-align: center;
+        }
+
+        .gallery-slider__thumbnails .item .img-fill img {
+            opacity: 0.5;
+            transition: all 0.5s;
+            display: inline-block;
+            position: relative;
+            max-width: 100%;
+            max-height: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .gallery-slider__thumbnails .item:hover .img-fill img {
+            opacity: 1;
+        }
+
+        .gallery-slider__thumbnails .item.slick-center img {
+            opacity: 1;
+        }
+
+        .gallery-slider__thumbnails .next-arrow,
+        .gallery-slider__thumbnails .prev-arrow {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.6);
+            color: #FFF;
+            border: 0 none;
+            z-index: 15;
+        }
+
+        .gallery-slider__thumbnails .next-arrow svg,
+        .gallery-slider__thumbnails .prev-arrow svg {
+            top: 2px;
+        }
+
+        .gallery-slider__thumbnails .next-arrow {
+            right: 0px;
+        }
+
+        .gallery-slider__thumbnails .prev-arrow {
+            left: 0px;
+        }
+
+        .gallery-slider .next-arrow,
+        .gallery-slider .prev-arrow {
+            cursor: pointer;
+        }
+
+        .gallery-slider .next-arrow svg,
+        .gallery-slider .prev-arrow svg {
+            width: 18px;
+            height: 18px;
+            position: relative;
+        }
+
+        .gallery-slider .img-fill {
+            width: 100%;
+            display: block;
+            overflow: hidden;
+            position: relative;
+            text-align: center;
+        }
+
+        .gallery-slider .slick-slider {
+            margin: 0 -7.5px;
+            padding: 0 !important;
+        }
+
+        .gallery-slider .slick-slide {
+            float: left;
+            padding: 0 7.5px;
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- .container -->
+    <div class="container">
+
+        <!-- .gallery-slider -->
+        <div class="gallery-slider">
+
+            <!-- __images -->
+            <div class="gallery-slider__images">
+                <div>
+                    <!-- .item -->
+                    <div class="item">
+                        <div class="img-fill"><img src="https://placekitten.com/700/450" alt="Kitten 1"></div>
+                    </div>
+                    <!-- /.item -->
+                    <!-- .item -->
+                    <div class="item">
+                        <div class="img-fill"><img src="https://placekitten.com/450/700" alt="Kitten 2"></div>
+                    </div>
+                    <!-- /.item -->
+                    <!-- .item -->
+                    <div class="item">
+                        <div class="img-fill"><img src="https://placekitten.com/770/450" alt=""></div>
+                    </div>
+                    <!-- /.item -->
+                    <!-- .item -->
+                    <div class="item">
+                        <div class="img-fill"><img src="https://placekitten.com/200/210" alt="Kitten 4"></div>
+                    </div>
+                    <!-- /.item -->
+                    <!-- .item -->
+                    <div class="item">
+                        <div class="img-fill"><img src="https://placekitten.com/300/310" alt="Kitten 5"></div>
+                    </div>
+                    <!-- /.item -->
+                    <!-- .item -->
+                    <div class="item">
+                        <div class="img-fill"><img src="https://placekitten.com/770/200" alt="Kitten 6"></div>
+                    </div>
+                    <!-- /.item -->
+                    <!-- .item -->
+                    <div class="item">
+                        <div class="img-fill"><img src="https://placekitten.com/200/770" alt="Kitten 7"></div>
+                    </div>
+                    <!-- /.item -->
+                    <!-- .item -->
+                    <div class="item">
+                        <div class="img-fill"><img src="https://placekitten.com/545/321" alt="Kitten 8"></div>
+                    </div>
+                    <!-- /.item -->
+                </div>
+                <button class="prev-arrow slick-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 1792">
+                        <path fill="#fff"
+                            d="M1171 301L640 832l531 531q19 19 19 45t-19 45l-166 166q-19 19-45 19t-45-19L173 877q-19-19-19-45t19-45L915 45q19-19 45-19t45 19l166 166q19 19 19 45t-19 45z" />
+                    </svg>
+                </button>
+                <button class="next-arrow slick-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 1792">
+                        <path fill="#fff"
+                            d="M1107 877l-742 742q-19 19-45 19t-45-19l-166-166q-19-19-19-45t19-45l531-531-531-531q-19-19-19-45t19-45L275 45q19-19 45-19t45 19l742 742q19 19 19 45t-19 45z" />
+                    </svg>
+                </button>
+                <span class="caption">&nbsp;</span>
+            </div>
+            <!-- /__images -->
+
+
+            <!-- __thumbnails -->
+            <div class="gallery-slider__thumbnails">
+                <div class="" align="left">
+                    <!-- .item -->
+                    <div class="item">
+                        <div class="img-fill"><img src="https://placekitten.com/700/450" alt="Kitten 1"></div>
+                    </div>
+                    <!-- /.item -->
+                    <!-- .item -->
+                    <div class="item">
+                        <div class="img-fill"><img src="https://placekitten.com/450/700" alt="Kitten 2"></div>
+                    </div>
+                    <!-- /.item -->
+
+                    <!-- .item -->
+                    <div class="item">
+                        <div class="img-fill"><img src="https://placekitten.com/545/321" alt="Kitten 8"></div>
+                    </div>
+                    <!-- /.item -->
+                </div>
+
+                <button class="prev-arrow slick-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 1792">
+                        <path fill="#fff"
+                            d="M1171 301L640 832l531 531q19 19 19 45t-19 45l-166 166q-19 19-45 19t-45-19L173 877q-19-19-19-45t19-45L915 45q19-19 45-19t45 19l166 166q19 19 19 45t-19 45z" />
+                    </svg>
+                </button>
+                <button class="next-arrow slick-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 1792">
+                        <path fill="#fff"
+                            d="M1107 877l-742 742q-19 19-45 19t-45-19l-166-166q-19-19-19-45t19-45l531-531-531-531q-19-19-19-45t19-45L275 45q19-19 45-19t45 19l742 742q19 19 19 45t-19 45z" />
+                    </svg>
+                </button>
+            </div>
+            <!-- /__thumbnails -->
+
+        </div>
+        <!-- /.gallery-slider -->
+
+    </div>
+    <!-- /.container -->
+
+
+
+    <!--New option-->
+    <!-- NEW SLICK GALLERY -->
+    <div class="gallery-slider">
+
+        <!-- __images -->
+        <div class="gallery-slider__images">
+            <div>
+                <!-- .item -->
+                <div class="item">
+                    <div class="img-fill"><img src="https://placekitten.com/700/450" alt="Kitten 1"></div>
+                </div>
+                <!-- /.item -->
+                <!-- .item -->
+                <div class="item">
+                    <div class="img-fill"><img src="https://placekitten.com/450/700" alt="Kitten 2"></div>
+                </div>
+                <!-- /.item -->
+                <!-- .item -->
+                <div class="item">
+                    <div class="img-fill"><img src="https://placekitten.com/770/450" alt=""></div>
+                </div>
+                <!-- /.item -->
+                <!-- .item -->
+                <div class="item">
+                    <div class="img-fill"><img src="https://placekitten.com/200/210" alt="Kitten 4"></div>
+                </div>
+                <!-- /.item -->
+                <!-- .item -->
+                <div class="item">
+                    <div class="img-fill"><img src="https://placekitten.com/300/310" alt="Kitten 5"></div>
+                </div>
+                <!-- /.item -->
+                <!-- .item -->
+                <div class="item">
+                    <div class="img-fill"><img src="https://placekitten.com/770/200" alt="Kitten 6"></div>
+                </div>
+                <!-- /.item -->
+                <!-- .item -->
+                <div class="item">
+                    <div class="img-fill"><img src="https://placekitten.com/200/770" alt="Kitten 7"></div>
+                </div>
+                <!-- /.item -->
+                <!-- .item -->
+                <div class="item">
+                    <div class="img-fill"><img src="https://placekitten.com/545/321" alt="Kitten 8"></div>
+                </div>
+                <!-- /.item -->
+            </div>
+            <button type="button" class="prev-arrow slick-arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 1792">
+                    <path fill="#fff"
+                        d="M1171 301L640 832l531 531q19 19 19 45t-19 45l-166 166q-19 19-45 19t-45-19L173 877q-19-19-19-45t19-45L915 45q19-19 45-19t45 19l166 166q19 19 19 45t-19 45z" />
+                </svg>
+            </button>
+            <button type="button" class="next-arrow slick-arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 1792">
+                    <path fill="#fff"
+                        d="M1107 877l-742 742q-19 19-45 19t-45-19l-166-166q-19-19-19-45t19-45l531-531-531-531q-19-19-19-45t19-45L275 45q19-19 45-19t45 19l742 742q19 19 19 45t-19 45z" />
+                </svg>
+            </button>
+
+        </div>
+        <!-- /__images -->
+
+        <!-- __thumbnails -->
+        <div class="gallery-slider__thumbnails ">
+            <div class="">
+                <!-- .item -->
+                <div class="item ">
+                    <div class="img-fill"><img src="https://placekitten.com/700/450" alt="Kitten 1"></div>
+                </div>
+                <!-- /.item -->
+
+                <div class="item">
+                    <div class="img-fill"><img src="https://placekitten.com/450/700" alt="Kitten 2"></div>
+                </div>
+
+                <!-- <div class="item">
+                    <div class="img-fill"><img src="https://placekitten.com/770/450" alt=""></div>
+                </div>
+                
+                <div class="item">
+                    <div class="img-fill"><img src="https://placekitten.com/200/210" alt="Kitten 4"></div>
+                </div>
+               
+                <div class="item">
+                    <div class="img-fill"><img src="https://placekitten.com/300/310" alt="Kitten 5"></div>
+                </div>
+                
+                <div class="item">
+                    <div class="img-fill"><img src="https://placekitten.com/770/200" alt="Kitten 6"></div>
+                </div>
+               
+                <div class="item">
+                    <div class="img-fill"><img src="https://placekitten.com/200/770" alt="Kitten 7"></div>
+                </div>
+                
+                <div class="item">
+                    <div class="img-fill"><img src="https://placekitten.com/545/321" alt="Kitten 8"></div>
+                </div>
+                <!-- /.item -->
+            </div>
+
+            <button type="button" class="prev-arrow slick-arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 1792">
+                    <path fill="#fff"
+                        d="M1171 301L640 832l531 531q19 19 19 45t-19 45l-166 166q-19 19-45 19t-45-19L173 877q-19-19-19-45t19-45L915 45q19-19 45-19t45 19l166 166q19 19 19 45t-19 45z" />
+                </svg>
+            </button>
+            <button type="button" class="next-arrow slick-arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 1792">
+                    <path fill="#fff"
+                        d="M1107 877l-742 742q-19 19-45 19t-45-19l-166-166q-19-19-19-45t19-45l531-531-531-531q-19-19-19-45t19-45L275 45q19-19 45-19t45 19l742 742q19 19 19 45t-19 45z" />
+                </svg>
+            </button>
+        </div>
+        <!-- /__thumbnails -->
+
+
+    </div>
+</body>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://kenwheeler.github.io/slick/slick/slick.js"></script>
+
+<script>
+    /*
+    variables
+*/
+
+    var $imagesSlider = $(".gallery-slider .gallery-slider__images>div"),
+        $thumbnailsSlider = $(".gallery-slider__thumbnails>div");
+
+    /*
+        sliders
+    */
+
+    // images options
+    $imagesSlider.slick({
+        speed: 300,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        cssEase: 'linear',
+        fade: true,
+        draggable: false,
+        asNavFor: ".gallery-slider__thumbnails>div",
+        prevArrow: '.gallery-slider__images .prev-arrow',
+        nextArrow: '.gallery-slider__images .next-arrow'
+    });
+
+    // thumbnails options
+    $thumbnailsSlider.slick({
+        speed: 300,
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        cssEase: 'linear',
+        centerMode: true,
+        draggable: false,
+        focusOnSelect: true,
+        asNavFor: ".gallery-slider .gallery-slider__images>div",
+        prevArrow: '.gallery-slider__thumbnails .prev-arrow',
+        nextArrow: '.gallery-slider__thumbnails .next-arrow',
+        responsive: [
+            {
+                breakpoint: 720,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 4
+                }
+            },
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3
+                }
+            },
+            {
+                breakpoint: 350,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            }
+        ]
+    });
+
+
+</script>
+<!-- <script>
+    $('.gallery-slider__image').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        asNavFor: '.slider-nav'
+    });
+    $('.gallery-slider__thumbnails').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        asNavFor: '.slider-for',
+        dots: true,
+        centerMode: true,
+        focusOnSelect: true
+    });
+</script> -->
+
+</html>

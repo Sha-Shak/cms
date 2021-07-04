@@ -1,0 +1,1736 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flow-File</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../ass ets/css/productlist.css">
+
+    <style>
+        a:link {
+            text-decoration: none;
+        }
+
+        a:active {
+            background-color: rgb(16, 172, 245);
+        }
+
+        body {
+            margin: 0px 0px;
+        }
+
+        .pro-header {
+            background-color: rgb(16, 172, 245);
+            color: white;
+            padding: 10px 25px;
+        }
+
+        .pro-header {
+            max-height: 90px;
+        }
+
+        .pro-pic {
+            max-width: 150px;
+            border: 3px solid white;
+            border-radius: 50%;
+        }
+
+        .pro-name-col {
+            margin: 0px 30px;
+        }
+
+        .pro-content {
+            margin: 0px 10px;
+        }
+
+        .pro-content-side {
+            padding: 10px;
+            margin: 10px;
+            margin-left: 0px;
+            margin-top: 15px;
+            padding-top: 0px;
+
+        }
+
+        .rep-per-img {
+            max-width: 40px;
+            border: 1px solid white;
+            border-radius: 50%;
+
+        }
+
+        .rep-per-name-col {
+            padding: 0px;
+            margin-left: 35px;
+        }
+
+        .rep-per-name,
+        .rep-per-desig {
+            display: block !important;
+        }
+
+        .pro-tab {
+            margin-top: 10px;
+            margin-left: 10px;
+            margin-bottom: 20px;
+        }
+
+        .pro-tab-name {
+            padding: 5px 10px;
+            color: rgb(158, 158, 158);
+        }
+
+        .table-status-title {
+            border-bottom: 1px solid black;
+            margin-bottom: 0px;
+            color: rgb(16, 172, 245);
+
+        }
+
+        .table-status thead tr {
+            padding: 2px 10px;
+
+        }
+
+        .my-table li {
+
+            border-radius: 0px;
+            padding: 2px 10px;
+            display: flex;
+            justify-content: space-between;
+            margin: 2px 15px;
+            margin-bottom: 7px;
+            white-space: normal;
+
+        }
+
+        .my-table .table-header {
+            background-color: #10ACF5;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            color: white;
+            box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+
+        }
+
+        ul.my-table {
+            margin-bottom: 10px;
+        }
+
+        .my-table .table-row {
+            background-color: #ffffff;
+            box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.2);
+        }
+
+        .my-table {
+            padding-left: 0px;
+        }
+
+        .cont-no,
+        .cont-mail,
+        .cont-location,
+        .cont-hire-date-lab,
+        .cont-hire-date,
+        .cont-rep-per-lab,
+        .cont-location-lab,
+        .cont-report-person {
+            color: rgb(158, 158, 158);
+            padding: 5px 10px;
+            white-space: normal;
+        }
+
+        .cont-rep-per-lab,
+        .cont-hire-date-lab,
+        .cont-location-lab {
+            color: black;
+            padding-bottom: 0px;
+        }
+
+        .cus-hr {
+            margin-top: 0px;
+        }
+
+        .table-status-title {
+            padding: 10px 0px;
+            margin-bottom: 15px;
+        }
+
+        .rep-per-desig {
+            font-style: italic;
+        }
+
+        .rep-per-img {
+            margin: 0p 15px;
+        }
+
+        .info-box {
+            margin: 5px;
+            margin-left: 0px;
+            margin-bottom: 10px;
+            border: 0.5px solid lightgray;
+            padding: 1px 10px;
+            box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.2);
+            color: gray;
+            width: auto;
+            height: auto;
+            overflow: auto;
+            white-space: nowrap;
+
+        }
+
+        .personal-block .row .col-sm-3 span {
+            color: #44546a;
+        }
+
+        ::-webkit-scrollbar {
+            width: 0px;
+            height: 0px;
+
+            background: transparent;
+
+        }
+
+        /* DOCUMENTS STARTS */
+        .doc-sub-row-app {
+            display: none;
+        }
+
+        .doc-item {
+            padding: 10px;
+            border-bottom: 0.5px solidlightgray;
+            width: 100%;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+            color: rgb(16, 172, 245);
+            font-weight: 600;
+
+        }
+
+        .doc-sub-row {
+            margin-left: 10px;
+        }
+
+        .show-span {
+            display: block !important;
+        }
+
+        .li-no-style {
+            list-style: none;
+        }
+
+        .doc-head-icon {
+            float: left;
+            color: rgb(25, 114, 224);
+            font-size: 24px;
+
+        }
+
+
+
+        .doc-icon {
+            float: left;
+            color: rgb(25, 114, 224);
+            font-size: 20px;
+        }
+
+        .sub-doc-icon {
+            float: left;
+            color: rgb(228, 62, 62);
+            font-size: 16px;
+        }
+
+        .show-span {
+            float: left;
+            margin-left: 7px;
+            color: rgb(16, 172, 245);
+        }
+
+        .doc-block .row .doc-sub-row li input {
+            float: left;
+            margin-top: 3px;
+        }
+
+        .doc-block .row .doc-sub-row label {
+            float: left;
+            margin-left: 10px;
+        }
+
+        .doc-row .main-li {
+            width: 100%;
+            padding: 10px;
+            border-bottom: 0.5px solid lightgray;
+            margin-bottom: 10px
+        }
+
+        .sub-li {
+            margin-left: 20px;
+        }
+
+        .doc-sub-row {
+            width: 100%;
+            d isplay: none;
+        }
+
+        .fa-file-pdf {
+            color: red;
+        }
+
+        .fa-file-word {
+            color: rgb(74, 128, 238);
+        }
+
+        .fa-file-excel {
+            color: green;
+        }
+
+        .doc-head li i,
+        .doc-head-title span {
+            font-size: 20px;
+
+        }
+
+        .doc-sub-head {
+            font-size: 14px;
+
+        }
+
+        .doc-subhead-icon {
+            float: left;
+            color: rgb(25, 114, 224);
+            font-size: 14px;
+            margin-top: 3px
+        }
+
+        .doc-sub-head {
+            margin-bottom: 10px;
+            border-bottom: 0.5px solid lightgray;
+            padding-bottom: 5px;
+        }
+
+        input#doc-up {
+            width: 0.1px;
+            height: 0.1px;
+            opacity: 0;
+            overflow: hidden;
+            position: absolute;
+            z-index: -1;
+        }
+
+        #doc-up-lab {
+            font-size: 14px;
+            font-weight: normal;
+            color: rgb(16, 172, 245);
+            display: inline-block;
+            border: 0.5px solid lightgray;
+            padding: 0px 5px;
+        }
+
+        .doc-btn,
+        .doc-dw {
+            position: relative;
+
+            left: 75%;
+            background: white;
+            border: 0.5px solid lightgray;
+            padding: 0px 7px;
+            color: rgb(16, 172, 245);
+
+        }
+
+        .doc-dw {
+
+            margin-right: 10px;
+
+        }
+
+        .doc-btn .fa-trash,
+        .doc-dw .fa-download {
+            color: rgb(25, 114, 224);
+        }
+
+        /* share option */
+        .share-btn-container {
+            background: #fff;
+            display: flex;
+            padding: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .share-btn-container a i {
+            font-size: 32px;
+            margin: 10px;
+            ;
+        }
+
+        .share-btn-container a {
+            margin: 12px 0;
+            transition: 500ms;
+        }
+
+        .share-btn-container a:hover {
+            transform: scale(1.2);
+        }
+
+        .share-btn-container .fa-facebook {
+            color: #3b5998;
+        }
+
+        .share-btn-container .fa-twitter {
+            color: #1da1f2;
+        }
+
+        .share-btn-container .fa-linkedin {
+            color: #0077b5;
+        }
+
+        .share-btn-container .fa-pinterest {
+            color: #bd081c;
+        }
+
+        .share-btn-container .fa-whatsapp {
+            color: #25d366;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="row pro-header">
+
+        <div class="col-md-2 img-col">
+            <img class="pro-pic" src="../assets/images/pro.png" alt="">
+        </div>
+        <div class="col pro-name-col">
+            <div class="row">
+                <h3 class="pro-name">Mr. Anderson</h3>
+            </div>
+            <div class="row">
+                <h5 class="pro-position">Manager, BitHut Corp. </h5>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col pro-tab">
+            <a myclass="personal-block" class="pro-tab-name" href="javascript:void(0)">Personal</a>
+            <a myclass="job-block" class=" pro-tab-name" href="javascript:void(0)">Job</a>
+            <a myclass="beni-block" class=" pro-tab-name" href="javascript:void(0)">Benifits</a>
+            <a myclass="doc-block" class=" pro-tab-name" href="javascript:void(0)">Documents</a>
+            <a myclass="atten-block" class=" pro-tab-name" href="javascript:void(0)">Attendence</a>
+            <a myclass="asset-block" class=" pro-tab-name" href="javascript:void(0)">Assets</a>
+            <a myclass="train-block" class=" pro-tab-name" href="javascript:void(0)">Training</a>
+            <a myclass="pay-block" class=" pro-tab-name" href="javascript:void(0)">Payroll</a>
+            <a myclass="des-block" class=" pro-tab-name" href="javascript:void(0)">Job Description</a>
+            <a myclass="kpi-block" class=" pro-tab-name" href="javascript:void(0)">KPI</a>
+            <a myclass="skill-block" class=" pro-tab-name" href="javascript:void(0)">Special Skill</a>
+
+
+        </div>
+    </div>
+
+
+    <div class="row pro-content">
+
+        <div class="col-sm-2 pro-content-side">
+
+            <div class="cont-no">+8801712345678</div>
+            <div class="cont-mail">mr.anderson@bithut.com.bd</div>
+            <div class="cont-location-lab">Location</div>
+            <div class="cont-location">Dhaka, Bangladesh</div>
+            <div class="cont-hire-date-lab">Hire Date:</div>
+
+            <div class="cont-hire-date">02-Sept-14</div>
+            <div class="cont-rep-per-lab">Reports to:</div>
+
+            <div class="row cont-report-person">
+                <div class="col-3">
+                    <img class="rep-per-img img-fluid" src="../assets/images/pro.png" alt="">
+                </div>
+
+                <div class="col rep-per-name-col">
+                    <span class="row rep-per-name">Francis James Pattinson</span>
+                    <span class="row rep-per-desig">Head HR</span>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col pro-content-body container">
+
+
+            <div class="pro-content">
+
+                <span class="personal-block">
+                    <div class="basic-info">
+                        <h5 class="table-status-title">Basic Information</h5>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <span>Employee ID</span>
+                                <div class="info-box">BH-0100-10</div>
+                            </div>
+                            <div class="col-sm-3">
+                                <span>Status</span>
+                                <div class="info-box">Active</div>
+                            </div>
+                            <div class="col-sm-3">
+                                <span>First Name</span>
+                                <div class="info-box">Mr.</div>
+                            </div>
+                            <div class="col-sm-3">
+                                <span>Last Name</span>
+                                <div class="info-box">Anderson</div>
+                            </div>
+                            <div class="col-sm-3">
+                                <span>Birthday</span>
+                                <div class="info-box">02-April-87</div>
+                            </div>
+                            <div class="col-sm-3">
+                                <span>Gender</span>
+                                <div class="info-box">Male</div>
+                            </div>
+                            <div class="col-sm-3">
+                                <span>Maritial Status</span>
+                                <div class="info-box">Single</div>
+                            </div>
+                            <div class="col-sm-3">
+                                <span>NID</span>
+                                <div class="info-box">12345678</div>
+                            </div>
+                            <div class="col-sm-3">
+                                <span>TIN</span>
+                                <div class="info-box">010010</div>
+                            </div>
+                            <div class="col-sm-3">
+                                <span>Blood Group</span>
+                                <div class="info-box">B+</div>
+                            </div>
+                            <div class="col-sm-3">
+                                <span>Passport No.</span>
+                                <div class="info-box">112233 </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <span>Driving License</span>
+                                <div class="info-box">112233 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="address">
+                        <h5 class="table-status-title">Address</h5>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="info-box">House:21, Road: 16, Sector:11</div>
+                            </div>
+
+                            <div class="col-sm-3">
+                                <span>Area</span>
+                                <div class="info-box">Uttara</div>
+                            </div>
+                            <div class="col-sm-3">
+                                <span>District</span>
+                                <div class="info-box">Dhaka</div>
+                            </div>
+                            <div class="col-sm-3">
+                                <span>Postal Code</span>
+                                <div class="info-box">1230</div>
+                            </div>
+                            <div class="col-sm-3">
+                                <span>Country</span>
+                                <div class="info-box">Bangladesh</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact">
+                        <h5 class="table-status-title">Contact</h5>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <span>Official</span>
+                                <div class="info-box">112299</div>
+                            </div>
+                            <div class="col-sm-3">
+                                <span>Personal 1</span>
+                                <div class="info-box">112299</div>
+                            </div>
+                            <div class="col-sm-3">
+                                <span>Personal 2</span>
+                                <div class="info-box">112299</div>
+                            </div>
+                            <div class="col-sm-3">
+                                <span>Extension</span>
+                                <div class="info-box">199</div>
+                            </div>
+
+
+                            <div class="col-sm-3">
+                                <span>Email Official</span>
+                                <div class="info-box">mrjamescharlesanderson@bithut.com.bd</div>
+                            </div>
+                            <div class="col-sm-3">
+                                <span>Email Personal 1</span>
+                                <div class="info-box">jamescharles@gmail.com</div>
+                            </div>
+                            <div class="col-sm-3">
+                                <span>Email Personal 2</span>
+                                <div class="info-box">mr.anderson@bithut.com.bd</div>
+                            </div>
+                            <div class="col-sm-3">
+                                <span>Email Personal 3</span>
+                                <div class="info-box">mranderson@hotmail.com</div>
+                            </div>
+
+                        </div>
+                        <div class="contact">
+                            <h5 class="table-status-title">Contact</h5>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <span>Name</span>
+                                    <div class="info-box">Agent Smith</div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <span>Relationship</span>
+                                    <div class="info-box">Rival</div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <span>Contact</span>
+                                    <div class="info-box">122122</div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <span>Address</span>
+                                    <div class="info-box">House:21, Road: 16, Sector:11, Uttara, Dhaka, Bangladesh</div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <span>Name</span>
+                                    <div class="info-box">Agent Smith</div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <span>Relationship</span>
+                                    <div class="info-box">Rival</div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <span>Contact</span>
+                                    <div class="info-box">122122</div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <span>Address</span>
+                                    <div class="info-box ad-box">House:21, Road: 16, Sector:11, Uttara, Dhaka,
+                                        Bangladesh</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </span>
+
+                <!-- <span class="job-block">
+
+
+                    <h5 class="table-status-title">Status History</h5>
+
+
+                    <ul class="my-table">
+
+                        <li class="table-header">
+                            <div class="col ">Effective Date</div>
+                            <div class="col ">Status</div>
+                            <div class="col ">Comment</div>
+
+                        </li>
+
+                        <li class="table-row">
+
+                            <div class="col " data-label="Job Id">02-April-2021</div>
+
+
+                            <div class="col" data-label="Status">Full Time</div>
+                            <div class="col" data-label="Status"></div>
+
+                        </li>
+                        <li class="table-row">
+
+                            <div class="col " data-label="Job Id">02-April-2021</div>
+
+
+                            <div class="col" data-label="Status">Full Time</div>
+                            <div class="col" data-label="Status"></div>
+
+                        </li>
+                        <li class="table-row">
+
+                            <div class="col " data-label="Job Id">02-April-2021</div>
+
+
+                            <div class="col" data-label="Status">Full Time</div>
+                            <div class="col" data-label="Status"></div>
+
+                        </li>
+
+                    </ul>
+
+
+
+
+                    <h5 class="table-status-title">Position History</h5>
+
+
+                    <ul class="my-table">
+
+                        <li class="table-header">
+                            <div class="col ">Status</div>
+                            <div class="col ">Effective Date</div>
+                            <div class="col ">Department</div>
+                            <div class="col ">Designation</div>
+                            <div class="col ">Reports To</div>
+                            <div class="col ">Location</div>
+                            <div class="col ">Remarks</div>
+                        </li>
+
+                        <li class="table-row">
+                            <div class="col " data-label="Job Id">Promoted</div>
+                            <div class="col " data-label="Job Id">02-April-2021</div>
+                            <div class="col " data-label="Customer Name">Mr. Anderson</div>
+                            <div class="col " data-label="Amount">Accountant</div>
+                            <div class="col" data-label="Payment Status">Francis</div>
+                            <div class="col" data-label="Payment Status">Dhaka</div>
+                            <div class="col" data-label="Payment Status"></div>
+                        </li>
+                        <li class="table-row">
+                            <div class="col " data-label="Job Id">Promoted</div>
+                            <div class="col " data-label="Job Id">02-April-2021</div>
+                            <div class="col " data-label="Customer Name">Mr. Anderson</div>
+                            <div class="col " data-label="Amount">Accountant</div>
+                            <div class="col" data-label="Payment Status">Francis</div>
+                            <div class="col" data-label="Payment Status">Dhaka</div>
+                            <div class="col" data-label="Payment Status"></div>
+                        </li>
+                        <li class="table-row">
+                            <div class="col " data-label="Job Id">Promoted</div>
+                            <div class="col " data-label="Job Id">02-April-2021</div>
+                            <div class="col " data-label="Customer Name">Mr. Anderson</div>
+                            <div class="col " data-label="Amount">Accountant</div>
+                            <div class="col" data-label="Payment Status">Francis</div>
+                            <div class="col" data-label="Payment Status">Dhaka</div>
+                            <div class="col" data-label="Payment Status"></div>
+                        </li>
+
+                    </ul>
+
+
+
+
+                    <h5 class="table-status-title">Position History</h5>
+
+
+                    <ul class="my-table">
+
+                        <li class="table-header">
+                            <div class="col ">Effective Date</div>
+                            <div class="col ">Amount</div>
+                            <div class="col ">Pay Type</div>
+                            <div class="col ">Schedule</div>
+
+                            <div class="col ">Remarks</div>
+                        </li>
+
+                        <li class="table-row">
+
+                            <div class="col " data-label="Job Id">02-April-2021</div>
+                            <div class="col " data-label="Job Id">$1100</div>
+                            <div class="col " data-label="Customer Name">Salary</div>
+                            <div class="col " data-label="Amount">Monthly</div>
+                            <div class="col" data-label="Payment Status">Increment</div>
+
+                        </li>
+                        <li class="table-row">
+
+                            <div class="col " data-label="Job Id">02-April-2021</div>
+                            <div class="col " data-label="Job Id">$1100</div>
+                            <div class="col " data-label="Customer Name">Salary</div>
+                            <div class="col " data-label="Amount">Monthly</div>
+                            <div class="col" data-label="Payment Status">Increment</div>
+
+                        </li>
+                        <li class="table-row">
+
+                            <div class="col " data-label="Job Id">02-April-2021</div>
+                            <div class="col " data-label="Job Id">$1100</div>
+                            <div class="col " data-label="Customer Name">Salary</div>
+                            <div class="col " data-label="Amount">Monthly</div>
+                            <div class="col" data-label="Payment Status">Increment</div>
+
+                        </li>
+                        <li class="table-row">
+
+                            <div class="col " data-label="Job Id">02-April-2021</div>
+                            <div class="col " data-label="Job Id">$1100</div>
+                            <div class="col " data-label="Customer Name">Salary</div>
+                            <div class="col " data-label="Amount">Monthly</div>
+                            <div class="col" data-label="Payment Status">Increment</div>
+
+                        </li>
+
+                    </ul>
+
+                    <div id="my-modal" class="modal">
+
+                        <!-- Modal content -->
+                <!-- <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="close">×</div>
+
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <label for="ef-date" class="mod-lab"> Effective Date</label>
+                            <input type="date" class="modal-field ef-date">
+                            <label for="status" class="mod-lab">Status:</label>
+                            <select name="status" class="modal-field">
+
+
+                                <option value="">Full Time</option>
+                                <option value="">Part Time</option>
+                            </select>
+                        </div>
+                        <div class="row">
+                            <h6 class="mod-lab">Add Comment </h6>
+                            <textarea class="st-area" rows="3" placeholder="Add comment"> </textarea>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div id="my-modal2" class="modal">
+
+                <!-- Modal content -->
+                <!-- <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="close">×</div>
+
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-4 mod-col">
+                                <label for="status" class="mod-lab">Status:</label>
+                                <select name="status" class="modal2-field">
+
+
+                                    <option value="">Full Time</option>
+                                    <option value="">Part Time</option>
+                                </select>
+                            </div>
+                            <div class="col-4 mod-col">
+                                <label for="ef-date" class="mod-lab"> Effective Date</label>
+                                <input type="date" class="modal2-field ef-date">
+                            </div>
+                            <div class="col-4 mod-col">
+                                <label for="desig" class="mod-lab">Designation:</label>
+                                <select name="desig" class="modal2-field">
+
+
+                                    <option value="">Jr. Software Engineer</option>
+                                    <option value="">Sr. Software Engineer </option>
+                                </select>
+                            </div>
+
+
+
+
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-4 mod-col">
+                                <label for="status" class="mod-lab">Department:</label>
+                                <select name="status" class="modal2-field">
+
+
+                                    <option value="">IT</option>
+                                    <option value="">Management</option>
+                                </select>
+                            </div>
+                            <div class="col-4 mod-col">
+                                <label for="rep" class="mod-lab">Reports to:</label>
+                                <select name="rep" class="modal2-field">
+
+
+                                    <option value="">Mr. Francis</option>
+                                    <option value="">Mr. Max </option>
+                                </select>
+                            </div>
+                            <div class="col-4 mod-col">
+                                <label for="loc" class="mod-lab">Location:</label>
+                                <select name="desig" class="modal2-field">
+
+
+                                    <option value="">Dhaka</option>
+                                    <option value="">Chittagong </option>
+                                </select>
+                            </div>
+
+
+
+
+
+                        </div>
+                        <div class="row">
+                            <h6 class="mod-lab">Remarks </h6>
+                            <textarea class="st-area" rows="3">  </textarea>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div id="my-modal3" class="modal">
+
+                <!-- Modal content -->
+                <!-- <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="close">×</div>
+
+                    </div>
+                    <div class="modal-body">
+
+
+                    </div>
+
+                </div> 
+            </div> -->
+
+                </span>
+                <span class="beni-block">
+                    <h5 class="table-status-title">Employee Benifits Status</h5>
+                    <ul class="my-table">
+
+                        <li class="table-header">
+                            <div class="col ed-info-box">Benifits</div>
+                            <div class="col ed-info-box">Effective Date</div>
+                            <div class="col ed-info-box">Entitled</div>
+                            <div class="col ed-info-box">Remarks</div>
+
+                        </li>
+
+                        <li class="table-row">
+                            <div class="col ed-info-box">Promoted</div>
+                            <div class="col ed-info-box">02-April-2021</div>
+                            <div class="col ed-info-box">Yes</div>
+                            <div class="col ed-info-box">Accountant</div>
+
+                        </li>
+                        <button type="button" id="my-btn" class="add-btn" data-toggle="modal"
+                            data-target=".bd-example-modal-lg">+Add</button>
+
+
+                    </ul>
+
+                    <h5 class="table-status-title">Employee Benifits History</h5>
+                    <ul class="my-table">
+
+                        <li class="table-header">
+                            <div class="col ed-info-box">Year</div>
+                            <div class="col ed-info-box">Date</div>
+                            <div class="col ed-info-box">Amount</div>
+                            <div class="col ed-info-box">Type</div>
+                            <div class="col ed-info-box">Remarks</div>
+
+                        </li>
+
+                        <li class="table-row">
+                            <div class="col ed-info-box">2020</div>
+                            <div class="col ed-info-box">02-April-2020</div>
+                            <div class="col ed-info-box">80000</div>
+                            <div class="col ed-info-box">Monthly Salary</div>
+                            <div class="col ed-info-box">Monthly Salary</div>
+
+                        </li>
+                        <button type="button" id="my-btn" class="add-btn" data-toggle="modal"
+                            data-target=".bd-example-modal-lg">+Add</button>
+
+
+                    </ul>
+
+                    <div id="my-modal4" class="modal">
+
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div class="close">×</div>
+
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-4 mod-col">
+                                        <label for="status" class="mod-lab">Status:</label>
+                                        <select name="status" class="modal2-field">
+
+
+                                            <option value="">Full Time</option>
+                                            <option value="">Part Time</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-4 mod-col">
+                                        <label for="ef-date" class="mod-lab"> Effective Date</label>
+                                        <input type="date" class="modal2-field ef-date">
+                                    </div>
+                                    <div class="col-4 mod-col">
+                                        <label for="desig" class="mod-lab">Designation:</label>
+                                        <select name="desig" class="modal2-field">
+
+
+                                            <option value="">Jr. Software Engineer</option>
+                                            <option value="">Sr. Software Engineer </option>
+                                        </select>
+                                    </div>
+
+
+
+
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-4 mod-col">
+                                        <label for="status" class="mod-lab">Department:</label>
+                                        <select name="status" class="modal2-field">
+
+
+                                            <option value="">IT</option>
+                                            <option value="">Management</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-4 mod-col">
+                                        <label for="rep" class="mod-lab">Reports to:</label>
+                                        <select name="rep" class="modal2-field">
+
+
+                                            <option value="">Mr. Francis</option>
+                                            <option value="">Mr. Max </option>
+                                        </select>
+                                    </div>
+                                    <div class="col-4 mod-col">
+                                        <label for="loc" class="mod-lab">Location:</label>
+                                        <select name="desig" class="modal2-field">
+
+
+                                            <option value="">Dhaka</option>
+                                            <option value="">Chittagong </option>
+                                        </select>
+                                    </div>
+
+
+
+
+
+                                </div>
+                                <div class="row">
+                                    <h6 class="mod-lab">Remarks </h6>
+                                    <textarea class="st-area" rows="3">  </textarea>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div id="my-modal5" class="modal">
+
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div class="close">×</div>
+
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-4 mod-col">
+                                        <label for="status" class="mod-lab">Status:</label>
+                                        <select name="status" class="modal2-field">
+
+
+                                            <option value="">Full Time</option>
+                                            <option value="">Part Time</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-4 mod-col">
+                                        <label for="ef-date" class="mod-lab"> Effective Date</label>
+                                        <input type="date" class="modal2-field ef-date">
+                                    </div>
+                                    <div class="col-4 mod-col">
+                                        <label for="desig" class="mod-lab">Designation:</label>
+                                        <select name="desig" class="modal2-field">
+
+
+                                            <option value="">Jr. Software Engineer</option>
+                                            <option value="">Sr. Software Engineer </option>
+                                        </select>
+                                    </div>
+
+
+
+
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-4 mod-col">
+                                        <label for="status" class="mod-lab">Department:</label>
+                                        <select name="status" class="modal2-field">
+
+
+                                            <option value="">IT</option>
+                                            <option value="">Management</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-4 mod-col">
+                                        <label for="rep" class="mod-lab">Reports to:</label>
+                                        <select name="rep" class="modal2-field">
+
+
+                                            <option value="">Mr. Francis</option>
+                                            <option value="">Mr. Max </option>
+                                        </select>
+                                    </div>
+                                    <div class="col-4 mod-col">
+                                        <label for="loc" class="mod-lab">Location:</label>
+                                        <select name="desig" class="modal2-field">
+
+
+                                            <option value="">Dhaka</option>
+                                            <option value="">Chittagong </option>
+                                        </select>
+                                    </div>
+
+
+
+
+
+                                </div>
+                                <div class="row">
+                                    <h6 class="mod-lab">Remarks </h6>
+                                    <textarea class="st-area" rows="3">  </textarea>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </span>
+                <span class="atten-block"></span>
+                <span class="doc-block">
+
+                    <div class="row doc-head">
+                        <h5 class="doc-head-title">
+                            <li style="list-style: none;">
+                                <i class="fa fa-file doc-head-icon" aria-hidden="true"></i><span
+                                    class="show-span">Documents</span>
+                            </li>
+                        </h5>
+                    </div>
+                    <div class="row doc-sub-head">
+                        <!-- <li style="list-style: none;">
+                            <i class="fa fa-upload doc-subhead-icon" aria-hidden="true"></i><span
+                                class="show-span">upload</span>
+                        </li> -->
+                        <input type="file" name="doc-up" id="doc-up">
+                        <label id="doc-up-lab" for="doc-up"><i class="fa fa-upload doc-subhead-icon"
+                                aria-hidden="true"></i><span class="show-span">upload</span></label>
+                        <button class="doc-dw" type="button"><i class="fas fa-download"></i> Download </button>
+                        <button class="doc-btn" type="button"> <i class="fa fa-trash" aria-hidden="true"></i> Delete
+                        </button>
+                    </div>
+
+                    <div class="row doc-row doc-row-1 ">
+
+                        <li class="li-no-style main-li">
+                            <h6><i class="fa fa-folder doc-icon" aria-hidden="true"></i><span
+                                    class="show-span">Resume</span>
+                            </h6>
+                        </li>
+
+
+                        <div class="row doc-sub-row">
+                            <li class="li-no-style sub-li">
+                                <input type="checkbox" name="resume" id="resume">
+                                <label for="resume">
+                                    <h6><i class="fa fa-file sub-doc-icon" aria-hidden="true"></i><span
+                                            class="show-span">Employee
+                                            Resume</span>
+                                    </h6>
+                                </label>
+                            </li>
+                        </div>
+                        <div class="row doc-sub-row">
+                            <li class="li-no-style sub-li">
+                                <input type="checkbox" name="resume" id="resume">
+                                <label for="resume">
+                                    <h6><i class="fas fa-file-word sub-doc-icon" aria-hidden="true"></i><span
+                                            class="show-span">Employee
+                                            Resume</span>
+                                    </h6>
+                                </label>
+                            </li>
+                        </div>
+                        <div class="row doc-sub-row">
+                            <li class="li-no-style sub-li">
+                                <input type="checkbox" name="resume" id="resume">
+                                <label for="resume">
+                                    <h6><i class="fas fa-file-excel sub-doc-icon" aria-hidden="true"></i><span
+                                            class="show-span">Employee
+                                            Resume</span>
+                                    </h6>
+                                </label>
+                            </li>
+                        </div>
+                    </div>
+
+                    <div class="row doc-row doc-row-2 ">
+
+                        <li class="li-no-style main-li">
+                            <h6><i class="fa fa-folder doc-icon" aria-hidden="true"></i><span class="show-span">Joining
+                                    Letter</span>
+                            </h6>
+                        </li>
+
+
+                        <div class="row doc-sub-row">
+                            <li class="li-no-style sub-li">
+
+                                <input type="checkbox" name="jl" id="jl">
+                                <label for="jl">
+                                    <h6><i class="fa fa-file-pdf sub-doc-icon" aria-hidden="true"></i><span
+                                            class="show-span">Joining Letter.pdf</span>
+                                    </h6>
+                                </label>
+                            </li>
+                        </div>
+                        <div class="row doc-sub-row">
+                            <li class="li-no-style sub-li">
+
+                                <input type="checkbox" name="jl" id="jl">
+                                <label for="jl">
+                                    <h6><i class="fas fa-file-excel sub-doc-icon" aria-hidden="true"></i><span
+                                            class="show-span">Joining Letter.pdf</span>
+                                    </h6>
+                                </label>
+                            </li>
+                        </div>
+                        <div class="row doc-sub-row">
+                            <li class="li-no-style sub-li">
+
+                                <input type="checkbox" name="jl" id="jl">
+                                <label for="jl">
+                                    <h6><i class="fas fa-file-word sub-doc-icon" aria-hidden="true"></i><span
+                                            class="show-span">Joining Letter.pdf</span>
+                                    </h6>
+                                </label>
+                            </li>
+                        </div>
+                    </div>
+
+                    <div class="row doc-row doc-row-3 ">
+
+                        <li class="li-no-style main-li">
+                            <h6><i class="fa fa-folder doc-icon" aria-hidden="true"></i><span class="show-span">Tax
+                                    Documents</span>
+                            </h6>
+                        </li>
+
+
+                        <div class="row doc-sub-row">
+                            <li class="li-no-style sub-li">
+
+                                <input type="checkbox" name="tax" id="tax">
+                                <label for="tax">
+                                    <h6><i class="fa fa-file-pdf sub-doc-icon" aria-hidden="true"></i><span
+                                            class="show-span">tax.pdf</span>
+                                    </h6>
+                                </label>
+                            </li>
+                        </div>
+                        <div class="row doc-sub-row">
+                            <li class="li-no-style sub-li">
+
+                                <input type="checkbox" name="tax" id="tax">
+                                <label for="tax">
+                                    <h6><i class="fa fa-file-pdf sub-doc-icon" aria-hidden="true"></i><span
+                                            class="show-span">tax.pdf</span>
+                                    </h6>
+                                </label>
+                            </li>
+                        </div>
+                        <div class="row doc-sub-row">
+                            <li class="li-no-style sub-li">
+
+                                <input type="checkbox" name="tax" id="tax">
+                                <label for="tax">
+                                    <h6><i class="fa fa-file-word sub-doc-icon" aria-hidden="true"></i><span
+                                            class="show-span">tax.pdf</span>
+                                    </h6>
+                                </label>
+                            </li>
+                        </div>
+                        <div class="row doc-sub-row">
+                            <li class="li-no-style sub-li">
+
+                                <input type="checkbox" name="tax" id="tax">
+                                <label for="tax">
+                                    <h6><i class="fa fa-file-excel sub-doc-icon" aria-hidden="true"></i><span
+                                            class="show-span">tax.pdf</span>
+                                    </h6>
+                                </label>
+                            </li>
+                        </div>
+                    </div>
+
+                    <div class="row doc-row doc-row-4 ">
+
+                        <li class="li-no-style main-li">
+                            <h6><i class="fa fa-folder doc-icon" aria-hidden="true"></i><span
+                                    class="show-span">Promotion Letter</span>
+                            </h6>
+                        </li>
+
+
+                        <div class="row doc-sub-row">
+                            <li class="li-no-style sub-li">
+
+                                <input type="checkbox" name="pl" id="pl">
+                                <label for="pl">
+                                    <h6><i class="fa fa-file-pdf sub-doc-icon" aria-hidden="true"></i><span
+                                            class="show-span">promotion.pdf</span>
+                                    </h6>
+                                </label>
+                            </li>
+                        </div>
+                        <div class="row doc-sub-row">
+                            <li class="li-no-style sub-li">
+
+                                <input type="checkbox" name="pl" id="pl">
+                                <label for="pl">
+                                    <h6><i class="fa fa-file-pdf sub-doc-icon" aria-hidden="true"></i><span
+                                            class="show-span">tax.pdf</span>
+                                    </h6>
+                                </label>
+                            </li>
+                        </div>
+                        <div class="row doc-sub-row">
+                            <li class="li-no-style sub-li">
+
+                                <input type="checkbox" name="tax" id="tax">
+                                <label for="tax">
+                                    <h6><i class="fa fa-file-word sub-doc-icon" aria-hidden="true"></i><span
+                                            class="show-span">tax.pdf</span>
+                                    </h6>
+                                </label>
+                            </li>
+                        </div>
+                        <div class="row doc-sub-row">
+                            <li class="li-no-style sub-li">
+
+                                <input type="checkbox" name="tax" id="tax">
+                                <label for="tax">
+                                    <h6><i class="fa fa-file-excel sub-doc-icon" aria-hidden="true"></i><span
+                                            class="show-span">tax.pdf</span>
+                                    </h6>
+                                </label>
+                            </li>
+                        </div>
+                    </div>
+
+                    <div class="row doc-row doc-row-5 ">
+
+                        <li class="li-no-style main-li">
+                            <h6><i class="fa fa-folder doc-icon" aria-hidden="true"></i><span
+                                    class="show-span">Registration or Terination</span>
+                            </h6>
+                        </li>
+
+
+                        <div class="row doc-sub-row">
+                            <li class="li-no-style sub-li">
+
+                                <input type="checkbox" name="pl" id="pl">
+                                <label for="pl">
+                                    <h6><i class="fa fa-file-pdf sub-doc-icon" aria-hidden="true"></i><span
+                                            class="show-span">promotion.pdf</span>
+                                    </h6>
+                                </label>
+                            </li>
+                        </div>
+                        <div class="row doc-sub-row">
+                            <li class="li-no-style sub-li">
+
+                                <input type="checkbox" name="pl" id="pl">
+                                <label for="pl">
+                                    <h6><i class="fa fa-file-pdf sub-doc-icon" aria-hidden="true"></i><span
+                                            class="show-span">tax.pdf</span>
+                                    </h6>
+                                </label>
+                            </li>
+                        </div>
+                        <div class="row doc-sub-row">
+                            <li class="li-no-style sub-li">
+
+                                <input type="checkbox" name="tax" id="tax">
+                                <label for="tax">
+                                    <h6><i class="fa fa-file-word sub-doc-icon" aria-hidden="true"></i><span
+                                            class="show-span">tax.pdf</span>
+                                    </h6>
+                                </label>
+                            </li>
+                        </div>
+                        <div class="row doc-sub-row">
+                            <li class="li-no-style sub-li">
+
+                                <input type="checkbox" name="tax" id="tax">
+                                <label for="tax">
+                                    <h6><i class="fa fa-file-excel sub-doc-icon" aria-hidden="true"></i><span
+                                            class="show-span">tax.pdf</span>
+                                    </h6>
+                                </label>
+                            </li>
+                        </div>
+                    </div>
+
+                    <div class="row doc-row doc-row-6 ">
+
+                        <li class="li-no-style main-li">
+                            <h6><i class="fa fa-folder doc-icon" aria-hidden="true"></i><span class="show-span">Show
+                                    Cause</span>
+                            </h6>
+                        </li>
+
+
+                        <div class="row doc-sub-row">
+                            <li class="li-no-style sub-li">
+
+                                <input type="checkbox" name="pl" id="pl">
+                                <label for="pl">
+                                    <h6><i class="fa fa-file-pdf sub-doc-icon" aria-hidden="true"></i><span
+                                            class="show-span">promotion.pdf</span>
+                                    </h6>
+                                </label>
+                            </li>
+                        </div>
+                        <div class="row doc-sub-row">
+                            <li class="li-no-style sub-li">
+
+                                <input type="checkbox" name="pl" id="pl">
+                                <label for="pl">
+                                    <h6><i class="fa fa-file-pdf sub-doc-icon" aria-hidden="true"></i><span
+                                            class="show-span">tax.pdf</span>
+                                    </h6>
+                                </label>
+                            </li>
+                        </div>
+                        <div class="row doc-sub-row">
+                            <li class="li-no-style sub-li">
+
+                                <input type="checkbox" name="tax" id="tax">
+                                <label for="tax">
+                                    <h6><i class="fa fa-file-word sub-doc-icon" aria-hidden="true"></i><span
+                                            class="show-span">tax.pdf</span>
+                                    </h6>
+                                </label>
+                            </li>
+                        </div>
+                        <div class="row doc-sub-row">
+                            <li class="li-no-style sub-li">
+
+                                <input type="checkbox" name="tax" id="tax">
+                                <label for="tax">
+                                    <h6><i class="fa fa-file-excel sub-doc-icon" aria-hidden="true"></i><span
+                                            class="show-span">tax.pdf</span>
+                                    </h6>
+                                </label>
+                            </li>
+                        </div>
+                    </div>
+
+                    <div class="row doc-row doc-row-6 ">
+
+                        <li class="li-no-style main-li">
+                            <h6><i class="fa fa-folder doc-icon" aria-hidden="true"></i><span
+                                    class="show-span">Application and Achievement</span>
+                            </h6>
+                        </li>
+
+
+                        <div class="row doc-sub-row">
+                            <li class="li-no-style sub-li">
+
+                                <input type="checkbox" name="pl" id="pl">
+                                <label for="pl">
+                                    <h6><i class="fa fa-file-pdf sub-doc-icon" aria-hidden="true"></i><span
+                                            class="show-span">promotion.pdf</span>
+                                    </h6>
+                                </label>
+                            </li>
+                        </div>
+                        <div class="row doc-sub-row">
+                            <li class="li-no-style sub-li">
+
+                                <input type="checkbox" name="pl" id="pl">
+                                <label for="pl">
+                                    <h6><i class="fa fa-file-pdf sub-doc-icon" aria-hidden="true"></i><span
+                                            class="show-span">tax.pdf</span>
+                                    </h6>
+                                </label>
+                            </li>
+                        </div>
+                        <div class="row doc-sub-row">
+                            <li class="li-no-style sub-li">
+
+                                <input type="checkbox" name="tax" id="tax">
+                                <label for="tax">
+                                    <h6><i class="fa fa-file-word sub-doc-icon" aria-hidden="true"></i><span
+                                            class="show-span">tax.pdf</span>
+                                    </h6>
+                                </label>
+                            </li>
+                        </div>
+                        <div class="row doc-sub-row">
+                            <li class="li-no-style sub-li">
+
+                                <input type="checkbox" name="tax" id="tax">
+                                <label for="tax">
+                                    <h6><i class="fa fa-file-excel sub-doc-icon" aria-hidden="true"></i><span
+                                            class="show-span">tax.pdf</span>
+                                    </h6>
+                                </label>
+                            </li>
+                        </div>
+                    </div>
+
+                    <!-- share op -->
+                    <div class="share-btn-container">
+                        <a href="#" class="facebook-btn">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+
+                        <a href="#" class="twitter-btn">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+
+                        <a href="#" class="pinterest-btn">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+
+                        <a href="#" class="linkedin-btn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+
+                        <a href="#" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+
+                </span>
+                <span class="asset-block"></span>
+                <span class="train-block"></span>
+                <span class="skill-block"></span>
+
+                <span class="kpi-block"></span>
+                <span class="des-block"></span>
+                <span class="pay-block"></span>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="../assets/js/jquery-3.4.1.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/fontawesome.js"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            $(".pro-content span").attr("style", "display:none");
+            $(".pro-content .doc-block").attr("style", "display:block");
+
+
+
+
+            $(".pro-tab a").click(function () {
+                $(".pro-content span").attr("style", "display:none");
+                var mclass = $(this).attr("myclass");
+                //alert(mclass);
+                $(".pro-content ." + mclass).attr("style", "display:block");
+
+
+
+            });
+
+
+
+
+        });
+    </script>
+    <script>
+        window.onload = function () {
+
+            var modal = document.getElementsByClassName('modal');
+
+
+            var btn = document.getElementsByClassName("add-btn");
+
+
+
+            var span = document.getElementsByClassName("close");
+
+
+            btn[0].onclick = function () {
+                modal[0].style.display = "block";
+            }
+
+            btn[1].onclick = function () {
+                modal[1].style.display = "block";
+            }
+            btn[2].onclick = function () {
+                modal[2].style.display = "block";
+            }
+            btn[3].onclick = function () {
+                modal[3].style.display = "block";
+            }
+            btn[4].onclick = function () {
+                modal[4].style.display = "block";
+            }
+
+            span[0].onclick = function () {
+                modal[0].style.display = "none";
+            }
+
+            span[1].onclick = function () {
+                modal[1].style.display = "none";
+            }
+            span[2].onclick = function () {
+                modal[2].style.display = "none";
+            }
+            span[3].onclick = function () {
+                modal[3].style.display = "none";
+            }
+            span[4].onclick = function () {
+                modal[4].style.display = "none";
+            }
+
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        };
+    </script>
+    <!-- <script>
+        var btn = document.querySelectorAll("button.modal-button");
+
+        // All page modals
+        var modals = document.querySelectorAll('.modal');
+
+        // Get the <span> element that closes the modal
+        var spans = document.getElementsByClassName("close");
+
+        // When the user clicks the button, open the modal
+        for (var i = 0; i < btn.length; i++) {
+            btn[i].onclick = function (e) {
+                e.preventDefault();
+                modal = document.querySelector(e.target.getAttribute("href"));
+                modal.style.display = "block";
+            }
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        for (var i = 0; i < spans.length; i++) {
+            spans[i].onclick = function () {
+                for (var index in modals) {
+                    if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";
+                }
+            }
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target.classList.contains('modal')) {
+                for (var index in modals) {
+                    if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";
+                }
+            }
+        }
+    </script> -->
+
+    <script>
+        $(document).ready(function () {
+            var i = 1;
+            var dc = document.getElementsByClassName("doc-item");
+            while (i <= dc.length;) {
+            alert(i);
+            $(".doc-item-[i]").click(function () {
+                $(".doc-sub-row-[i]").toggle();
+                i++;
+            })
+        }
+
+
+
+        });
+    </script>
+
+    <script>
+        const facebookBtn = document.querySelector(".facebook-btn");
+        const twitterBtn = document.querySelector(".twitter-btn");
+        const pinterestBtn = document.querySelector(".pinterest-btn");
+        const linkedinBtn = document.querySelector(".linkedin-btn");
+        const whatsappBtn = document.querySelector(".whatsapp-btn");
+
+        function init() {
+            const pinterestImg = document.querySelector(".pinterest-img");
+
+            let postUrl = encodeURI(document.location.href);
+            let postTitle = encodeURI("Hi everyone, please check this out: ");
+            let postImg = encodeURI(pinterestImg.src);
+
+            facebookBtn.setAttribute(
+                "href",
+                `https://www.facebook.com/sharer.php?u=${postUrl}`
+            );
+
+            twitterBtn.setAttribute(
+                "href",
+                `https://twitter.com/share?url=${postUrl}&text=${postTitle}`
+            );
+
+            pinterestBtn.setAttribute(
+                "href",
+                `https://pinterest.com/pin/create/bookmarklet/?media=${postImg}&url=${postUrl}&description=${postTitle}`
+            );
+
+            linkedinBtn.setAttribute(
+                "href",
+                `https://www.linkedin.com/shareArticle?url=${postUrl}&title=${postTitle}`
+            );
+
+            whatsappBtn.setAttribute(
+                "href",
+                `https://wa.me/?text=${postTitle} ${postUrl}`
+            );
+        }
+
+        init();
+    </script>
+
+</body>
+
+</html>

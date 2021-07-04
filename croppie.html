@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-jp">
+
+    <title>Rent-CashMyStash</title>
+    <link rel="stylesheet" href="assets/css/productlist.css">
+    <link rel="stylesheet" href="assets/css/side.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bit-style.css" />
+    <link rel="icon" href="./img/favicon.png" type="image/gif" sizes="16x16">
+    <link rel="stylesheet" type="text/css" href="assets/css/slick.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/croppie.css">
+    <link rel="stylesheet" href="./assets/js/croppie.js">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: white !important;">
+
+        <a class="navbar-brand" href="index.html"> <img src="./img/Nlogo.png" alt="" class="img-fluid"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="mr-auto" id="navbar-menu-ls">
+
+                <ul class="navbar-nav">
+
+                    <input type="text" class="form-control" id="navsearch" placeholder="Search here">
+
+                    <button class="btn btn-primary" style="margin-left: 3px;"> Search </button>
+
+                </ul>
+            </div>
+
+
+            <div id="navbar-menu-rs" style="float: left;">
+                <ul class="nav navbar-nav action-links">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="#"><i class="fas fa-comments" style="color: #44546a;"></i> Chat</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-user" style="color: #44546a;"></i>My Account</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"> <i class="fas fa-bell" style="color: #44546a;"></i></a>
+                    </li>
+                </ul>
+            </div>
+
+
+
+
+        </div>
+    </nav>
+    <br>
+    <!-- end of nav -->
+
+    <!-- top-bar -->
+
+    <div class="container">
+
+        <div class="row section-nav">
+            <div class="col snav snav-buysell text-center">
+                <a href="buy_sell.html"><i class="fas fa-shopping-basket"></i> <span>Buy Now</span></a>
+                <!--				<span class="snav-bottom-line"></span>-->
+            </div>
+            <div class="col snav snav-auction text-center">
+                <a href="auction.html" id="topbar"><i class="fas fa-file-signature"></i> <span>Auction</span></a>
+            </div>
+
+            <div class="col snav snav-exchange  text-center">
+                <a href="Exchange.html"><i class="fas fa-sync"></i> <span>Exchange</span></a>
+            </div>
+
+
+            <div class="col snav-camera text-center">
+                <a href="post_category.html"><i class="fas fa-camera fa-3x"> </i> </a>
+            </div>
+            <div class="col snav snav-exchange active text-center">
+
+                <a href="rent.html"> <i class="fas fa-dollar-sign"></i> <span>Rent</span></a>
+            </div>
+            <div class="col snav snav-donation text-center">
+                <a href="donation.html"><i class="fas fa-hand-holding-usd"></i><span>Donation</span></a>
+            </div>
+            <div class="col snav snav-giveway text-center">
+                <a href="giveaway.html"><i class="fas fa-gift"></i> <span>Giveaway</span></a>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="section-divider"></div>
+
+
+    <script>
+
+        $uploadCrop = $('#upload-demo').croppie({
+            enableExif: true,
+            viewport: {
+                width: 200,
+                height: 200,
+                type: 'circle'
+            },
+            boundary: {
+                width: 300,
+                height: 300
+            }
+        });
+
+
+    </script>
+
+    <div class="form-group">
+        <label class="control-label required" for="username">Username</label>
+        <input type="text" id="username" name="data[username]" required="required" class="form-control">
+    </div>
+
+
+
+    <style>
+        form input[required=required]:after,
+        form select[required=required]:after,
+        form textarea[required=required]:after,
+        #username {
+            color: red;
+            content: " *";
+        }
+
+        form label.required:after {
+            color: red;
+            content: " *";
+        }
+    </style>
+
+
+
+
+
+
+</body>

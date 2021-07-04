@@ -1,0 +1,227 @@
+body {
+  font-family: 'Gesta';
+}
+
+h1, h2, h3, h4, h5 , p , a {
+   font-family: 'Gesta';
+}
+
+
+.menu-chart ul,
+.menu-chart-left ul {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* nandos part start */
+.Add-Listing {
+    padding: 22px 5px;
+    display: inline-block;
+    
+    
+
+
+}
+
+.Add-Listing button {
+    background-color: transparent;
+    border: 1px solid #fff;
+    font-size: 12px;
+    margin-left: 20px;
+}
+
+.Add-Listing button:hover{
+    background-color: #F99F1C
+}
+
+.Add-Listing button a {
+    color: #fff;
+    text-decoration: none
+}
+
+.pro-img {
+    height: 50px;
+    width: 50px;
+    background-color: gray;
+    border: 2px solid #F99F1C;
+    border-radius: 50%;
+    float: left;
+    margin-top: 15px;
+    position: relative;
+}
+
+.pro-img img {
+    position: absolute;
+    height: 46px;
+    width: 46px;
+    border-radius: 50%;
+
+}
+
+.profile-name h5 {
+    font-size: 12px;
+    float: left;
+    margin-top: 30px;
+    padding-left: 5px;
+    color: #fff;
+   
+
+}
+
+.nandos-part {
+    padding: 0px 60px;
+}
+
+
+
+/* nandos menu part start */
+
+
+.nandos-menu-text h4 {
+    
+    font-size: 26px;
+    color: #58585B;
+
+}
+
+.menu-list ul li {
+    display: inline-block;
+    
+}
+
+.menu-list ul li a {
+    color: #F99F1C;
+    text-decoration: none;
+    font-weight: 400;
+    margin-left: 5px;
+}
+
+.menu-list ul li a span {
+    color: black;
+}
+
+.nandos-main-menu h4 {
+    border-bottom: 1px solid gray;
+    padding: 5px 0px;
+    color: #58585B;
+    font-weight: 400;
+
+
+}
+
+.nandos-main-menu p img{
+    border: none;
+}
+
+.nandos-main-menu p i {
+    color: #F99F1C;
+    padding: 2px;
+
+}
+
+
+
+.nandos-main-menu span i {
+    margin-left: 3px;
+    color: #F99F1C;
+}
+
+.menu-name img{
+    height: 80px;
+    width: 80px;
+    border: 1px solid #F99F1C;
+    border-radius: 5px;
+}
+
+
+
+.menu-name h6 {
+    
+    font-weight: 400;
+    font-size: 16px;
+    color: #1d1d1d;
+}
+
+.nandos-main-menu span a{
+    float: right;
+    color: #F99F1C;
+    text-decoration: none;
+}
+
+/*.nandos-main-menu .media {
+    border-bottom: 1px solid #d8d7d7;
+    padding: 5px 0px;
+
+}*/
+
+.media-body {
+    font-size: 14px;
+    font-weight: 400;
+}
+.media-body p a{
+    color: gray;
+    text-decoration: none;
+}
+
+/* nandos menu part end */
+
+
+@media (max-width: 575.98px) {
+    .menu-name img{
+        height: 50px;
+        width: 50px;
+    }
+    
+    
+    
+
+}
+
+
+@media (min-width: 576px) and (max-width: 767.98px) {}
+
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    
+     .Add-Listing button{
+       margin: 0 auto;
+        height: 30px;
+         width: 90px;
+    }
+    
+    .pro-img {
+        height: 35px;
+        width: 35px;
+    }
+    .pro-img img{
+        height: 31px;
+        width: 31px;
+    }
+    .Add-Listing button a {
+        font-size: 11px;
+    }
+}
+
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+     .Add-Listing button{
+       margin: 0 auto;
+        height: 30px;
+         width: 90px;
+    }
+    
+    .pro-img {
+        height: 35px;
+        width: 35px;
+    }
+    .pro-img img{
+        height: 31px;
+        width: 31px;
+    }
+    .Add-Listing button a {
+        font-size: 11px;
+    }
+}
+
+
+@media (min-width: 1200px) {}

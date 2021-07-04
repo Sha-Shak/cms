@@ -1,0 +1,809 @@
+<?php
+require "core/common/conn.php";
+session_start();
+$val= $_REQUEST["val"];
+
+?>
+
+
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+
+  <title>Post ad-CashMyStash</title>
+  <link rel="icon" href="./img/favicon.png" type="image/gif" sizes="50x16">
+  <link rel="stylesheet" href="./assets/css/productlist.css">
+  <link rel="stylesheet" href="./assets/css/side.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/bit-style.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <!-- CSS LIBRARY -->
+  <link rel="stylesheet" type="text/css" href="./assets/css/slick.css" />
+  <link rel="stylesheet" type="text/css" href="./assets/css/slick-theme.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+  <style>
+    /* .sell-op,
+    .rent-op,
+    .don-op {
+      display: none;
+    } */
+
+    .post-method-1,
+    .post-method-2,
+    .post-method-3 {
+      padding: 15px;
+      border: 0.5px solid lightgray;
+      border-radius: 5px;
+    }
+  </style>
+
+
+
+
+</head>
+
+<body>
+  <?php include "./navbar.php" ?>
+
+  <div class="section-divider"></div>
+
+
+
+
+
+  <form action="common/addpost.php" method="POST" enctype="multipart/form-data">
+
+    <div class="container" style="background-color:white; border-top:0px solid #44546A;">
+
+      <div class="content-base-margin">
+
+        <div class="container" style="background-color:white;">
+          <div class="row">
+
+
+
+            <div class="col-12 " id="post-ad">
+
+
+
+
+              <br>
+
+              <div class="row">
+                <div class="col-12">
+                  <h3><input type="text" class="" name="title" id="title" placeholder="Add a Title" required></h3>
+                  <br>
+
+                </div>
+              </div>
+
+              <br>
+
+              <div class="row" id="">
+                <div class=" col-12 post-type">
+                  <div class=" post-method-1">
+
+                    <input type="radio" name="post-met" id="post-met-1">
+                    <label for="post-met-1">
+                      <h6>Sell Options</h6>
+                    </label>
+                    <hr>
+                    <div class="sell-op">
+                      <input type="checkbox" id="buy-now" name="buy-now" checked>
+                      <label for="buy-now">Buy Now</label>
+                      <input type="checkbox" id="auction" name="auction">
+                      <label for="auction">Auction</label>
+                      <input type="checkbox" id="exchange" name="exchange">
+                      <label for="exchange">Exchange</label>
+                    </div>
+                    <div class="card auc-box" id="card-auc">
+                      <div class="pc-header">
+                        <h6> Auction Field</h6>
+
+                      </div>
+                      <hr>
+                      <div class="row auc-field ">
+
+
+
+
+                        <div class="post-bid-am">
+                          <label for="auc-amount">Minimum Bid</label>
+                          <input type="number" min="0" class="form" id="auc-amount" name="auc-amount">
+                        </div>
+
+
+
+
+
+
+                        <div class="post-bid-end">
+                          <label for="auc-day">Ends in</label>
+                          <input type="number" min="0" class="form" id="auc-day" name="auc-day">
+                        </div>
+
+
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+
+                  <div class="post-method-2">
+
+                    <input type="radio" name="post-met" id="post-met-2">
+                    <label for="post-met-2">
+                      <h6>Rent Options</h6>
+                    </label>
+                    <hr>
+                    <div class="rent-op">
+                      <input type="checkbox" id="rent" name="rent">
+                      <label for="rent">Rent</label>
+                    </div>
+                    <div class="card rent-box">
+
+
+                      <div class="row">
+
+
+
+                        <div class="col-sm day-field">
+
+                          <input type="number" class="form" id="day-box" name="rent-day" value="$">
+                          <label for="rent-day">per Day</label>
+
+                        </div>
+
+                        <div class="col-sm week-field">
+
+                          <input type="number" class="form" id="week-box" name="rent-week" value="$">
+                          <label for="rent-week">per Week</label>
+                        </div>
+
+                        <div class="col-sm month-field">
+
+                          <input type="number" class="form" id="month-box" name="rent-month" value="$">
+                          <label for="rent-month">per Month</label>
+                        </div>
+
+
+                        <br>
+
+
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+
+                  <div class="post-method-3">
+
+                    <input type="radio" name="post-met" id="post-met-3">
+                    <label for="post-met-3">
+                      <h6>Donate Options</h6>
+                    </label>
+                    <hr>
+                    <div class="don-op">
+                      <input type="checkbox" id="donation" name="donation">
+                      <label for="donation">Donation</label>
+                      <input type="checkbox" id="giveaway" name="giveaway">
+                      <label for="giveaway">Giveaway</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+
+
+
+
+
+
+              <div class="row">
+
+                <div class="col-sm-3 ">
+                  <h6> <input type="number" class="" name="price" id="price" placeholder="price" required> </h6>
+
+                </div>
+                <div class="col-sm-2 text-center">
+                  <h6> <input type="number" class="" name="quantity" id="quantity" value="1" required> </h6>
+                </div>
+              </div>
+              <br>
+
+              <div class="row">
+                <div class="neg">
+                  <input type="radio" name="negotiable" id="negotiable1" value=1 required>
+                  <label for="negotiable1" style="margin-right:10px;">
+                    Negotiable
+                  </label>
+
+                  <input type="radio" name="negotiable" id="non-neg" value=0 required>
+                  <label for="non-neg">Non Negotiable</label>
+
+                </div>
+              </div>
+
+
+
+
+
+
+
+              <br>
+
+              <div class="form-group ">
+                <select class="form-control" name="category" id="category" required>
+                  <option value="">Select category</option>
+                  <?php $qry = "SELECT `id`, `title` FROM `catagory` WHERE st=1 and ischildonly = 0";
+                    $result = $conn->query($qry); 
+                    if ($result->num_rows > 0)
+                    {
+                         while($row = $result->fetch_assoc()) { ?>
+                  <option value="<?php echo $row[" id"] ?>">
+                    <?php echo $row["title"]?>
+                  </option>
+
+                  <?php }} ?>
+
+                </select>
+                <hr>
+
+
+
+              </div>
+              <div class="form-group ">
+                <select class="form-control" name="subcat" id="sub_category" required>
+                  <option value=""> Sub category</option>
+                </select>
+                <hr>
+
+
+
+              </div>
+
+              <div class="form-group ">
+                <select id="country" class="form-control" name="state" required>
+                  <option value="">Select State</option>
+                  <?php $qry = "SELECT `id`, `title` FROM `state` WHERE country=2 AND st=1";
+                    $result = $conn->query($qry); 
+                    if ($result->num_rows > 0){
+                         while($row = $result->fetch_assoc()){ ?>
+                  <option value="<?php echo $row[" id"] ?>">
+                    <?php echo $row["title"]?>
+                  </option>
+                  <?php 
+						}
+					} 
+					?>
+
+                </select>
+                <hr>
+
+
+
+              </div>
+              <div class="form-group ">
+
+                <select class="form-control" id="district" name="tt" required>
+                  <option value="">Select District</option>
+                </select>
+
+                <hr>
+
+
+
+              </div>
+              <br>
+
+
+              <div class="ups-img">
+                <div class="post-header">
+                  <h6>Add Photos</h6>
+                </div>
+                <hr>
+                <label for="file-upload" class="custom-file-upload" name="photo" required>
+                  <i class="fas fa-camera"></i> Add Photo
+                </label>
+                <input id="file-upload" type="file" name="photo" />
+
+
+
+
+
+              </div>
+              <br>
+              <br>
+              <div class="row" id="post-method">
+                <div class="post-header">
+                  <h6>Post Type</h6>
+                </div>
+              </div>
+              <hr>
+
+
+
+
+              <!-- fill in the details -->
+              <div class="post-header">
+                <h5>Fill in the details</h5>
+              </div>
+              <hr>
+              <div class="post-header">
+                <h6>Personal Details</h6>
+              </div>
+              <hr>
+
+              <div class="row" id="p-details">
+                <div class="col-md">
+
+                  <label for="name"> Name :</label>
+                  <input type="text" class="form-control seller_name" id="name" name="name" placeholder="Name" value=""
+                    required>
+
+
+                </div>
+                <div class="post-divider">
+
+                </div>
+
+                <!-- <div class="space"></div> -->
+                <div class="col-md">
+                  <label for="phone"> Phone : </label>
+                  <input type="tel" class="form-control seller_name" id="phone" name="phone" value="+1" required>
+                </div>
+              </div>
+              <br>
+              <br>
+
+
+
+
+
+              <div class="post-header">
+                <h6>Delivery Method</h6>
+              </div>
+              <hr>
+
+              <div class="row" id="pay-met">
+                <?php $qry = "SELECT `id`, `title` FROM `deliverymode` WHERE st=1";
+                    $result = $conn->query($qry); 
+                    if ($result->num_rows > 0)
+                    {   
+                         while($row = $result->fetch_assoc()) { if ($row["title"] == "Shipping") {?>
+                <div class="c-pay">
+                  <input type="checkbox" onclick="myFunction()" id="ship" name="delivery[]" value="<?php echo $row["
+                    id"] ?>">
+
+                  <label for="ship">
+                    <?php echo $row["title"] ?>
+                  </label>
+
+                  <div class="form-group" id="myDIV">
+                    <div class="row">
+                      <div class="col">
+                        <?php $qry1 = "SELECT `id`, `title` FROM `deliverychargetype` WHERE st=1";
+                                        $result1 = $conn->query($qry1); 
+                                        if ($result1->num_rows > 0)
+                                        {
+                                             while($row1 = $result1->fetch_assoc()) {  ?>
+                        <label for="local" name="charge[]" value="<?php echo $row1[" id"] ?>">
+                          <?php echo $row1["title"] ?>
+                        </label>
+                        <input type="number" class="form-control" id="local" name="charge[]">
+                        <br>
+
+                        <?php }} ?>
+
+
+                      </div>
+                    </div>
+
+
+                  </div>
+                </div>
+                <?php }else{ ?>
+
+                <div class="cod">
+                  <input type="checkbox" onclick="myFunc()" id="pick" name="delivery[]" value="<?php echo $row["
+                    id"]?>">
+                  <label for="pick">
+                    <?php echo $row["title"] ?>
+                  </label>
+                  <div class="container">
+                    <div class="form-group" id="pick">
+
+                      <div class="form-group" id="des-box">
+                        <label for="des-box">
+                          <h6>Address
+                          </h6>
+                        </label>
+                        <textarea class="form-control" rows="5" id="des-box" name="daddress"></textarea> <br>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+
+
+                <?php }}} ?>
+
+              </div>
+              <br>
+
+
+              <div class="row" id="pay-method">
+                <div class="post-header">
+                  <h6>Payment Method</h6>
+                </div>
+              </div>
+              <hr>
+              <div class="row" id="pay-met">
+                <?php $qry = "SELECT `id`, `title` FROM `paytype` WHERE st=1";
+                    $result = $conn->query($qry); 
+                    if ($result->num_rows > 0)
+                    {
+                         while($row = $result->fetch_assoc()) { ?>
+
+                <div class="cod">
+
+                  <input type="checkbox" id="" name="pay[]" value="<?php echo $row[" id"] ?>">
+                  <label for="cash">
+                    <?php echo $row["title"] ?>
+                  </label>
+
+                </div>
+                <?php }} ?>
+              </div>
+
+              <br>
+              <br>
+
+
+
+              <div class="description">
+                <div class="form-group">
+                  <label for="description">
+                    <h6> Add a description </h6>
+                  </label>
+                  <textarea class="form-control" rows="5" id="description" name="description"></textarea> <br>
+
+                </div>
+
+
+              </div>
+
+              <br>
+
+
+              <div class="authen">
+                <div class="post-header">
+                  <h6>Condition</h6>
+                </div>
+                <hr>
+                <div class=" row">
+                  <?php $qry = "SELECT `id`, `title` FROM `ItemCondition` WHERE st=1";
+                    $result = $conn->query($qry); 
+                    if ($result->num_rows > 0)
+                    {
+                         while($row = $result->fetch_assoc()) { ?>
+                  <div class="cod">
+                    <input type="radio" id="condition" name="condition" value="<?php echo $row[" id"] ?>">
+                    <label for="used">
+                      <?php echo $row["title"] ?>
+                    </label>
+                  </div>
+                  <?php }} ?>
+                </div>
+
+              </div>
+              <br>
+              <div id="submission">
+                <button type="submit" class="btn btn-primary btn-block text-center">Post Ad</button>
+
+
+              </div>
+
+            </div>
+            <br>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    </div>
+
+  </form>
+
+  <!-- New Footer -->
+  <footer class="footer-distributed">
+
+    <div class="footer-left">
+
+      <h3>CashMyStash</h3>
+
+      <p class="footer-links">
+        <a href="#">Home</a>
+        ï¼?
+        <a href="#">About</a>
+        ï¼?
+        <a href="#">Faq</a>
+        ï¼?
+        <a href="#">Contact</a>
+      </p>
+
+      <p class="footer-company-name">CashMyStash &copy; 2020</p>
+    </div>
+
+    <div class="footer-center">
+
+      <div>
+        <i class="fa fa-map-marker"></i>
+        <p><span>221b Baker Street</span> London, United Kingdom</p>
+      </div>
+
+      <div>
+        <i class="fas fa-phone"></i>
+        <p>+2211224</p>
+      </div>
+
+      <div>
+        <i class="far fa-envelope"></i>
+        <p><a href="#"></i>contact@cashmystash.com</a></p>
+      </div>
+
+    </div>
+
+    <div class="footer-right">
+
+      <p class="footer-company-about">
+        <span>About the company</span>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat voluptas deserunt voluptatum a tenetur quae
+        cupiditate ex repellat amet nobis laudantium, beatae mollitia alias eaque blanditiis natus architecto magni
+        itaque.
+      </p>
+
+      <div class="footer-icons">
+
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-github"></i></a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+
+  <script>
+    $(document).ready(function () {
+
+      $("#myDIV").attr('style', 'display:none;');
+
+      $("input[id = ship]:checkbox").change(function () {
+
+
+        if ($('#ship').is(':checked')) {
+          $("#myDIV").attr('style', 'display:block;');
+        } else {
+          $("#myDIV").attr('style', 'display:none;');
+        }
+      });
+
+      //attr('checked', true);
+
+    });
+
+  </script>
+
+  <script>
+    $(document).ready(function () {
+
+      $("#des-box").attr('style', 'display:none;');
+
+      $("input[id = pick]:checkbox").change(function () {
+
+
+        if ($('#pick').is(':checked')) {
+          $("#des-box").attr('style', 'display:block;');
+        } else {
+          $("#des-box").attr('style', 'display:none;');
+        }
+      });
+
+
+
+
+      //attr('checked', true);
+
+
+
+
+
+      //############## district laoder
+      //call area cmb on district change		
+      $('#country').change(function () {
+        country = $(this).find("option:selected").val();
+        load_district(country);
+      });
+
+      function load_district(country) {
+        $.ajax({
+
+          url: "core/phpajax/load_district.php",
+          method: "POST",
+          data: { state: country },
+          beforeSend: function () {
+            $('#district').html('<option>Loading divisions...</option>');
+          },
+          success: function (data) {
+            $('#district').html(data);
+
+            //alert(data);
+
+          }
+        });
+
+      }
+
+
+      $('#category').change(function () {
+        category = $(this).find("option:selected").val();
+
+        load_subcategory(category);
+      });
+      function load_subcategory(category) {
+        $.ajax({
+
+          url: "core/phpajax/load_subcategory.php",
+          method: "POST",
+          data: { parent: category },
+          beforeSend: function () {
+            $('#sub_category').html('<option>Loading sub categories...</option>');
+          },
+          success: function (data) {
+            $('#sub_category').html(data);
+
+            //alert(data);
+
+          }
+        });
+
+      }
+
+
+
+
+    });
+
+  </script>
+
+  <!-- RENT BOX -->
+  <script>
+    $(document).ready(function () {
+
+      $(".rent-box").attr('style', 'display:none;');
+
+
+
+      $("input[id=rent]:checkbox").change(function () {
+
+
+        if ($('#rent').is(':checked')) {
+          $(".rent-box").attr('style', 'display:block;');
+        } else {
+          $(".rent-box").attr('style', 'display:none;');
+        }
+      });
+
+
+
+    });
+  </script>
+
+  <!-- Auction BOX -->
+  <script>
+    $(document).ready(function () {
+
+      $(".auc-box").attr('style', 'display:none;');
+
+
+
+      $("input[id=auction]:checkbox").change(function () {
+
+
+        if ($('#auction').is(':checked')) {
+          $(".auc-box").attr('style', 'display:block;');
+        } else {
+          $(".auc-box").attr('style', 'display:none;');
+        }
+      });
+
+
+
+    });
+  </script>
+  <!-- <script>
+    $(document).ready(function () {
+
+      $("input[name=post-met]:radio").change(function () {
+
+        if ($('#post-met-1').is(':checked')) {
+          $('.sell-op').attr('style', 'display:block');
+          $('.rent-op').attr('style', 'display:none');
+          $('.don-op').attr('style', 'display:none');
+
+        } else {
+          $('.rent-op').attr('style', 'display:none');
+          $('.don-op').attr('style', 'display:none');
+        }
+
+      })
+    });
+  </script>
+
+
+  <script>
+    $(document).ready(function () {
+
+      $("input[name=post-met]:radio").change(function () {
+
+        if ($('#post-met-2').is(':checked')) {
+          $('.rent-op').attr('style', 'display:block');
+
+        } else {
+          $('.sell-op').attr('style', 'display:none');
+          $('.don-op').attr('style', 'display:none');
+        }
+
+      })
+    });
+  </script>
+
+  <script>
+    $(document).ready(function () {
+
+      $("input[name=post-met]:radio").change(function () {
+
+        if ($('#post-met-3').is(':checked')) {
+          $('.don-op').attr('style', 'display:block');
+
+        } else {
+
+          $('.rent-op').attr('style', 'display:none');
+          $('.sell-op').attr('style', 'display:none');
+        }
+
+      })
+    });
+  </script> -->
+
+
+
+</body>
+
+</html>

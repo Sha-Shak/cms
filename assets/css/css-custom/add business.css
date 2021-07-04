@@ -1,0 +1,191 @@
+@font-face {
+  font-family: 'Gesta';
+  src: url("../fonts/bsigesta-light-webfont.ttf");
+  font-weight: 300;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Gesta';
+  src: url("../fonts/bsigesta-medium-webfont.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Gesta';
+  src: url("../fonts/bsigesta-webfont.ttf");
+  font-weight: 500;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Gesta';
+}
+
+h1, h2, h3, h4, h5 , p , a {
+   font-family: 'Gesta';
+}
+
+
+
+
+/* add business-part start*/
+
+.add-busin-text h4 {
+    color: #F99F1C;
+    
+}
+
+.add-busin-text p {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.card-body{
+    padding: 0;
+}
+
+.addBusiness-form label {
+    font-family: 'Gesta';
+}
+
+.md-form {
+    padding: 10px;
+}
+
+/* .busine-name input {
+    width: 95%;
+    margin-left: 15px
+} */
+
+/* .busine-name label {
+    margin-left: 15px;
+} */
+
+.review-businessBox textarea {
+    height: 250px;
+    margin-left: 15px;
+    resize: none;
+
+
+}
+
+.textarea-text {
+    margin-left: 15px;
+    font-family: 'Gesta';
+}
+
+.review-businessBox {
+    position: absolute;
+    top: 25%;
+    left: 0px;
+    width: 95%;
+
+}
+
+.busi-smsBox {
+    height: 350px;
+    background-color: #FCEFE0;
+    position: relative;
+    border: 1px solid #F99F1C;
+    text-align: center;
+    padding: 10px;
+    margin-left: 10px;
+}
+
+.busi-smsBox h6 {
+    color: #F99F1C;
+    font-size: 14px;
+    padding-top: 3px;
+}
+
+.submit-business {
+    margin-left: 10px;
+    background-color: #F99F1C;
+    color: white;
+     font-family: 'Gesta';
+}
+
+.businessRightText h5 {
+    font-weight: 400
+}
+
+.businessName-show {
+    border: 1px solid #e2e2e2;
+    border-radius: 5px;
+}
+
+.busin-cont span h5 {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.busin-cont h6 {
+    font-weight: 600;
+}
+
+
+.businessdetile-show {
+    padding: 15px;
+}
+
+
+
+
+
+
+
+
+/* add business-part start*/
+
+/* add business-media-part start*/
+@media (max-width:320px) {
+    .busi-smsBox img {
+        height: 40px;
+    }
+
+    .review-businessBox {
+        left: -3px
+    }
+}
+
+@media (max-width:575px) {
+     .busi-smsBox {
+       margin-left: 0;
+    } 
+
+    .review-businessBox {
+        margin-left: -2%;
+
+    }
+
+    .submit-business{
+        margin-left: 0;
+    }
+
+    .textarea-text{
+        text-align: center;
+    }
+}
+
+@media (max-width:768px) {
+
+    /* .busi-smsBox {
+        width: 100%;
+    } */
+
+    .review-businessBox {
+        margin-left: -1.5%;
+
+    }
+
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    /* .busi-smsBox {
+        width: 100%;
+    } */
+}

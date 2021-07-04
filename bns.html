@@ -1,0 +1,1481 @@
+<?php 
+require "core/common/conn.php";
+session_start();
+
+$atid = $_GET['id'];
+$res = $_GET['res'];
+
+$whyme = '';
+
+
+if($res == 2){
+    $ship = $_SESSION['ship'];
+    $pay = $_SESSION['pay'];
+    $posttype = $_SESSION['posttype'];
+    $whyme = $_SESSION["whyme"];
+    //Auction
+    $bid = $_SESSION["bid"];
+    
+    //Exchange
+    $amount = $_SESSION["amount"];
+    $details = $_SESSION["details"];
+    $name = $_SESSION["name"];
+    $photo = $_SESSION["photo"];
+    
+    //Rent
+    
+}
+
+?>
+
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb18030">
+
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Now-CashMyStash</title>
+    <link rel="icon" href="./img/favicon.png" type="image/gif" sizes="50x12">
+    <link rel="stylesheet" href="assets/css/productlist.css">
+    <link rel="stylesheet" href="assets/css/side.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- CSS LIBRARY -->
+    <link rel="stylesheet" type="text/css" href="assets/css/slick.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css" />
+
+
+    <link rel="stylesheet" type="text/css" href="assets/css/bit-style.css" />
+
+
+
+
+
+
+</head>
+
+<body>
+
+    <?php include "./navbar.php"; ?>
+
+    <div class="section-divider"></div>
+
+
+
+
+
+    <form action="common/placeorder.php?id=<?php echo $atid?>" method="POST" enctype="multipart/form-data">
+
+        <?php $qry = "SELECT `id`, `title`, `postusernm`, `description`, `boardtype`,postuseraddress,`otherboard`, `auc_day`, `auc_amount`, `rent_day`, `rent_week`, `rent_month`, `zipcode`,`postusercontact`, `offerprice`, `conditions`  FROM `postitem` WHERE st=1 and id = ".$atid;
+$result = $conn->query($qry); 
+if ($result->num_rows > 0)
+{ while($row = $result->fetch_assoc()) { ?>
+
+
+        <div class="container" style="background-color:white; border-top:0px solid #44546A;">
+
+            <div class="content-base-margin">
+
+
+
+
+
+
+
+                <div class="row">
+
+                    <div class="col-12">
+                        <!-- Slick Slider -->
+
+
+                        <div class="thumb-slider-wrapper" st yle="height: 500px; overflow: hidden">
+
+
+                            <div class="product-gallery thumb-left">
+
+                                <ul id="main-slider" class="pdt-gallery pdt-gal1">
+                                    <?php $qry1 = "SELECT `id`, `postid`, `photo` FROM `postitemphoto` WHERE postid = ".$atid;
+                                $result1 = $conn->query($qry1); 
+                                if ($result1->num_rows > 0)
+                                { while($row1 = $result1->fetch_assoc()) { $photo="../../core/images/upload/postitem/".$row1["photo"]; $t = 1; while($t--){ ?>
+                                    <li><img src="<?php echo $photo ?>" alt=""></li>
+                                    <?php }}}?>
+                                </ul>
+                                <div class="thumb-wrap">
+                                    <ul class="pdt-gallery-thumb pdt-thumb1">
+                                        <?php $qry1 = "SELECT `id`, `postid`, `photo` FROM `postitemphoto` WHERE postid = ".$atid;
+                                $result1 = $conn->query($qry1); 
+                                if ($result1->num_rows > 0)
+                                { while($row1 = $result1->fetch_assoc()) { $photo="../../core/images/upload/postitem/".$row1["photo"]; $t = 6; while($t--){ ?>
+                                        <li><img src="<?php echo $photo ?>" alt=""></li>
+                                        <?php }}}?>
+                                    </ul>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                        <div class="container" id="slick-title">
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <b>
+                                        <?php echo $row["title"] ?>
+                                    </b> <br>
+                                    <b>$
+                                        <?php echo$row["offerprice"] ?>
+                                    </b>
+
+                                    <p> <small>By
+                                            <?php echo $row["postusernm"] ?>, Long Time member.
+                                        </small> </p>
+
+                                    <br>
+
+
+                                </div>
+                                <div class="col-md-2 text-center">
+                                    <div class="row" id="like-share">
+                                        <a href="#" class="likes">
+                                            <i class="fas fa-heart" aria-hidden="true" style="font-weight: normal"></i>
+                                        </a>
+                                        <a href="#" style="margin-left: 15px; color: #44546A !important;"><i
+                                                class="fas fa-share-alt"></i></a>
+                                    </div>
+
+
+                                    <div class="row">
+                                        <div class="seller-btn" id="product-contact">
+                                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                                                data-target="#myModal">Contact Seller</button>
+                                            <div class="modal fade" id="myModal" role="dialog">
+                                                <div class="modal-dialog">
+
+                                                    <!-- Modal content-->
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h4 class="modal-title">Send a message</h4>
+                                                            <button type="button" class="close"
+                                                                data-dismiss="modal">&times;
+                                                            </button>
+
+
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <h5>
+                                                                <?php echo $row["title"] ?>
+                                                            </h5>
+                                                            <p
+                                                                style="padding-left: 10px; font-size: small; color: gray; ">
+                                                                To:
+                                                                <?php echo $row["postusernm"] ?>
+                                                            </p>
+                                                            <textarea name="contacr-seller" id="contact-sell" cols="37"
+                                                                rows="5"></textarea>
+                                                        </div>
+
+
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-primary"
+                                                                data-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br>
+                                    </div>
+                                    <br>
+                                </div>
+
+                            </div>
+
+
+
+                        </div>
+
+
+                        <!-- End of Slick Slider -->
+
+                        <!-- Deatils -->
+                        <div class="card" id="details">
+
+                            <div class="card-body">
+
+                                <h5 class="c-header">Details</h5>
+
+                                <div class="container">
+                                    <?php $qry1 = "SELECT `id`, `title` FROM `ItemCondition` WHERE st=1 and id = ".$row["conditions"];
+                    $result1 = $conn->query($qry1); 
+                    //echo $result1->num_rows;die;
+                    if ($result1->num_rows > 0)
+                    {
+                         while($row1 = $result1->fetch_assoc()) { ?>
+                                    <div class="container">
+                                        <p class="cond">Condition:
+                                            <?php echo $row1["title"]?>
+                                        </p>
+                                        <?php }} ?>
+                                        <p class="product-des">
+                                            <?php echo $row["description"]?>
+                                        </p>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+
+
+
+                        <!-- SUB_MENU-BAR -->
+                        <div class="row buy-menu text-center" id="buy-option-body">
+                            <?php $exchange = explode(",", $row["otherboard"]); 
+    						    $buy1 = false; $auction1 = false;$exchange1 = false;$rent1 = false;$giveaway1 = false;$donation1 = false;
+						    foreach($exchange as $key => $value)
+						    {   
+						        if($value == 27){ 
+							        $buy1 = true;
+							        
+							        $isSelectCss = 'style="background-color: #3168FF;"';
+							    }
+							    if($value == 28){ 
+							        $auction1 = true;
+							    }
+							    if($value == 29){ 
+							        $exchange1 = true;
+							    }
+							    if($value == 30){ 
+							        $rent1 = true;
+							    }
+							    if($value == 31){ 
+							        $donation1 = true;
+							    }
+							    if($value == 32){ 
+							        $giveaway1 = true;
+							    }
+							  }?>
+
+                            <?php if($buy1){ ?>
+
+                            <a <?=($exchange[0]==27)?'style="background-color:#3168FF"':''?> myclass="buy-block" class="col" href="javascript:void(0)">
+            
+                
+                                        
+                                        <h6 class="buy-menu-text" > <i class="fas fa-shopping-basket buy-buy buy-now"> </i> Buy Now
+                                        </h6>
+            
+            
+                                    </a>
+                            <?php } if($auction1){ ?>
+                                <a  <?=($exchange[0]==28)?' style="background-color:#327BE9"':''?> myclass="auction-block " class="col" href="javascript:void(0)">
+        
+                                    <h6 class="buy-menu-text"><i class="fas fa-file-signature buy-buy "></i> Auction</h6>
+        
+                                </a>
+                            <?php } if($exchange1){ ?>
+                                <a  <?=($exchange[0]==29)?' style="background-color:#327BE9"':''?>  myclass="ex-block" class="col" href="javascript:void(0)">
+        
+                                    <h6 class="buy-menu-text">  <i class="fas fa-sync buy-buy "> </i> Exchange</h6>
+        
+                                </a>
+                            <?php } if($rent1){ ?>
+                                <a  <?=($exchange[0]==30)?' style="background-color:#327BE9"':''?>  myclass="rent-block" class="col" href="javascript:void(0)">
+        
+                                    <h6 class="buy-menu-text">  <i class="fas fa-dollar-sign buy-buy"></i>
+                                        </i> Rent</h6>
+        
+                                </a>
+                            <?php } if($donation1){ ?>
+                                    <a  <?=($exchange[0]==31)?' style="background-color:#327BE9"':''?>  myclass="don-block" class="col" href="javascript:void(0)"  >
+                                    
+                                        <h6 class="buy-menu-text"> <i class="fas fa-hand-holding-usd buy-buy" ></i>
+                                            Donation
+                                        </h6>
+                                        
+                                     
+            
+                                    </a>
+                            <?php } if($giveaway1){ ?>
+                                <a  <?=($exchange[0]==32)?' style="background-color:#327BE9"':''?>  myclass="give-block" class="col" href="javascript:void(0)">
+        
+                                    <h6 class="buy-menu-text">  <i class="fas fa-gift buy-buy"></i> Giveaway</h6>
+        
+                                </a>
+
+                            <?php } ?>
+
+
+
+                    </div>
+                    <br>
+ <input type="hidden" id="whichTab" name = "type1" value="<?=$exchange[0]?>">
+                    <span class="buy-content" >
+                        
+                     
+                       
+                        
+
+                        <!-- Seller option -->
+                        <span class="buy-block">
+
+
+
+                                    
+
+                        </span>
+
+
+
+                        <!-- Auction -->
+    <div class="alertmsg"></div> <!-- MSG -->
+    
+                        <span class="auction-block">
+                            <div class="card" id="auction-option">
+                                <h5 class="c-header">
+                                    Auction
+                                </h5>
+
+                                <div class="container">
+
+                                    <div class="card-body">
+ <form  id = "auc" method = "POST">
+<?php
+$qry1 = "SELECT `id`, offerprice FROM `Posthist` WHERE posttype = 28 and postid = ".$atid;
+                    $result1 = $conn->query($qry1);
+                    $row1 = $result1->fetch_assoc();
+                    $r = $result1->num_rows;
+                    $bidstart = $row["auc_amount"];
+        
+        
+?>
+                         
+                                         <div class="row">
+                  <p class="bid-day"> Bid end in 4days 2 minutes
+                    <a href="bid_his.php?id=<?= $atid ?>" id = "total_bid" class="bid-count"><?= $r ?> bids so far...</a>
+                  </p>
+                </div>
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <input type = "text" class="form-control" type="text" placeholder="bid here" id="bid" name = "bid" value = "<?= $bid ?>">
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <button type = "button" class="btn btn-primary" id = "aucbtn"> Place Bid </button>
+                                            </div>
+                                            <div class="col-sm-3" id="bid-text">
+                                                <p>You have to bid at least <?= $bidstart ?></p>
+                                            </div>
+                                            
+                                             <br>
+<?php
+$qry1 = "SELECT `dealprice` FROM `Posthist` WHERE posttype = 28 and postid = ".$atid." Order By dealprice DESC LIMIT 1";
+$result1 = $conn->query($qry1); 
+$row1 = $result1->fetch_assoc();
+
+$hbid =  $row1["dealprice"]; 
+
+if($hbid == ''){
+    $hbid = 0;
+}
+        
+?>                                            
+                                             <div class="col-sm-4">
+                                         <h6 id="bvalue">Highest Bid : $<?= $hbid ?></h6>
+                                             </div>
+                                             
+                                        </div>
+                                        <br>
+</form>
+                                       
+                                    </div>
+                                </div>
+                                <br>
+                            </div>
+                            <br>
+                        </span>
+
+
+
+
+                        <!-- Exchange -->
+                        <span class="ex-block">
+                            <div class="card " id="ex-option">
+
+                                <div class="container">
+
+                                    <div class="card-body" id="give-card">
+                                        <br>
+
+                                        <h5 class="c-header">Exchange</h5>
+
+                                        <br>
+<div class="alertmsg"></div> <!-- Exchange MSG -->
+
+                                        <div class="container ex-box">
+                                            <p>Provide Your Exchange Offer: </p>
+                                            <div class="row">
+                                                <div class="col-md-12 text-center">
+                                                    <table style="width: 100%;" class="text-center extable">
+                                                        <tr>
+                                                            <th>Images</th>
+                                                            <th>Name</th>
+                                                            <th>Value</th>
+                                                            <th>Details</th>
+                                                        </tr>
+                          <?php
+                                $qry1 = "SELECT name, amount, details, images FROM `auction_details` WHERE buyer_id = ".$_SESSION["cms_user"]." and seller_post_id = ".$atid." ";
+                                $result1 = $conn->query($qry1); 
+                                while($row1 = $result1->fetch_assoc()){
+                                    $photo="./img/exchange/".$row1["images"];
+                                    
+                            ?>  
+                                                        <tr>
+                                                            <td> <img class="table-image" src="<?= $photo ?>" alt="">
+                                                            </td>
+                                                            <td><?= $row1["name"] ?></td>
+                                                            <td><?= $row1["amount"] ?></td>
+                                                            <td><?= $row1["details"] ?></td>
+                                                        </tr>
+                            <?php } ?>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <br>
+    
+                                            <div class="row">
+									<div class=" seller-btn">
+                                                <a href="" data-toggle="modal" data-target="#addModal"
+                                                    style="color: #44546a !important;">+add
+                                                    details</a>
+
+                                                <div class="modal fade" id="addModal" role="dialog">
+                                                    <div class="modal-dialog">
+
+                                                        <!-- Modal content-->
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h4 class="modal-title">Place your excnahge offer</h4>
+                                                                <button type="button" class="closer"
+                                                                    data-dismiss="modal">&times;
+                                                                </button>
+
+                                                            </div>
+                                                        <form  id = "exc" method = "POST">
+                                                            <div class="modal-body">
+                                                                
+                                                                    <div class="ups-img">
+                                                                        <div class="post-header">
+                                                                            <h5>Add Photos</h5>
+                                                                        </div>
+                                                                        <hr>
+                                                                        <label for="file"
+                                                                            class="custom-file-upload">
+                                                                            <i class="fas fa-camera"></i> Add Photo
+                                                                        </label>
+                                                                        <input id="file" name = "file" type="file" />
+                                                                    </div>
+                                                                    <br>
+
+                                                                    <label for="ex-name"> Name</label>
+                                                                    <input type="text" name = "name" class="form-control"
+                                                                        id="ex-name" value = "<?= $name ?>">
+                                                                    <br>
+                                                                    <label for="ex-value">Value</label>
+                                                                    <input type="number" name = "amount" class="form-control"
+                                                                        id="ex-value" value = "<?= $amount ?>">
+                                                                    <br>
+
+                                                                    <br>
+
+                                                                    <textarea name="details" id="contact-sell"
+                                                                        cols="37" rows="5" value = "<?= $details ?>"></textarea>
+                                                                
+
+
+                                                                <div class="modal-footer">
+                                                                    <button type = "button" class="btn btn-primary btn-block" id = "excbtn"> Submit </button>
+                                                                </div>
+                                                            </div>
+                                                            </form>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <br>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <br>
+                                    <br>
+                                </div>
+
+                                <br>
+                            </div>
+                            </div>
+                            <br>
+
+
+
+                        </span>
+
+
+                        <!-- Rent -->
+                        <span class="rent-block">
+                            <div class="card" id="rent-option">
+                               
+                               <div class="container">
+
+                                    <div class="card-body">
+                                        <br>
+                                        
+                                        
+                                         <div>
+
+
+
+                                            <h5 id="rent-pricing">Rent Pricing</h5>
+                                            <br>
+                                            <div class="row text-center">
+                                            <?php if($row["rent_day"] != ''){ ?>
+                                                <div class="col-sm-4">
+                                                    <h6>Daily rental Fee</h6>
+                                                        <h6 class="rent-price">$<?= $row["rent_day"] ?></h6>
+                                                </div>
+                                            <?php } if($row["rent_week"] != ''){ ?>
+                                                <div class="col-sm-4">
+                                                    <h6>Weekly Rental Fee</h6>
+                                                    
+                                                        <h6 class="rent-price">$<?= $row["rent_week"] ?></h6>
+                                                    
+
+                                                </div>
+                                            <?php } if($row["rent_month"] != ''){ ?>
+                                                <div class="col-sm-4">
+                                                    <h6>Weekly Rental Fee</h6>
+                                                    
+                                                        <h6 class="rent-price">$<?= $row["rent_month"] ?></h6>
+                                                    
+
+                                                </div>
+                                            <?php } ?>
+                                            </div>
+
+                                        </div>
+                                        <br>
+                                        
+                                         <h5 class="c-header">Renting Options</h5>
+                                        
+                                        <div class="row text-center" id="buttons">
+
+
+                                            <div class="col-sm">
+                                                <a href="javascript:void(0) " rclass = "rent-day" class="btn btn-block " id="rent-day">Daily Rent</a>
+                                            </div>
+                                            <div class="col-sm">
+                                                <a href="javascript:void(0) " rclass = "rent-week" id="rent-week" class="btn btn-block">Weekly Rent</a>
+                                            </div>
+                                            <div class="col-sm">
+                                                <a href="  javascript:void(0)  " rclass = "rent-month" id="rent-month"
+                                                    class="btn btn-block ">Monthly Rent</a>
+                                            </div>
+
+
+
+
+                                        </div>
+                                        <br>
+<input type="hidden" id="rentwhichTab" name = "rent_per" >
+    
+                        
+                        
+                                        <div class="rent-time-block">
+                                            <div class=" row rent-time-f">
+
+                                                <div class="col-2"></div>
+                                                <div class="col-md rent-count">
+                                                    <div class="row">
+                                                        <h6 id="rent-f-text">Rent for: </h6>
+                                                        <input type=" number" name = "rent_value" class="form" id="rent-f">
+                                                        <label for="rent-f" id="rent-day-f"> days</label>
+                                                        <label for="rent-f" id="rent-week-f">weeks</label>
+                                                        <label for="rent-f" id="rent-month-f">months</label>
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <br>
+                                                <br>
+                                                <div class=" col-md rent-date">
+
+                                                    <label for="stdate" id="stdate-lab">Start Date:</label>
+                                                    <input type="date" id="stdate" name="stdate">
+
+                                                </div>
+                                                <div class="col-2"></div>
+
+                                            </div>
+
+                                        </div>
+
+                                     
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+
+
+
+
+
+
+
+
+
+                        </span>
+
+
+
+                        <!-- Donation -->
+                        <span class="don-block">
+
+                            <div class="card " id="don-option">
+                                <h5 class="c-header">Donation </h5>
+                                <div class="container">
+
+                                    <div class="card-body">
+
+
+
+                                        <br>
+                                        <div class="form-group">
+                                            <label for="exampleFormControlTextarea1">Why me?</label>
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" name = "whyme1" rows="3"><?php echo $whyme ?></textarea>
+                                        </div>
+
+
+
+
+
+                                    </div>
+                                    <br>
+                                </div>
+
+                            </div>
+                            <br>
+                        </span>
+
+
+
+                        <!-- Giveaway -->
+
+                        <span class="give-block">
+                            <div class="card " id="give-option">
+                                <h5 class="c-header">Giveaway </h5>
+                                <div class="container">
+
+                                    <div class="card-body">
+
+
+
+                                        <br>
+                                        <div class="form-group">
+                                            <label for="exampleFormControlTextarea1">Why me?</label>
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" name = "whyme2" rows="3"><?php echo $whyme ?></textarea>
+                                        </div>
+
+
+
+
+
+                                    </div>
+                                    <br>
+
+                                </div>
+                            </div>
+                            <br>
+                        </span>
+
+
+
+
+                        <div class="ship-pay">
+                            <!-- shipping -->
+                            <div id="shipping">
+                                <div class="card">
+
+                                    <div class="card-body">
+
+                                        <h5 class="c-header">Shipping method: </h5>
+                                        
+                                        <br>
+                                        <div class="container">
+<?php $qry1 = "SELECT `ID`, `title` FROM `postitem` where deliverymode like ' %1%' and ID=".$atid;
+                                        $result1 = $conn->query($qry1); 
+                                        if ($result1->num_rows > 0) 
+                                        { while($row1 = $result1->fetch_assoc()){ if($ship == 1) {?>
+                                        
+            								<input type=" radio" onclick="myFunction()" id="ship" name="shipping" value=1 checked>
+
+                                <label for="ship">Shipping</label>
+                                <?php }else { ?>
+                                <input type="radio" onclick="myFunction()" id="ship" name="shipping" value=1>
+
+                                <label for="ship">Shipping</label>
+                                <?php }}} ?>
+
+                                <?php $qry1 = "SELECT `ID`, `title` FROM `postitem` where deliverymode like '%2%' and ID = ".$atid;
+                                        $result1 = $conn->query($qry1); 
+                                        if ($result1->num_rows > 0) 
+                                        { while($row1 = $result1->fetch_assoc()){ if($ship == 2) { ?>
+                                <input type="radio" name="shipping" id="pick" value=2 checked
+                                    style="margin-left: 10px;">
+                                <label for="pick"> Pickup </label>
+
+                                <?php } else { ?>
+
+                                <input type="radio" name="shipping" id="pick" value=2 style="margin-left: 10px;">
+                                <label for="pick"> Pickup </label>
+
+                                <?php }}} ?>
+                        </div>
+
+
+                        <br>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- Ship to -->
+
+                <div class="card" id="my">
+                    <div class="card-body">
+                        <h5 class="c-header">Ship To: </h5>
+
+                        <div class="container">
+                            <div class="row" id="address">
+                                <a href="#">+add new address</a>
+                            </div>
+
+                            <br>
+                            <br>
+                            <div class="container">
+                                <div class="row">
+
+                                    <div class="col-md-4">
+                                        <div class="pad" id="sender">
+                                            <div class="row">
+                                                <div class="col-8">
+                                                    <div class=" send-detail">
+                                                        <p>House #44, Sector 1, Road 14</p>
+                                                        <p>Uttara, Dhaka-1230</p>
+                                                        <p>Bangladesh</p>
+                                                        <p>8887776665</p>
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-4">
+                                                    <a href="#" id="del"> <i class="far fa-trash-alt"></i>
+                                                    </a>
+                                                    <a href="#" id="edit" alt="edit"> <i class="far fa-edit"></i>
+                                                    </a>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="pad" id="sender">
+                                            <div class="row">
+                                                <div class="col-8">
+                                                    <p>House #44, Sector 1, Road 14</p>
+                                                    <p>Uttara, Dhaka-1230</p>
+                                                    <p>Bangladesh</p>
+                                                    <p>8887776665</p>
+
+                                                </div>
+                                                <div class="col-4">
+                                                    <a href="#"> <i class="far fa-trash-alt"></i> </a>
+                                                    <a href="#" id="edit" alt="edit"> <i class="far fa-edit"></i>
+                                                    </a>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="pad" id="sender">
+                                            <div class="row">
+                                                <div class="col-8">
+                                                    <p>House #44, Sector 1, Road 14</p>
+                                                    <p>Uttara, Dhaka-1230</p>
+                                                    <p>Bangladesh</p>
+                                                    <p>8887776665</p>
+
+                                                </div>
+                                                <div class="col-4">
+                                                    <a href="#" id="del "> <i class=" far fa-trash-alt"></i>
+                                                    </a>
+                                                    <a href="#" id="edit" alt="edit"> <i class="far fa-edit"></i>
+                                                    </a>
+
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+
+
+                        <br>
+                    </div>
+                    <br>
+
+                </div>
+
+
+
+                <div class="card" id="mypick">
+                    <div class="card-body">
+                        <h5 class="c-header"> Pick up Location</h5>
+                        <div class="container">
+
+                            <div class="pick-detail ">
+                                <div class="container">
+                                    <p>
+                                        <?php echo $row["postuseraddress"]  ?>
+                                    </p>
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <br>
+
+
+
+
+
+
+            <div class="card" id="payment">
+
+                <div class="card-body">
+
+
+                    <h5 class="c-header">Payment </h5>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="row">
+                                    <div class="col">
+                                        <?php $qry1 = "SELECT `ID`, `title` FROM `postitem` where paymode like '%6%' and ID = ".$atid;
+                                                    $result1 = $conn->query($qry1); 
+                                                    if ($result1->num_rows > 0) 
+                                                    { while($row1 = $result1->fetch_assoc()){ if($pay == 1){ ?>
+                                        <input type="radio" name="payment" id="buy-cod" value=1 checked>
+                                        <label for="buy-cod"> Cash on Delivery </label>
+                                        <?php }else {?>
+                                        <input type="radio" name="payment" id="buy-cod" value=1>
+                                        <label for="buy-cod"> Cash on Delivery </label>
+                                        <?php }}} ?>
+
+                                        <?php $qry1 = "SELECT `ID`, `title` FROM `postitem` where paymode like '%7%' and ID = ".$atid;
+                                                    $result1 = $conn->query($qry1); 
+                                                    if ($result1->num_rows > 0) 
+                                                    { while($row1 = $result1->fetch_assoc()){ if($pay == 2){ ?>
+                                        <input type="radio" name="payment" id="card" value=2 checked
+                                            style="margin-left: 15px;">
+                                        <label for="card"> Card Pay </label>
+                                        <?php } else { ?>
+                                        <input type="radio" name="payment" id="card" value=2 style="margin-left: 15px;">
+                                        <label for="card"> Card Pay </label>
+                                        <?php }}} ?>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="card-form">
+                                    <form>
+                                        <input class="form-control" type="text" placeholder=" Card Name" id="">
+                                        <br>
+                                        <input class="form-control" type="text" placeholder="Credit card/Debit Card"
+                                            id="">
+                                        <br>
+                                        <div class="row">
+                                            <div class="col-sm-3" style="float: left;">
+                                                <input class="form-control" type="text" placeholder="MM/YY" id="">
+                                                <br>
+                                            </div>
+
+                                            <div class="col-sm-3">
+                                                <input class="form-control" type="text" placeholder="CVC" id="">
+                                                <br>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <!-- row -->
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="container">
+                            <a href="#">
+                                <p> Do you have a voucher? </p>
+                            </a>
+                            <p>By making this product you agree to our <a href="#">terms and
+                                    conditions</a>.
+                            </p>
+
+
+
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+            </div>
+            <br>
+
+
+
+
+        </div>
+
+
+
+
+
+        <!-- place order button -->
+        <button id="placeorder-btn" type="submit" class="btn btn-primary btn-block text-center">Place
+            Order</button>
+
+
+
+
+
+
+        </span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <?php }} ?>
+
+        </div>
+
+
+
+
+        </div>
+        </div>
+
+    </form>
+    <!-- New Footer -->
+    <footer class="footer-distributed">
+
+        <div class="footer-left">
+
+            <h3>CashMyStash</h3>
+
+            <p class="footer-links">
+                <a href="#">Home</a>
+                .
+                <a href="#">About</a>
+                .
+                <a href="#">Faq</a>
+                .
+                <a href="#">Contact</a>
+            </p>
+
+            <p class="footer-company-name">CashMyStash &copy; 2020</p>
+        </div>
+
+        <div class="footer-center">
+
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p><span>221b Baker Street</span> London, United Kingdom</p>
+            </div>
+
+            <div>
+                <i class="fas fa-phone"></i>
+                <p>+2211224</p>
+            </div>
+
+            <div>
+                <i class="far fa-envelope"></i>
+                <p><a href="#">contact@cashmystash.com</a></p>
+            </div>
+
+        </div>
+
+        <div class="footer-right">
+
+            <p class="footer-company-about">
+                <span>About the company</span>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat voluptas deserunt voluptatum a tenetur
+                quae cupiditate ex repellat amet nobis laudantium, beatae mollitia alias eaque blanditiis natus
+                architecto magni itaque.
+            </p>
+
+
+
+        </div>
+
+    </footer>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+    <script src="assets/js/custom.js"></script>
+
+    <!-- carousel -->
+
+    <script src="./assets/js/owl.carousel.min.js"></script>
+    <script src="./assets/js/jquer.js"></script>
+
+    <script src="assets/js/slick.min.js"></script>
+
+    <script>
+        $(function () {
+            $('.pdt-gal1').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false,
+                fade: true,
+                asNavFor: '.pdt-thumb1',
+                autoplay: true,
+                pauseOnHover: true,
+            });
+
+            $('.pdt-thumb1').slick({
+                slidesToShow: 4,
+                infinite: true,
+                slidesToScroll: 1,
+                asNavFor: '.pdt-gal1',
+                focusOnSelect: true,
+                autoplay: false,
+                vertical: true,
+                verticalSwiping: true,
+                arrows: false,
+                centerMode: true,
+            });
+
+
+        });			
+    </script>
+
+    <!-- custom like -->
+
+    <script>
+        $(this).animate({ fontWeight: 'normal' });
+
+        $(".likes").click(function () {
+
+            $(this).find('.fa-heart').animate({ fontSize: '30px', fontWeight: '900' });
+
+
+        });
+
+
+    </script>
+
+
+    <!-- Shipping-pickup -->
+
+
+
+    <script>
+        $(document).ready(function () {
+
+            $("#my").attr('style', 'display:none;');
+
+            $("input[name=shipping]:radio").change(function () {
+
+
+                if ($('#ship').is(':checked')) {
+                    $("#my").attr('style', 'display:block;');
+                } else {
+                    $("#my").attr('style', 'display:none;');
+                }
+            });
+
+            //attr('checked', true);
+
+        });
+
+    </script>
+
+    <script>
+        $(document).ready(function () {
+
+            $("#mypick").attr('style', 'display:none;');
+
+            $("input[name=shipping]:radio").change(function () {
+
+
+                if ($('#pick').is(':checked')) {
+                    $("#mypick").attr('style', 'display:block;');
+                } else {
+                    $("#mypick").attr('style', 'display:none;');
+                }
+            });
+
+            //attr('checked', true);
+
+        });
+
+    </script>
+
+
+    <script>
+        $(document).ready(function () {
+
+            $(".cod-amount").attr('style', 'display:none;');
+
+            $("input[name=payment]:radio").change(function () {
+
+
+                if ($('#buy-cod').is(':checked')) {
+                    $(".cod-amount").attr('style', 'display:block;');
+                } else {
+                    $(".cod-amount").attr('style', 'display:none;');
+                }
+            });
+
+            //attr('checked', true);
+
+        });
+
+    </script>
+
+    <script>
+        $(document).ready(function () {
+
+            $(".card-form").attr('style', 'display:none;');
+
+            $("input[name=payment]:radio").change(function () {
+
+
+                if ($('#card').is(':checked')) {
+                    $(".card-form").attr('style', 'display:block;');
+                } else {
+                    $(".card-form").attr('style', 'display:none;');
+                }
+            });
+
+
+
+        });
+
+    </script>
+
+
+
+    <!-- display-hide -->
+    <script>
+        $(document).ready(function () {
+
+
+            $(".buy-content span").attr("style", "display:none");
+
+            // $(".buy-content .buy-option").attr("style", "display:none");
+
+            //$("#buy-option-body a:first-child").attr("style", "background-color:#217CB8");
+            //#44546a
+
+            $(".buy-menu a").click(function () {
+                $(".buy-content span").attr("style", "display:none");
+
+                var mclass = $(this).attr("myclass");
+
+                //alert(mclass);
+
+                //alert($("#wt").val());
+                $("#whichTab").val(mclass);
+
+                $(".buy-content ." + mclass).attr("style", "display:block");
+                $(".buy-menu a").attr("style", "background-color:#e1e3e2");
+                $(this).attr("style", "background-color: #3168FF");
+                $("#payment, #shipping, #placeorder-btn").attr("style", "display:none;")
+                if (mclass == 'don-block' || mclass == 'give-block') {
+                    $("#payment").attr("style", "display:none;");
+                    $("#placeorder-btn, #shipping").attr("style", "display: block");
+                }
+
+                if (mclass == 'buy-block' || mclass == 'ex-block') {
+                    $("#payment, #shipping").attr("style", "display:block;");
+                    $("#placeorder-btn").attr("style", "display: block;");
+                }
+
+            });
+
+
+
+
+
+            //default tab handling
+            var myFirstTabClass = $(".buy-menu a:first-child").attr("myclass");
+            $("#whichTab").val(myFirstTabClass);
+
+            $(".buy-content ." + myFirstTabClass).attr("style", "display:block");
+
+            if (myFirstTabClass == 'don-block' || myFirstTabClass == 'give-block') {
+                $(" #shipping").attr("style", "display:none;")
+            }
+
+            if (myFirstTabClass == 'auction-block' || myFirstTabClass == 'rent-block') {
+                $("#payment, #shipping").attr("style", "display:none;")
+            }
+
+
+
+        });
+    </script>
+
+
+
+    <!--RENT BLOCK -->
+    <script>
+        $(document).ready(function () {
+            $("#rent-day-f").attr('style', 'display:none');
+            $("#rent-week-f").attr('style', 'display:none');
+            $("#rent-month-f").attr('style', 'display:none');
+            $("#rent-day").click(function () {
+
+                var nclass = $(this).attr("rclass");
+                $("#rentwhichTab").val(nclass);
+
+
+                $("#rent-day").attr('style', 'background-color: #327BE9');
+                $("#rent-week").attr('style', 'background-color:lightgray');
+                $("#rent-month").attr('style', 'background-color: lightgray');
+
+                $("#rent-day-f").show();
+                $("#rent-week-f").hide();
+                $("#rent-month-f").hide();
+            });
+            $("#rent-week").click(function () {
+
+                var nclass = $(this).attr("rclass");
+                $("#rentwhichTab").val(nclass);
+
+                $("#rent-day").attr('style', 'background-color: lightgray');
+                $("#rent-week").attr('style', 'background-color: #327BE9');
+                $("#rent-month").attr('style', 'background-color: lightgray');
+
+                $("#rent-week-f").show();
+                $("#rent-day-f").hide();
+                $("#rent-month-f").hide();
+
+            });
+            $("#rent-month").click(function () {
+
+                var nclass = $(this).attr("rclass");
+                $("#rentwhichTab").val(nclass);
+
+                $("#rent-day").attr('style', 'background-color: lightgray');
+                $("#rent-week").attr('style', 'background-color: lightgray ');
+                $("#rent-month").attr('style', 'background-color: #327BE9');
+
+                $("#rent-week-f").hide();
+                $("#rent-day-f").hide();
+                $("#rent-month-f").show();
+
+            });
+        });
+    </script>
+
+    <script>
+        let stdate = new Date().toISOString().substr(0, 10);
+        document.querySelector("#stdate").value = stdate;
+
+
+    </script>
+
+    <!-- Modal Submit -->
+
+    <!-- +add -->
+
+    <script>
+        $(document).ready(function () {
+            $("#excbtn").click(function () {
+                submitform();
+            });
+        });
+
+
+        function submitform() {
+            //alert("BOOM");
+
+            var form = $("#exc");
+            var name1 = $("input[name=name]").val();
+            var amount = $("input[name=amount]").val();
+            var details = $("textarea[name=details]").val();
+            //var photo = $("input[name=photo]").val();
+            var id = <?= $atid ?>;
+            //photo
+            var fd = new FormData();
+            var files = $('#file')[0].files;
+            fd.append('file', files[0]);
+            fd.append('name1', name1);
+            fd.append('amount', amount);
+            fd.append('details', details)
+            fd.append('id', id)
+
+            $.ajax({
+                type: "POST",
+                url: "phpajax/placeexchange.php",
+                //data:{name:name, amount:amount, details:details, id:id},
+                data: fd,
+                dataType: "json",
+                contentType: false,
+                processData: false,
+                success: function (res) {
+                    //$('.display-msg').html(res);
+                    messageAlertLong(res.msg, 'alert-success');
+
+
+
+                    var str1 = '<tr><td> <img class="table-image" src="' + res.imgpath + '" alt=""> </td> <td>' + name1 + '</td> <td></td>' + amount + ' <td>' + details + '</td> </tr>';
+                    $(".extable").append(str1);
+
+
+                    jQuery.noConflict();
+                    $('.closer').trigger('click');
+                    // $('#addModal').modal('toggle');
+
+                },
+                error: function () {
+                    alert("Error");
+                }
+            });
+        }
+    </script>
+
+    <!-- +new Auction -->
+
+    <script>
+        $(document).ready(function () {
+            $("#aucbtn").click(function () {
+                submitaucform();
+            });
+        });
+
+
+        function submitaucform() {
+            //alert("BOOM");
+            var bid = $("input[name=bid]").val();
+            var bidstart = <?= $bidstart ?>;
+            var id = <?= $atid ?>;
+
+            $.ajax({
+                type: "POST",
+                url: "phpajax/placebid.php",
+                //data:{name:name, amount:amount, details:details, id:id},
+                data: { bid: bid, bidstart: bidstart, id: id },
+                success: function (res) {
+                    //$('.display-msg').html(res);
+                    messageAlertLong(res, 'alert-success');
+
+                    var ctxt = <?= $r ?>;
+                    ctxt = ctxt + 1;
+
+                    var hbid = <?= $hbid ?>;
+
+                    if (hbid < bid) {
+                        fbid = bid;
+                    }
+
+                    ('#total_bid').html(ctxt);
+                    ('#bvalue1').html(fbid);
+                },
+                error: function () {
+                    alert("Error");
+                }
+            });
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>

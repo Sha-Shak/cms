@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap Multi Step Form with Progress Bar Example </title>
+
+  <!-- Bootstrap 4 CSS -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css'>
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css"
+    integrity="sha512-OdEXQYCOldjqUEsuMKsZRj93Ht23QRlhIb8E/X0sbwZhme8eUw6g8q7AdxGJKakcBbv7+/PX0Gc2btf7Ru8cZA=="
+    crossorigin="anonymous" />
+
+  <!-- Style CSS -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <!-- Demo CSS -->
+  <link rel="stylesheet" href="css/demo.css">
+
+  <style>
+    .add-custom-radio input {
+      display: none;
+    }
+
+    .add-radio-btn {
+      margin: 5px;
+      margin-top: 20px;
+      width: 200px;
+      height: 120px;
+      border: 3px solid transparent;
+      display: inline-block;
+      position: relative;
+      text-align: center;
+      box-shadow: 0 0 10px #c3c3c3a6;
+      cursor: pointer;
+      padding: 5px;
+      overflow: auto;
+    }
+
+    .add-radio-btn>i {
+      color: #ffffff;
+      background-color: black;
+      font-size: 14px;
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%) scale(4);
+      border-radius: 50px;
+      padding: 3px;
+      transition: 0.2s;
+      pointer-events: none;
+      opacity: 0;
+    }
+
+    .add-custom-radio input:checked+.add-radio-btn {
+      border: 2px solid black;
+      border-radius: 5px;
+    }
+
+    .add-custom-radio input:checked+.add-radio-btn>i {
+      opacity: 1;
+      transform: translateX(-50%) scale(1);
+    }
+
+    .code_group {
+      margin-bottom: 60px;
+    }
+
+    .code_group .form-control {
+      border: 0;
+      border-bottom: 1px solid #a1a7ac;
+      border-radius: 0;
+      display: inline-block;
+      width: 30px;
+      font-size: 30px;
+      color: #5f6771;
+      padding: 0;
+      margin-right: 7px;
+      text-align: center;
+      line-height: 1;
+    }
+  </style>
+
+</head>
+
+<body>
+
+
+
+
+  <!-- Start Multiform HTML -->
+  <section class="multi_step_form">
+    <form id="msform">
+      <!-- Tittle -->
+
+      <!-- progressbar -->
+      <ul id="progressbar">
+        <li class="active">Select Post Type</li>
+        <li>Product Details</li>
+        <li>Shipping and Payment</li>
+      </ul>
+      <!-- fieldsets -->
+      <fieldset>
+        <style>
+          .fa-stack-2x {
+            color: black;
+            font-size: 16px !important;
+          }
+
+          .fa-stack-1x {
+            color: white;
+            margin-left: 4px;
+            font-weight: normal;
+          }
+        </style>
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+        <span class="fa-stack">
+          <span class="fa fa-comment fa-stack-2x"></span>
+          <strong class="fa-stack-1x">
+            2
+          </strong>
+        </span>
+
+        <div class="code_group">
+          <input type="text" class="form-control" placeholder="0">
+          <input type="text" class="form-control" placeholder="0">
+          <input type="text" class="form-control" placeholder="0">
+          <input type="text" class="form-control" placeholder="0">
+        </div>
+
+        <div class="pass-field">
+          <input type="text" class="form-control" placeholder="New Password">
+          <input type="text" class="form-control" placeholder="Confirm new Password">
+        </div>
+        <button type="button" class="next action-button">Continue</button>
+      </fieldset>
+      <div class="row">
+        <label class="c-ustom-radio add-custom-radio">
+          <input type="radio" name="radio" />
+          <span class="r-adio-btn add-radio-btn"></i>
+
+            <h3 class="add-text">Lorem ipsum dolor sit amet</h3>
+            <h3 class="add-text">Lorem ipsum dolor sit amet</h3>
+            <h3 class="add-text">12345678</h3>
+
+          </span>
+        </label>
+        <label class="c-ustom-radio add-custom-radio">
+          <input type="radio" name="radio" />
+          <span class="r-adio-btn add-radio-btn"></i>
+
+            <h3 class="add-text">Lorem ipsum dolor sit amet</h3>
+            <h3 class="add-text">Lorem ipsum dolor sit amet</h3>
+            <h3 class="add-text">12345678</h3>
+
+          </span>
+        </label>
+        <label class="c-ustom-radio add-custom-radio">
+          <input type="radio" name="radio" />
+          <span class="r-adio-btn add-radio-btn"></i>
+
+            <h3 class="add-text">Lorem ipsum dolor sit amet</h3>
+            <h3 class="add-text">Lorem ipsum dolor sit amet</h3>
+            <h3 class="add-text">12345678</h3>
+
+          </span>
+        </label>
+      </div>
+      <fieldset>
+
+        <button type="button" class="action-button previous previous_button">Back</button>
+        <button type="button" class="next action-button">Continue</button>
+      </fieldset>
+      <fieldset>
+
+        <button type="button" class="action-button previous previous_button">Back</button>
+        <a href="#" class="action-button">Finish</a>
+      </fieldset>
+    </form>
+  </section>
+  <!-- END Multiform HTML -->
+
+
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <s cript src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
+
+    <script src="./assets/js/script.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
+      integrity="sha512-RXf+QSDCUQs5uwRKaDoXt55jygZZm2V++WUZduaU/Ui/9EGp3f/2KZVahFZBKGH0s774sd3HmrhUy+SgOFQLVQ=="
+      crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+</body>
+
+</html>

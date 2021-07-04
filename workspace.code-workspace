@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../bitflow_html"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "cms.bithut.com.bd"
+	}
+}

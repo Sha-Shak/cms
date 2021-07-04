@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="" viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flow-File</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../ass ets/css/productlist.css">
+
+    <style>
+        a:link {
+            text-decoration: none;
+        }
+
+        a:active {
+            background-color: rgb(16, 172, 245);
+        }
+
+        body {
+            margin: 0px 0px;
+        }
+
+        .pro-header {
+            background-color: rgb(16, 172, 245);
+            color: white;
+            padding: 10px 25px;
+        }
+
+        .pro-header {
+            max-height: 90px;
+        }
+
+        .pro-pic {
+            max-width: 150px;
+            border: 3px solid white;
+            border-radius: 50%;
+        }
+
+        .pro-name-col {
+            margin: 0px 30px;
+        }
+
+        .pro-content {
+            margin: 0px 10px;
+        }
+
+        .pro-content-side {
+            padding: 10px;
+            margin: 10px;
+            margin-left: 0px;
+            margin-top: 15px;
+            padding-top: 0px;
+
+        }
+
+        .rep-per-img {
+            max-width: 40px;
+            border: 1px solid white;
+            border-radius: 50%;
+
+        }
+
+        .rep-per-name-col {
+            padding: 0px;
+            margin-left: 35px;
+        }
+
+        .rep-per-name,
+        .rep-per-desig {
+            display: block !important;
+        }
+
+        .pro-tab {
+            margin-top: 10px;
+            margin-left: 10px;
+            margin-bottom: 20px;
+        }
+
+        .pro-tab-name {
+            padding: 5px 10px;
+            color: rgb(158, 158, 158);
+        }
+
+        .table-status-title {
+            border-bottom: 1px solid black;
+            margin-bottom: 0px;
+            color: rgb(16, 172, 245);
+
+        }
+
+        .table-status thead tr {
+            padding: 2px 10px;
+
+        }
+
+        .my-table li {
+
+            border-radius: 0px;
+            padding: 2px 10px;
+            display: flex;
+            justify-content: space-between;
+            margin: 2px 15px;
+            margin-bottom: 7px;
+            white-space: normal;
+
+        }
+
+        .my-table .table-header {
+            background-color: #10ACF5;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            color: white;
+            box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+
+        }
+
+        ul.my-table {
+            margin-bottom: 10px;
+        }
+
+        .my-table .table-row {
+            background-color: #ffffff;
+            box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.2);
+        }
+
+        .my-table {
+            padding-left: 0px;
+        }
+
+        .cont-no,
+        .cont-mail,
+        .cont-location,
+        .cont-hire-date-lab,
+        .cont-hire-date,
+        .cont-rep-per-lab,
+        .cont-location-lab,
+        .cont-report-person {
+            color: rgb(158, 158, 158);
+            padding: 5px 10px;
+            white-space: normal;
+        }
+
+        .cont-rep-per-lab,
+        .cont-hire-date-lab,
+        .cont-location-lab {
+            color: black;
+            padding-bottom: 0px;
+        }
+
+        .cus-hr {
+            margin-top: 0px;
+        }
+
+        .table-status-title {
+            padding: 10px 0px;
+            margin-bottom: 15px;
+        }
+
+        .rep-per-desig {
+            font-style: italic;
+        }
+
+        .rep-per-img {
+            margin: 0p 15px;
+        }
+
+        .ed-info-box {
+            margin: 5px;
+            margin-left: 0px;
+            margin-bottom: 10px;
+            border: 0.5px solid lightgray;
+            padding: 1px 10px;
+            box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.2);
+            color: gray;
+            width: auto;
+            width: 100%;
+            height: auto;
+            overflow: auto;
+            white-space: nowrap;
+
+        }
+
+        .personal-block .row .col-sm-3 span {
+            color: #44546a;
+        }
+
+        ::-webkit-scrollbar {
+            width: 0px;
+            height: 0px;
+
+            background: transparent;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="row pro-header">
+
+        <div class="col-md-2 img-col">
+            <img class="pro-pic" src="../assets/images/pro.png" alt="">
+        </div>
+        <div class="col pro-name-col">
+            <div class="row">
+                <h3 class="pro-name">Mr. Anderson</h3>
+            </div>
+            <div class="row">
+                <h5 class="pro-position">Manager, BitHut Corp. </h5>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col pro-tab">
+            <a myclass="personal-block" class="pro-tab-name" href="javascript:void(0)">Personal</a>
+            <a myclass="job-block" class=" pro-tab-name" href="javascript:void(0)">Job</a>
+            <a myclass="beni-block" class=" pro-tab-name" href="javascript:void(0)">Benifits</a>
+            <a myclass="doc-block" class=" pro-tab-name" href="javascript:void(0)">Documents</a>
+            <a myclass="atten-block" class=" pro-tab-name" href="javascript:void(0)">Attendence</a>
+            <a myclass="asset-block" class=" pro-tab-name" href="javascript:void(0)">Assets</a>
+            <a myclass="train-block" class=" pro-tab-name" href="javascript:void(0)">Training</a>
+            <a myclass="pay-block" class=" pro-tab-name" href="javascript:void(0)">Payroll</a>
+            <a myclass="des-block" class=" pro-tab-name" href="javascript:void(0)">Job Description</a>
+            <a myclass="kpi-block" class=" pro-tab-name" href="javascript:void(0)">KPI</a>
+            <a myclass="skill-block" class=" pro-tab-name" href="javascript:void(0)">Special Skill</a>
+
+
+        </div>
+    </div>
+
+
+    <div class="row pro-content">
+
+        <div class="col-sm-2 pro-content-side">
+
+            <div class="cont-no">+8801712345678</div>
+            <div class="cont-mail">mr.anderson@bithut.com.bd</div>
+            <div class="cont-location-lab">Location</div>
+            <div class="cont-location">Dhaka, Bangladesh</div>
+            <div class="cont-hire-date-lab">Hire Date:</div>
+
+            <div class="cont-hire-date">02-Sept-14</div>
+            <div class="cont-rep-per-lab">Reports to:</div>
+
+            <div class="row cont-report-person">
+                <div class="col-3">
+                    <img class="rep-per-img img-fluid" src="../assets/images/pro.png" alt="">
+                </div>
+
+                <div class="col rep-per-name-col">
+                    <span class="row rep-per-name">Francis James Pattinson</span>
+                    <span class="row rep-per-desig">Head HR</span>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col pro-content-body container">
+
+
+            <div class="pro-content">
+
+                <span class="personal-block">
+                    <div class="basic-info">
+                        <h5 class="table-status-title">Basic Information</h5>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <span>Employee ID</span>
+
+                                <input type="text" name="" class="ed-info-box" value="BH-0100-10">
+                            </div>
+                            <div class="col-sm-3">
+                                <span>Status</span>
+                                <input type="text" name="" class="ed-info-box" value="Active">
+                            </div>
+                            <div class="col-sm-3">
+                                <span>First Name</span>
+                                <input type="text" name="" class=" ed-info-box" value="Mr.">
+                            </div>
+                            <div class="col-sm-3">
+                                <span>Last Name</span>
+                                <input type="text" name="" class=" ed-info-box" value="Anderson">
+                            </div>
+                            <div class="col-sm-3">
+                                <span>Birthday</span>
+                                <input type="date" name="" class=" ed-info-box" value="">
+                            </div>
+                            <div class="col-sm-3">
+                                <span>Gender</span>
+                                <input type="text" name="" class=" ed-info-box" value="Male">
+                            </div>
+                            <div class="col-sm-3">
+                                <span>Maritial Status</span>
+                                <input type="text" name="" class=" ed-info-box" value="Single">
+                            </div>
+                            <div class="col-sm-3">
+                                <span>NID</span>
+                                <input type="number" name="" class=" ed-info-box" value="11223322">
+
+                            </div>
+                            <div class="col-sm-3">
+                                <span>TIN</span>
+                                <input type="number" name="" class=" ed-info-box" value="221144">
+
+                            </div>
+                            <div class="col-sm-3">
+                                <span>Blood Group</span>
+                                <input type="text" name="" class=" ed-info-box" value="B+">
+
+                            </div>
+                            <div class="col-sm-3">
+                                <span>Passport No.</span>
+                                <input type="text" name="" class=" ed-info-box" value="111">
+                            </div>
+                            <div class="col-sm-3">
+                                <span>Driving License</span>
+                                <input type="text" name="" class=" ed-info-box" value="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="address">
+                        <h5 class="table-status-title">Address</h5>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <input type="text" name="" class=" ed-info-box" value="House:21, Road: 16, Sector:11">
+
+                            </div>
+
+                            <div class="col-sm-3">
+                                <span>Area</span>
+                                <input type="text" name="" class=" ed-info-box" value="Uttara">
+                            </div>
+                            <div class="col-sm-3">
+                                <span>District</span>
+                                <input type="text" name="" class=" ed-info-box" value="Dhaka">
+                            </div>
+                            <div class="col-sm-3">
+                                <span>Postal Code</span>
+                                <input type="text" name="" class=" ed-info-box" value="1230">
+                            </div>
+                            <div class="col-sm-3">
+                                <span>Country</span>
+                                <input type="text" name="" class=" ed-info-box" value="Bangladesh">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact">
+                        <h5 class="table-status-title">Contact</h5>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <span>Official</span>
+                                <input type="tel" name="" class=" ed-info-box" value="12211221">
+                            </div>
+                            <div class="col-sm-3">
+                                <span>Personal 1</span>
+                                <input type="tel" name="" class=" ed-info-box" value="112211221">
+                            </div>
+                            <div class="col-sm-3">
+                                <span>Personal 2</span>
+                                <input type="text" name="" class=" ed-info-box" value="33221">
+                            </div>
+                            <div class="col-sm-3">
+                                <span>Extension</span>
+                                <input type="text" name="" class=" ed-info-box" value="19999">
+                            </div>
+
+
+                            <div class="col-sm-3">
+                                <span>Email Official</span>
+                                <input type="email" name="" class=" ed-info-box"
+                                    value="mrjamescharlesanderson@bithut.com.bd">
+                                inpu
+                            </div>
+                            <div class="col-sm-3">
+                                <span>Email Personal 1</span>
+                                <input type="email" name="" class=" ed-info-box" value="jamescharles@gmail.com">
+
+                            </div>
+                            <div class="col-sm-3">
+                                <span>Email Personal 2</span>
+                                <input type="email" name="" class=" ed-info-box" value="jamescharles@gmail.com">
+                            </div>
+                            <div class="col-sm-3">
+                                <span>Email Personal 3</span>
+                                <input type="email" name="" class=" ed-info-box" value="jamescharles@gmail.com">
+                            </div>
+
+                        </div>
+                        <div class="contact">
+                            <h5 class="table-status-title">Contact</h5>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <span>Name</span>
+                                    <input type="text" name="" class=" ed-info-box" value="Agent Smith">
+                                </div>
+                                <div class="col-sm-3">
+                                    <span>Relationship</span>
+                                    <input type="text" name="" class=" ed-info-box" value="Rival">
+                                </div>
+                                <div class="col-sm-3">
+                                    <span>Contact</span>
+                                    <input type="tel" name="" class=" ed-info-box" value="1229999">
+                                </div>
+                                <div class="col-sm-3">
+                                    <span>Address</span>
+                                    <input type="text" class="ed-info-box"
+                                        value="House:21, Road: 16, Sector:11, Uttara, Dhaka, Bangladesh">
+                                </div>
+                                <div class="col-sm-3">
+                                    <span>Name</span>
+                                    <input type="text" name="" class=" ed-info-box" value="Agent Smith">
+                                </div>
+                                <div class="col-sm-3">
+                                    <span>Relationship</span>
+                                    <input type="text" name="" class=" ed-info-box" value="Rival">
+                                </div>
+                                <div class="col-sm-3">
+                                    <span>Contact</span>
+                                    <input type="tel" name="" class=" ed-info-box" value="1229999">
+                                </div>
+                                <div class="col-sm-3">
+                                    <span>Address</span>
+                                    <input type="text" class="ed-info-box"
+                                        value="House:21, Road: 16, Sector:11, Uttara, Dhaka, Bangladesh">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </span>
+
+                <span class="job-block">
+
+
+                    <h5 class="table-status-title">Status History</h5>
+
+
+                    <ul class="my-table">
+
+                        <li class="table-header">
+                            <div class="col ">Effective Date</div>
+                            <div class="col ">Status</div>
+                            <div class="col ">Comment</div>
+
+                        </li>
+
+                        <li class="table-row">
+
+                            <div class="col " data-label="Job Id">02-April-2021</div>
+
+
+                            <div class="col" data-label="Status">Full Time</div>
+                            <div class="col" data-label="Status"></div>
+
+                        </li>
+                        <li class="table-row">
+
+                            <div class="col " data-label="Job Id">02-April-2021</div>
+
+
+                            <div class="col" data-label="Status">Full Time</div>
+                            <div class="col" data-label="Status"></div>
+
+                        </li>
+                        <li class="table-row">
+
+                            <div class="col " data-label="Job Id">02-April-2021</div>
+
+
+                            <div class="col" data-label="Status">Full Time</div>
+                            <div class="col" data-label="Status"></div>
+
+                        </li>
+
+                    </ul>
+
+
+
+
+                    <h5 class="table-status-title">Position History</h5>
+
+
+                    <ul class="my-table">
+
+                        <li class="table-header">
+                            <div class="col ">Status</div>
+                            <div class="col ">Effective Date</div>
+                            <div class="col ">Department</div>
+                            <div class="col ">Designation</div>
+                            <div class="col ">Reports To</div>
+                            <div class="col ">Location</div>
+                            <div class="col ">Remarks</div>
+                        </li>
+
+                        <li class="table-row">
+                            <div class="col " data-label="Job Id">Promoted</div>
+                            <div class="col " data-label="Job Id">02-April-2021</div>
+                            <div class="col " data-label="Customer Name">Mr. Anderson</div>
+                            <div class="col " data-label="Amount">Accountant</div>
+                            <div class="col" data-label="Payment Status">Francis</div>
+                            <div class="col" data-label="Payment Status">Dhaka</div>
+                            <div class="col" data-label="Payment Status"></div>
+                        </li>
+                        <li class="table-row">
+                            <div class="col " data-label="Job Id">Promoted</div>
+                            <div class="col " data-label="Job Id">02-April-2021</div>
+                            <div class="col " data-label="Customer Name">Mr. Anderson</div>
+                            <div class="col " data-label="Amount">Accountant</div>
+                            <div class="col" data-label="Payment Status">Francis</div>
+                            <div class="col" data-label="Payment Status">Dhaka</div>
+                            <div class="col" data-label="Payment Status"></div>
+                        </li>
+                        <li class="table-row">
+                            <div class="col " data-label="Job Id">Promoted</div>
+                            <div class="col " data-label="Job Id">02-April-2021</div>
+                            <div class="col " data-label="Customer Name">Mr. Anderson</div>
+                            <div class="col " data-label="Amount">Accountant</div>
+                            <div class="col" data-label="Payment Status">Francis</div>
+                            <div class="col" data-label="Payment Status">Dhaka</div>
+                            <div class="col" data-label="Payment Status"></div>
+                        </li>
+
+                    </ul>
+
+
+
+
+                    <h5 class="table-status-title">Position History</h5>
+
+
+                    <ul class="my-table">
+
+                        <li class="table-header">
+                            <div class="col ">Effective Date</div>
+                            <div class="col ">Amount</div>
+                            <div class="col ">Pay Type</div>
+                            <div class="col ">Schedule</div>
+
+                            <div class="col ">Remarks</div>
+                        </li>
+
+                        <li class="table-row">
+
+                            <div class="col " data-label="Job Id">02-April-2021</div>
+                            <div class="col " data-label="Job Id">$1100</div>
+                            <div class="col " data-label="Customer Name">Salary</div>
+                            <div class="col " data-label="Amount">Monthly</div>
+                            <div class="col" data-label="Payment Status">Increment</div>
+
+                        </li>
+                        <li class="table-row">
+
+                            <div class="col " data-label="Job Id">02-April-2021</div>
+                            <div class="col " data-label="Job Id">$1100</div>
+                            <div class="col " data-label="Customer Name">Salary</div>
+                            <div class="col " data-label="Amount">Monthly</div>
+                            <div class="col" data-label="Payment Status">Increment</div>
+
+                        </li>
+                        <li class="table-row">
+
+                            <div class="col " data-label="Job Id">02-April-2021</div>
+                            <div class="col " data-label="Job Id">$1100</div>
+                            <div class="col " data-label="Customer Name">Salary</div>
+                            <div class="col " data-label="Amount">Monthly</div>
+                            <div class="col" data-label="Payment Status">Increment</div>
+
+                        </li>
+                        <li class="table-row">
+
+                            <div class="col " data-label="Job Id">02-April-2021</div>
+                            <div class="col " data-label="Job Id">$1100</div>
+                            <div class="col " data-label="Customer Name">Salary</div>
+                            <div class="col " data-label="Amount">Monthly</div>
+                            <div class="col" data-label="Payment Status">Increment</div>
+
+                        </li>
+
+                    </ul>
+
+                </span>
+                <span class="atten-block"></span>
+                <span class="doc-block"></span>
+                <span class="asset-block"></span>
+                <span class="train-block"></span>
+                <span class="skill-block"></span>
+                <span class="beni-block"></span>
+                <span class="kpi-block"></span>
+                <span class="des-block"></span>
+                <span class="pay-block"></span>
+            </div>
+        </div>
+    </div>
+    <style>
+        .c {
+            width: 50px;
+            margin-left: 20px;
+        }
+    </style>
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="../assets/images/i1.jpg" alt="Card image cap">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-4">
+                    <img class="c img-responsive" src="../assets/images/i1.jpg" alt="">
+                </div>
+                <div class="col-8">
+                    <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque suscipit
+                        corrupti molestias sapiente, quos ut blanditiis distinctio nostrum possimus soluta nesciunt,
+                        nisi saepe ducimus laborum illo harum ipsa eum cumque!</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    <script src="../assets/js/jquery-3.4.1.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/fontawesome.js"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            $(".pro-content span").attr("style", "display:none");
+            $(".pro-content .personal-block").attr("style", "display:block");
+
+
+
+
+            $(".pro-tab a").click(function () {
+                $(".pro-content span").attr("style", "display:none");
+                var mclass = $(this).attr("myclass");
+                //alert(mclass);
+                $(".pro-content ." + mclass).attr("style", "display:block");
+
+
+
+            });
+
+
+
+
+
+
+        });
+    </script>
+</body>
+
+</html>

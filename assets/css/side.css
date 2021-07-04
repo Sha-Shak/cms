@@ -1,0 +1,209 @@
+#top-bar {
+	color: blue !important;
+}
+.payinfo {
+	width: 750px;
+}
+#cod {
+	width: 750px;
+}
+#cvc {
+	float: right;
+}
+@media (max-width: 768px) {
+	.btn {
+		font-size: 11px;
+		padding: 4px 6px;
+	}
+}
+
+@media (min-width: 768px) {
+	.btn {
+		font-size: 12px;
+		padding: 6px 12px;
+	}
+}
+@media (min-width: 750px) {
+	.payform {
+		width: 55%;
+	}
+}
+
+@media (min-width: 992px) {
+	.btn {
+		font-size: 14px;
+		padding: 8px 12px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.btn {
+		padding: 10px 16px;
+		font-size: 18px;
+	}
+}
+
+#sender {
+	width: auto;
+	height: auto;
+	border: 1px solid lightgray !important;
+	box-sizing: border-box;
+	padding: 15px;
+	margin-top: 5px;
+
+	margin-bottom: 10px;
+}
+.pick-detail {
+	padding: 10px;
+}
+p {
+	font-size: medium;
+	margin: -10px;
+	padding: -10px;
+}
+.pad {
+	padding-left: 1px;
+}
+
+#address {
+	padding-top: 5px;
+	float: right !important;
+}
+#address a {
+	color: #44546a;
+}
+
+/* bidding page */
+
+#options {
+	padding-top: 10px;
+}
+#bid-text,
+.bid-day {
+	font-size: small;
+	color: gray;
+	padding-bottom: 10px;
+	margin-left: 15px;
+	padding-top: 5px;
+}
+.bid-count {
+	padding: 8px;
+	font-size: 15px;
+}
+#bvalue {
+	font-size: medium;
+	color: #44546a;
+	margin-left: 3px;
+}
+#purchasing {
+	color: black;
+}
+#purchasing-option {
+	color: gray;
+	font-size: small !important;
+}
+.col-sm-4 h5 {
+	color: black;
+}
+/* renting */
+#buttons {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+s-date {
+	padding-top: 15px;
+}
+/* giveaway */
+#give-card {
+	padding-left: 15px;
+	padding-right: 12cm;
+}
+
+/*Slick Slider*/
+
+.pdt-gallery,
+.pdt-gallery-thumb {
+	margin: 0;
+	padding: 0;
+}
+
+.pdt-gallery li,
+.pdt-gallery-thumb li {
+	list-style: none;
+}
+
+.thumb-wrap {
+	padding: 0;
+}
+
+.pdt-gallery-thumb li {
+	outline: none;
+	margin: 0 10px 0 0;
+	width: 100px;
+	opacity: 0.5;
+	float: left;
+}
+
+.pdt-gallery-thumb li.slick-current {
+	opacity: 1;
+}
+
+.product-gallery.thumb-left {
+	margin-bottom: -10px;
+}
+
+.product-gallery.thumb-left .pdt-gallery-thumb li {
+	margin-bottom: 10px;
+}
+
+.product-gallery.thumb-left .pdt-gallery {
+	width: 540px;
+	float: right;
+}
+
+.product-gallery img {
+	height: auto;
+	max-width: 100%;
+	vertical-align: middle;
+	border: 0;
+}
+
+#slick-title {
+	font-size: x-large;
+	color: #44546a;
+}
+#slick-title small {
+	font-style: italic;
+	color: gray;
+	font-size: small;
+}
+#cond {
+	font-size: large !important;
+	font-style: normal !important;
+	color: #44546a !important;
+}
+
+/*Exchange */
+table,
+th,
+td {
+	border: 1px solid lightgray;
+	border-collapse: collapse;
+}
+th {
+	background-color: #327be9;
+	color: white;
+	font-weight: lighter;
+}
+.table-image {
+	max-width: 200px;
+	max-height: 220px;
+}
+/*thanks you page */
+#thanks {
+	font-size: large;
+	color: #44546a;
+}
+#print {
+	margin-left: 5px;
+}

@@ -1,0 +1,232 @@
+/* status menu */
+
+
+
+/* dealstatus */
+.new{background-color: #FFBD33;border-color:#fff!important;}
+.new:hover{background-color: #D3B719;}
+
+.active{background-color: #ff9300;border-color:#fff!important; }
+.active:hover{background-color: #db9406;}
+
+.disable{background-color: #f95822;border-color:#fff!important; }
+.disable:hover{background-color: #c24318;}
+
+.suspend{background-color: #CDEA53;border-color:#fff!important; }
+.suspend:hover{background-color: #B6D14C;}
+
+
+.stop{background-color: #84D319;border-color:#fff!important; }
+.stop:hover{background-color: #5D8920;}
+
+
+.delete{background-color: #AD350E;border-color:#fff!important; }
+.delete:hover{background-color: #A34C30;}
+
+.return{background-color: #843FB1;border-color:#fff!important; }
+.return:hover{background-color: #533169;}
+
+.complained{background-color: #BB4E28;border-color:#fff!important; }
+.complained:hover{background-color: #B15C3F;}
+
+
+/* end dealsatus */
+
+/* dealstage */
+.opportunity{background-color: #EF4846;border-color:#FFFFFF!important;} /* Maroon*/
+.opportunity:hover{background-color: #D76249;}
+
+.proposal{background-color: #00A9DC;border-color:#FFFFFF!important; } /* Blue*/
+.proposal:hover{background-color: #A4D6ED;}
+
+.q_sent{background-color: #FFCD2C;border-color:#FFFFFF!important; } /* Yellow*/
+.q_sent:hover{background-color: #FFE18B;}
+
+.negotiation{background-color: #983E72;border-color:#FFFFFF!important; } /* Violet*/
+.negotiation:hover{background-color: #BE869F;}
+
+.order_placed{background-color: #52BA9B;border-color:#FFFFFF!important; } /* Green*/
+.order_placed:hover{background-color: #76AD7E;}
+
+.others{background-color: #CE0275;border-color:#FFFFFF!important; } /* Majenta*/
+.others:hover{background-color: #D83391;}
+
+
+/* end dealstage */
+
+
+.status{cursor: pointer; position: relative;}
+
+.status1{background-color: #6dd919;border-color:#52a611!important; }
+.status1:hover{background-color: #52a611;}
+
+.status2{background-color: #ff9300;border-color:#db9406!important; }
+.status2:hover{background-color: #db9406;}
+
+.status3{background-color: #f95822;border-color:#c24318!important; }
+.status3:hover{background-color: #c24318;}
+
+.status4{background-color: #cd22f9;border-color:#b218d9!important; }
+.status4:hover{background-color: #b218d9;}
+
+.status5{background-color: #2293f9;border-color:#167edb!important; }
+.status5:hover{background-color: #167edb;}
+
+.status6{background-color: #68b5b0;border-color:#4d8f8b!important; }
+.status6:hover{background-color: #4d8f8b;}
+
+.status7{background-color: #916f6f;border-color:#7c5b5b!important; }
+.status7:hover{background-color: #7c5b5b;}
+
+.status8{background-color: #7668b5;border-color:#5b4ca0!important; }
+.status8:hover{background-color: #5b4ca0;}
+
+
+
+.status .bit-btn{
+    
+    display: table;
+    text-align: center;
+    color: #fff!important;
+    position: absolute;
+    top: 0;
+    bottom:0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+.status .bit-btn:hover{text-decoration: none;}
+
+.bit-btn>span{
+    display:table-cell; 
+    vertical-align:middle;
+    padding-left: 15px;
+}
+
+.status .bit-btn .caret{
+    float: right; 
+    margin-right: 15px;
+    margin-top: 5px;
+}
+
+.status .dropdown-menu-mega{
+    padding-left: 10px;
+}
+/*======stage====*/
+
+/* end dealstage */
+
+
+.stage{cursor: pointer; position: relative;}
+
+.stage1{background-color: #6dd919;border-color:#52a611!important; }
+.stage1:hover{background-color: #52a611;}
+
+.stage2{background-color: #ff9300;border-color:#db9406!important; }
+.stage2:hover{background-color: #db9406;}
+
+.stage3{background-color: #f95822;border-color:#c24318!important; }
+.stage3:hover{background-color: #c24318;}
+
+.stage4{background-color: #cd22f9;border-color:#b218d9!important; }
+.stage4:hover{background-color: #b218d9;}
+
+.stage5{background-color: #2293f9;border-color:#167edb!important; }
+.stage5:hover{background-color: #167edb;}
+
+.stage6{background-color: #68b5b0;border-color:#4d8f8b!important; }
+.stage6:hover{background-color: #4d8f8b;}
+
+
+.stage .bit-btn{
+    
+    display: table;
+    text-align: center;
+    color: #fff!important;
+    position: absolute;
+    top: 0;
+    bottom:0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+.stage .bit-btn:hover{text-decoration: none;}
+
+.bit-btn>span{
+    display:table-cell; 
+    vertical-align:middle;
+    padding-left: 15px;
+}
+.stage .bit-btn .caret{
+    float: right; 
+    margin-right: 15px;
+    margin-top: 5px;
+}
+
+.stage .dropdown-menu-mega{
+    padding-left: 10px;
+}
+/*======stage====*/
+.dropdown-menu-mega .row > [class^="col-"]{
+    padding: 0;
+    padding: 0;
+}
+.dropdown-menu-mega .row{padding: 0; margin: 0;}
+.dropdown-menu-mega{
+    width: 280px;
+    padding:0px 0px;
+    padding-bottom: 10px;
+    padding-right: 0px;
+    border-radius: 0;
+    
+}
+.dropdown-menu-mega ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-left: 0px;
+    padding-left: 0;
+    margin-right: 0px;
+    margin-bottom:0px;
+    width: 100%;
+}
+.dropdown-menu-mega li{padding: 0; margin:0;}
+.dropdown-menu-mega li a{
+    width: 120px;
+    display:block;
+    padding: 8px 20px;
+    clear: both;
+    font-weight: 400;
+    font-size: 12px;
+    color: #fff;
+    white-space: nowrap;
+    text-decoration: none;
+    border: 1px solid #c0c0c0;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* end status menu */
+
+
+/* color scheme modified by sami 08 oct 2019*/
+.call_again{background-color: #40B8EA;border-color:#FFFFFF!important;} /* Blue*/
+.call_again:hover{background-color: #70C3ED;}
+
+.email_sent{background-color: #FDB64E;border-color:#FFFFFF!important; } /* Orange*/
+.email_sent:hover{background-color: #FFD8A1;}
+
+.not_answering{background-color: #8750A1;border-color:#FFFFFF!important; } /* Violet*/
+.not_answering:hover{background-color: #9A6DB0;} 
+
+.won{background-color: #52BA9B;border-color:#FFFFFF!important; } /* Green*/
+.won:hover{background-color: #76AD7E;}
+
+.lost{background-color: #EF4846;border-color:#FFFFFF!important; } /* Lost*/
+.lost:hover{background-color: #D76249;}
+
+

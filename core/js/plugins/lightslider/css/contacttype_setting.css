@@ -1,0 +1,53 @@
+#imageGallery1{
+display:none;
+}
+
+#imageGallery1{
+    border:0px solid #0066ff;
+    height: 45px!important;
+}
+
+.lSSlideOuter{
+    
+    
+}
+.lSSlideOuter li a{
+    border: 0px solid #ff0000;
+    text-align: center;
+    display: block;
+    padding: 10px;
+    font-family:roboto;
+    font-weight: 600;
+    color: #000;
+    background: #fff;
+}
+.lSSlideOuter li a:hover{
+text-decoration:none;
+}
+
+
+.lSSlideOuter li{
+    border: 0;
+	text-align: center;
+}
+
+.lSAction > a {
+    width: 35px;
+    display: block;
+    height: 40px;
+    position: absolute;
+    z-index: 99;
+    margin-top: -23px;
+    opacity: 1.5;
+    -webkit-transition: opacity 0.35s linear 0s;
+    transition: opacity 0.35s linear 0s;
+    border: 0px solid #000;
+}
+
+.lSAction > .lSNext {
+    right: -6px;
+}
+
+.lSAction > .lSPrev {
+    left: -4px;
+}

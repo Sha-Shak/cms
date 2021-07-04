@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+
+
+
+<body>
+    <input type="button" onclick="myFunction()" value="Click me!">
+    <div class="content">
+        <p>lorem</p>
+    </div>
+    <script>
+        function myFunction() {
+            let even = 'grid';
+            let odd = 'none';
+            let elements = document.getElementsByClassName("content")
+
+            Array.prototype.forEach.call(elements, function (element) {
+                element.style.display === even ? element.style.display = odd : element.style.display = even
+            });
+        }
+    </script>
+</body>
+
+</html>

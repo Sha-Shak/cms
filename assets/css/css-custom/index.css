@@ -1,0 +1,262 @@
+@font-face {
+  font-family: 'Gesta';
+  src: url("../fonts/bsigesta-light-webfont.ttf");
+  font-weight: 300;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Gesta';
+  src: url("../fonts/bsigesta-medium-webfont.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Gesta';
+  src: url("../fonts/bsigesta-webfont.ttf");
+  font-weight: 500;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Gesta';
+}
+
+h1, h2, h3, h4, h5 , p , a {
+   font-family: 'Gesta';
+}
+
+
+
+#index-bannar{
+    background: url(../image/myfolio.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+    
+}
+
+#index-bannar:after{
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.78);
+    z-index: -1;
+}
+
+.login-part{
+    text-align: right;
+}
+
+.login-part button{
+    background-color: transparent;
+    border: none;
+    border: 2px solid white;
+    padding: 3px 10px;
+    color: white;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgba(80, 80, 80, 0.62);
+    transition: 0.3s;
+    font-family: 'Gesta';
+    font-weight: 400;
+    
+    
+}
+
+.login-part button:hover{
+    background-color: #F99F1C;
+}
+
+
+.logo-part{
+ text-align: center;   
+    margin-top: 10%;
+}
+
+.logo-part a img{
+   width: 260px;
+    height: 127px;
+}
+
+.index-search{
+    text-align: center;
+    background-color:rgba(255, 255, 255, 0.29);
+    padding: 15px 0px;
+    border-radius: 5px;
+    
+}
+
+.index-search input{
+    width: 42%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+.index-search input:focus{
+    border: 3px solid #F99F1C;
+}
+
+.index-search button{
+    background-color: transparent;
+    border: none;
+    background-color: #F99F1C;
+    padding: 10px 10px;
+    color: white;
+    font-weight: 400;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Gesta';
+}
+
+
+.index-menu{
+    text-align: center;
+}
+
+.index-menu h4{
+    color: white;
+    font-weight: 500;
+    font-family: 'Gesta';
+}
+
+.index-menuList ul li{
+    display: inline-block;
+    margin: 0px 15px
+}
+
+.index-menuList ul li a{
+    color: #d1cdcd;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+    font-family: 'Gesta';
+}
+
+.index-menuList ul li a:hover{
+    color: #F99F1C
+}
+
+.footerImage{
+    text-align: left;
+}
+
+.footer-text p{
+    text-align:left;
+    color: #b4b4b4;
+    font-size: 14px;
+    margin-top: 30px;
+}
+
+
+#footer ul.social li a, #footer ul.quick-links li a{
+    transition: 0.3s
+}
+
+#footer ul.social li a, #footer ul.quick-links li a:hover{
+    color:  #F99F1C
+}
+
+
+
+@media (max-width:575px){
+ 
+    #index-bannar{
+       
+    }
+    
+   
+    
+    .index-search input{
+        display: block;
+        width: 100%;
+        margin: 5px 0;
+    }
+    
+    .login-part{
+        text-align: center;
+    }
+    
+    .index-search{
+        background-color: transparent
+    }
+    
+    .footerImage{
+    text-align: center;
+}
+    
+    .footer-text p{
+    text-align:center;
+    
+}
+    
+
+    
+    
+} 
+
+
+@media (max-width:767px){
+    
+    #index-bannar{
+       
+    }
+    
+   
+    
+    .index-search input{
+        display: block;
+        width: 100%;
+        margin: 5px 0;
+    }
+    
+    .login-part{
+        text-align: center;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

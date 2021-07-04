@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flow-File</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../ass ets/css/productlist.css">
+
+
+    <style>
+        /* share option */
+        .share-btn-container {
+            background: #fff;
+            display: flex;
+            padding: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            position: fixed;
+            left: 40%;
+            top: 40%;
+            transform: translateY(-50%);
+        }
+
+        .share-btn-container a i {
+            font-size: 32px;
+            margin: 10px;
+
+        }
+
+        .share-btn-container a {
+            margin: 12px 0;
+            transition: 500ms;
+        }
+
+        .share-btn-container a:hover {
+            transform: scale(1.2);
+        }
+
+        .share-btn-container .fa-facebook {
+            color: #3b5998;
+        }
+
+        .share-btn-container .fa-twitter {
+            color: #1da1f2;
+        }
+
+        .share-btn-container .fa-linkedin {
+            color: #0077b5;
+        }
+
+        .share-btn-container .fa-pinterest {
+            color: #bd081c;
+        }
+
+        .share-btn-container .fa-whatsapp {
+            color: #25d366;
+        }
+
+        .soc-shr-btn {
+            background-color: white;
+            outline: none;
+            border: none;
+        }
+
+        .soc-shr-btn:focus {
+            outline: none;
+        }
+    </style>
+
+<body class="scontainer">
+
+
+    <button type="button" class="btn btn-primary shr-btn">Share </button>
+    <div class="share-btn-container">
+        <button class="soc-shr-btn" type="button" data-sharer="facebook" data-picture="" data-title="Cash My Stash"
+            data-hashtags="" data-url="https://cms.bithut.com.bd/">
+            <a href="javascript:void(0)" class="facebook-btn">
+                <i class="fab fa-facebook"></i>
+            </a>
+        </button>
+
+        <button class="soc-shr-btn" type="button" data-sharer="twitter" data-picture="" data-title="Cash My Stash"
+            data-hashtags="" data-url="https://cms.bithut.com.bd/">
+            <a href="javascript:void(0)" class="twitter-btn">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </button>
+
+
+        <button class="soc-shr-btn" type="button" data-sharer="skype" data-picture="" data-title="Cash My Stash"
+            data-hashtags="" data-url="https://cms.bithut.com.bd/" data-to=" ">
+            <a href="javascript:void(0)" class="pinterest-btn">
+                <i class="fab fa-skype"></i>
+            </a>
+        </button>
+
+        <button class="soc-shr-btn" type="button" data-sharer="linkedin" data-picture="" data-title="Cash My Stash"
+            data-hashtags="" data-url="https://cms.bithut.com.bd/">
+            <a href="javascript:void(0)" class="linkedin-btn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </button>
+
+
+
+        <button class="soc-shr-btn" type="button" data-sharer="whatsapp" data-picture="" data-title="Cash My Stash"
+            data-hashtags="" data-url="https://cms.bithut.com.bd/">
+            <a href="javascript:void(0)" class="whatsapp-btn">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+
+        </button>
+
+        <button class="soc-shr-btn" type="button" data-sharer="email" data-picture="" data-title="Cash My Stash"
+            data-hashtags="" data-to="" data-url="https://cms.bithut.com.bd/">
+            <a href="javascript:void(0)" class="linkedin-btn">
+                <i class="far fa-envelope-open"></i>
+            </a>
+        </button>
+    </div>
+</body>
+
+
+
+<script src="../assets/js/jquery-3.4.1.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/fontawesome.js"></script>
+<script src="./assets/js/sharer.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+
+
+<!-- <script>
+    const facebookBtn = document.querySelector(".facebook-btn");
+    const twitterBtn = document.querySelector(".twitter-btn");
+    const pinterestBtn = document.querySelector(".pinterest-btn");
+    const linkedinBtn = document.querySelector(".linkedin-btn");
+    const whatsappBtn = document.querySelector(".whatsapp-btn");
+
+    function init() {
+        const pinterestImg = document.querySelector(".pinterest-img");
+
+        let postUrl = encodeURI(document.location.href);
+        let postTitle = encodeURI("Hi everyone, please check this out: ");
+        let postImg = encodeURI(pinterestImg.src);
+
+        facebookBtn.setAttribute(
+            "href",
+            `https://www.facebook.com/sharer.php?u=${postUrl}`
+        );
+
+        twitterBtn.setAttribute(
+            "href",
+            `https://twitter.com/share?url=${postUrl}&text=${postTitle}`
+        );
+
+        pinterestBtn.setAttribute(
+            "href",
+            `https://pinterest.com/pin/create/bookmarklet/?media=${postImg}&url=${postUrl}&description=${postTitle}`
+        );
+
+        linkedinBtn.setAttribute(
+            "href",
+            `https://www.linkedin.com/shareArticle?url=${postUrl}&title=${postTitle}`
+        );
+
+        whatsappBtn.setAttribute(
+            "href",
+            `https://wa.me/?text=${postTitle} ${postUrl}`
+        );
+    }
+
+    init();
+</script> -->
+
+<script>
+    $(document).ready(function () {
+        $(".share-btn-container").hide();
+        $(".shr-btn").click(function () {
+            $(".share-btn-container").toggle();
+        });
+    });
+</script>
+
+<!-- <script>
+    $(window).load(function () {
+        $(".shr-btn").click(function () {
+            $(".share-btn-container").toggle();
+        });
+    });
+</script> -->
+</body>

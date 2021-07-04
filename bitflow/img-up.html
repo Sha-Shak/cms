@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container {
+            max-width: 960px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 20px;
+            text-align: center;
+            margin: 20px 0 20px;
+        }
+
+        h1 small {
+            display: block;
+            font-size: 15px;
+            padding-top: 8px;
+            color: gray;
+        }
+
+        .avatar-upload {
+            position: relative;
+            max-width: 205px;
+            margin: 50px auto;
+        }
+
+        .avatar-upload .avatar-edit {
+            position: absolute;
+            right: 12px;
+            z-index: 1;
+            top: 10px;
+        }
+
+        .avatar-upload .avatar-edit input {
+            display: none;
+        }
+
+        .avatar-upload .avatar-edit input+label {
+            display: inline-block;
+            width: 34px;
+            height: 34px;
+            margin-bottom: 0;
+            border-radius: 100%;
+            background: #FFFFFF;
+            border: 1px solid transparent;
+            box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+            cursor: pointer;
+            font-weight: normal;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .avatar-upload .avatar-edit input+label:hover {
+            background: #f1f1f1;
+            border-color: #d6d6d6;
+        }
+
+        .avatar-upload .avatar-edit input+label:after {
+            content: "\f040";
+            font-family: 'FontAwesome';
+            color: #757575;
+            position: absolute;
+            top: 10px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            margin: auto;
+        }
+
+        .avatar-upload .avatar-preview {
+            width: 192px;
+            height: 192px;
+            position: relative;
+            border-radius: 100%;
+            border: 6px solid gray;
+            box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        #dp-imagePreview {
+            width: 192px;
+            height: 192px;
+            border-radius: 100%;
+        }
+
+        .avatar-upload .avatar-preview>div {
+            width: 100%;
+            height: 100%;
+            border-radius: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .container2 .btn {
+            position: absolute;
+            top: 90%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+
+            color: white;
+            font-size: 16px;
+
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .dp-btn {
+            background: rgba(16, 16, 16, 0.21);
+            border: none;
+            color: white;
+            padding: 4px 30px;
+            transform: translate(42%, 680%);
+        }
+    </style>
+</head>
+
+<body>
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+
+    <form enctype="multipart/form-data" action="#" method="POST" class="avatar-upload">
+        <div class="avatar-edit">
+            <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" name="avatar"
+                class="{{ $errors->has('email') ? 'alert alert-danger' : '' }}" />
+            <label for="imageUpload"></label>
+        </div>
+        <div class="avatar-preview container2">
+            <div id="dp-imagePreview" style="background-image: url(http://i.pravatar.cc/500?img=7);">
+                <!--<span id="dp-imagePreview" src="../assets/images/pro.png" alt=""></span> -->
+                <!-- <img id="dp-imagePreview" src="../assets/images/pro.png" alt=""> -->
+                <input type="hidden" name="_token" value="">
+                <button class="dp-btn" type="submit">Submit
+
+                </button>
+
+
+            </div>
+        </div>
+    </form>
+
+    <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    console.log(e.target.result);
+                    $('#dp-imagePreview').css('background-image', 'url(' + e.target.result + ')');
+                    //document.getElementById("dp-imagePreview").src = "e.target.result";
+                    $('#dp-imagePreview').hide();
+                    $('#dp-imagePreview').fadeIn(650);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        $("#imageUpload").change(function () {
+            readURL(this);
+        });
+
+    </script>
+
+</body>
+
+</html>

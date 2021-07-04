@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Exchange-CashMyStash</title>
+  <link rel="icon" href="./img/favicon.png" type="image/gif" sizes="50x16">
+  <link rel="stylesheet" href="assets/css/productlist.css">
+  <link rel="stylesheet" href="assets/css/side.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <!-- CSS LIBRARY -->
+  <link rel="stylesheet" type="text/css" href="assets/css/slick.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/bit-style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: white !important;">
+
+    <a class="navbar-brand" href="index.html"> <img src="./img/Nlogo.png" alt="" class="img-fluid"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="mr-auto" id="navbar-menu-ls">
+
+        <ul class="navbar-nav">
+
+          <input type="text" class="form-control" id="navsearch" placeholder="Search here">
+
+          <button class="btn btn-primary" style="margin-left: 3px;"> Search </i></button>
+
+        </ul>
+      </div>
+
+
+      <div id="navbar-menu-rs" style="float: left;">
+        <ul class="nav navbar-nav action-links">
+          <li class="nav-item ">
+            <a class="nav-link" href="chat.html"><i class="fas fa-comments" style="color: #44546a;"></i> Chat</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-user" style="color: #44546a;"></i>My Account</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#"> <i class="fas fa-bell" style="color: #44546a;"></i></a>
+          </li>
+        </ul>
+      </div>
+      </ul>
+
+
+
+    </div>
+  </nav>
+  <br>
+  <!-- end of nav -->
+
+  <!-- top-bar -->
+
+  <div class="container">
+
+    <div class="row section-nav">
+      <div class="col snav snav-buysell text-center">
+        <a href="buy_sell.html"><i class="fas fa-shopping-basket"></i> <span>Buy Sell</span></a>
+        <!--				<span class="snav-bottom-line"></span>-->
+      </div>
+      <div class="col snav snav-auction text-center">
+        <a href="auction.html" id="topbar"><i class="fas fa-file-signature"></i> <span>Auction</span></a>
+      </div>
+
+      <div class="col snav snav-exchange  active text-center">
+        <a href="exchange.html"><i class="fas fa-sync"></i> <span>Exchange</span></a>
+      </div>
+
+
+      <div class="col snav-camera text-center">
+        <a href="post_category.html"><i class="fas fa-camera fa-3x"> </i> </a>
+      </div>
+      <div class="col snav snav-exchange text-center">
+
+        <a href="rent.html"> <i class="fas fa-dollar-sign"></i> <span>Rent</span></a>
+      </div>
+      <div class="col snav snav-donation text-center">
+        <a href="donation.html"><i class="fas fa-hand-holding-usd"></i></i> <span>Donation</span></a>
+      </div>
+      <div class="col snav snav-giveway text-center">
+        <a href="giveaway.html"><i class="fas fa-gift"></i> <span>Giveaway</span></a>
+      </div>
+    </div>
+
+
+  </div>
+
+  <div class="section-divider"></div>
+
+
+
+
+
+
+  <div class="container" style="background-color:white; border-top:0px solid #44546A;">
+
+    <div class="content-base-margin">
+
+
+
+
+
+
+
+      <div class="row">
+
+        <div class="col-12">
+          <!-- Slick Slider -->
+
+
+
+
+          <div class="thumb-slider-wrapper" st yle="height: 500px; overflow: hidden">
+
+
+            <div class="product-gallery thumb-left">
+
+              <ul id="main-slider" class="pdt-gallery pdt-gal1">
+                <li><img src="assets/images/i1.jpg" alt=""></li>
+                <li><img src="assets/images/i2.jpg" alt=""></li>
+                <li><img src="assets/images/i3.jpg" alt=""></li>
+                <li><img src="assets/images/i1.jpg" alt=""></li>
+              </ul>
+              <div class="thumb-wrap">
+                <ul class="pdt-gallery-thumb pdt-thumb1">
+                  <li><img src="assets/images/i1.jpg" alt=""></li>
+                  <li><img src="assets/images/i2.jpg" alt=""></li>
+                  <li><img src="assets/images/i3.jpg" alt=""></li>
+                  <li><img src="assets/images/i3.jpg" alt=""></li>
+                  <li><img src="assets/images/i1.jpg" alt=""></li>
+                  <li><img src="assets/images/i1.jpg" alt=""></li>
+                  <li><img src="assets/images/i1.jpg" alt=""></li>
+                </ul>
+              </div>
+
+            </div>
+
+
+          </div>
+
+
+
+
+
+
+          <div class="container" id="slick-title">
+            <div class="row">
+              <div class="col-10">
+                <b> MacBook Air</b> <br>
+                <b>$600</b>
+
+                <p> <small>By Alif Hossain, Long Time member, sold 14 items so far.</small> </p>
+                <small id="cond"><b>Condition Good</b></small>
+                <br>
+                <br>
+
+                <div class="seller-btn">
+                  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                    data-target="#myModal">Contact Seller</button>
+                  <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog">
+
+                      <!-- Modal content-->
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h4 class="modal-title">Send a message</h4>
+                          <button type="button" class="close" data-dismiss="modal">&times;
+                          </button>
+
+
+                        </div>
+                        <div class="modal-body">
+                          <h5>MacBook Air</h5>
+                          <p style="padding-left: 10px; font-size: small; color: gray; ">To:
+                            Alif Hossain</p>
+
+                          <textarea name="contacr-seller" id="contact-sell" cols="37" rows="5"></textarea>
+                        </div>
+
+                        </style>
+                        <div class="modal-footer">
+                          <input type="submit" class="btn btn-primary btn-block" data-dismiss="modal" value="Submit">
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+
+
+                <br>
+
+              </div>
+              <div class="col-2" style="float: right;">
+                <a href="#" class="likes">
+                  <i class="fas fa-heart" aria-hidden="true" style="font-weight: normal"></i>
+                </a>
+                <a href="#" style="margin-left: 15px; color: #44546A !important;"><i class="fas fa-share-alt"></i></a>
+              </div>
+
+            </div>
+
+
+          </div>
+
+
+          <!-- End of Slick Slider -->
+
+
+          <!-- Seller option -->
+          <div class="card ">
+            <div class="card">
+              <div class="container">
+
+                <div class="card-body" id="give-card">
+                  <br>
+
+                  <a href="#" class="btn btn-primary">Contact Seller</a>
+                  <br>
+                  <br>
+
+                  <div class="container ex-box">
+                    <p>Provide Your Exchange Offer: </p>
+                    <div class="row">
+                      <div class="col-md-12 text-center">
+                        <table style="width: 100%;" class="text-center">
+                          <tr>
+                            <th>Images</th>
+                            <th>Name</th>
+                            <th>Value</th>
+                            <th>Details</th>
+                          </tr>
+                          <tr>
+                            <td> <img class="table-image" src="./img/i1.jpg" alt=""></td>
+                            <td>Phone</td>
+                            <td>$300</td>
+                            <td>Fresh Condition</td>
+                          </tr>
+
+                          <tr>
+                            <td> <img class="table-image" src="./img/i2.jpg" alt=""></td>
+                            <td>Phone</td>
+                            <td>$300</td>
+                            <td>Fresh Condition</td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+                    <br>
+                    <div class="row>
+                        <div class=" seller-btn">
+                      <a href="" data-toggle="modal" data-target="#addModal" style="color: #44546a !important;">+add
+                        details</a>
+
+                      <div class="modal fade" id="addModal" role="dialog">
+                        <div class="modal-dialog">
+
+                          <!-- Modal content-->
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h4 class="modal-title">Send a message</h4>
+                              <button type="button" class="closer" data-dismiss="modal">&times;
+                              </button>
+
+
+                            </div>
+                            <div class="modal-body">
+                              <form action="">
+                                <div class="ups-img">
+                                  <div class="post-header">
+                                    <h5>Add Photos</h5>
+                                  </div>
+                                  <hr>
+                                  <label for="file-upload" class="custom-file-upload">
+                                    <i class="fas fa-camera"></i> Add Photo
+                                  </label>
+                                  <input id="file-upload" type="file" />
+                                </div>
+                                <br>
+
+                                <label for="ex-name"> Name</label>
+                                <input type="text" class="form-control" id="ex-name">
+                                <br>
+                                <label for="ex-value">Value</label>
+                                <input type="number" class="form-control" id="ex-value">
+                                <br>
+
+                                <br>
+
+                                <textarea name="contacr-seller" id="contact-sell" cols="37" rows="5"></textarea>
+                              </form>
+
+
+                              <div class="modal-footer">
+                                <input type="submit" class="btn btn-primary btn-block" data-dismiss="modal"
+                                  value="Submit">
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+
+
+                      <br>
+
+                    </div>
+                  </div>
+                </div>
+
+
+                <br>
+                <br>
+              </div>
+            </div>
+
+
+
+
+            <div class="text-center">
+
+
+              <h5>Other Renting Options</h5>
+              <br>
+              <div class="row">
+                <div class="col-sm-4">
+                  <h6>Daily rental Fee</h6>
+                  <a href="#">
+                    <h6>$35</h6>
+                  </a>
+                </div>
+                <div class="col-sm-4">
+                  <h6>Weekly Rental Fee</h6>
+                  <a href="#">
+                    <h6>$185</h6>
+                  </a>
+
+                </div>
+                <div class="col-sm-4">
+                  <h6>Weekly Rental Fee</h6>
+                  <a href="#">
+                    <h6>$485</h6>
+                  </a>
+
+                </div>
+              </div>
+
+            </div>
+
+            <br>
+          </div>
+        </div>
+      </div>
+
+      <br>
+
+      <!-- Deatils -->
+      <div class="card">
+        <h5 class="c-header">Details</h5>
+        <div class="card-body">
+          <div class="container">
+            <p>Product description here.</p>
+          </div>
+
+        </div>
+      </div>
+      <br>
+
+
+      <div class="card" id="shipping">
+
+        <div class="card-body">
+
+          <h5 class="c-header">Shipping method: </h5>
+          <br>
+          <div class="container">
+            <input type="radio" onclick="myFunction()" id="ship" name="shipping" value="cpay">
+
+            <label for="ship">Shipping</label>
+
+            <input type="radio" onclick="myFuction()" name="shipping" id="pick" style="margin-left: 10px;">
+            <label for="pick"> Pickup</label>
+          </div>
+
+
+          <br>
+
+        </div>
+      </div>
+      <br>
+
+      <br>
+      <!-- Ship to -->
+      <div class="card" id="my">
+        <div class="card-body">
+          <h5 class="c-header">Ship To: </h5>
+
+          <div class="container">
+            <div class="row" id="address">
+              <a href="#">+add new address</a>
+            </div>
+
+            <br>
+            <br>
+            <div class="container">
+              <div class="row">
+
+                <div class="col-md-4">
+                  <div class="pad" id="sender">
+                    <div class="row">
+                      <div class="col-8">
+                        <div class=" send-detail">
+                          <p>House #44, Sector 1, Road 14</p>
+                          <p>Uttara, Dhaka-1230</p>
+                          <p>Bangladesh</p>
+                          <p>8887776665</p>
+                        </div>
+
+                      </div>
+                      <div class="col-4">
+                        <a href="#" id="del"> <i class="far fa-trash-alt"></i> </a>
+                        <a href="#" id="edit" alt="edit"> <i class="far fa-edit"></i>
+                        </a>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="pad" id="sender">
+                    <div class="row">
+                      <div class="col-8">
+                        <p>House #44, Sector 1, Road 14</p>
+                        <p>Uttara, Dhaka-1230</p>
+                        <p>Bangladesh</p>
+                        <p>8887776665</p>
+
+                      </div>
+                      <div class="col-4">
+                        <a href="#"> <i class="far fa-trash-alt"></i> </a>
+                        <a href="#" id="edit" alt="edit"> <i class="far fa-edit"></i>
+                        </a>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="pad" id="sender">
+                    <div class="row">
+                      <div class="col-8">
+                        <p>House #44, Sector 1, Road 14</p>
+                        <p>Uttara, Dhaka-1230</p>
+                        <p>Bangladesh</p>
+                        <p>8887776665</p>
+
+                      </div>
+                      <div class="col-4">
+                        <a href="#" id="del "> <i class=" far fa-trash-alt"></i> </a>
+                        <a href="#" id="edit" alt="edit"> <i class="far fa-edit"></i>
+                        </a>
+
+                      </div>
+                    </div>
+
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br>
+          </div>
+
+
+          <br>
+        </div>
+        <br>
+
+      </div>
+      <br>
+
+      <div class="card" id="mypick">
+        <div class="card-body">
+          <h5 class="c-header"> Pick up Location</h5>
+          <div class="container">
+
+            <div class="pick-detail ">
+              <div class="container">
+                <p>House #42, Road #3, Sector #9</p>
+                <p>Uttara, Dhaka-1230</p>
+                <p>Bangladesh</p>
+                <p>875566</p>
+              </div>
+            </div>
+            <br>
+          </div>
+        </div>
+
+      </div>
+
+
+
+      <!-- Form -->
+      <div class="card" id="payment">
+
+        <div class="card-body">
+
+
+          <h5 class="c-header">Payment </h5>
+          <hr>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="row">
+                  <div class="col">
+                    <input type="radio" name="payment" id="buy-cod">
+                    <label for="buy-cod">Cash On Delivery</label>
+
+
+                    <input type="radio" name="payment" id="card" style="margin-left: 15px;">
+                    <label for="card"> Card Payment</label>
+                  </div>
+                </div>
+
+
+                <!-- <input type="radio" id="card1" name="card" value="card1">
+							  <label for="card1"><input class="form-control " type="text" placeholder="Visa" id="" required></label><br>
+							  <input type="radio" id="card2" name="card" value="card2">
+							  <label for="card2"><input class="form-control " type="text" placeholder="Visa" id="" required></label><br>
+							   -->
+                <div class="card-form">
+                  <form>
+                    <input class="form-control" type="text" placeholder=" Card Name" id="" required>
+                    <br>
+                    <input class="form-control" type="text" placeholder="Credit card/Debit Card" id="" required>
+                    <br>
+                    <div class="row">
+                      <div class="col-sm-3" style="float: left;">
+                        <input class="form-control" type="text" placeholder="MM/YY" id="" required>
+                        <br>
+                      </div>
+
+                      <div class="col-sm-3">
+                        <input class="form-control" type="text" placeholder="CVC" id="" required>
+                        <br>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+
+                <div class="cod-amount">
+                  <input class="form-control" type="text" placeholder="Cash on Delivery" id="" required>
+
+                  <br>
+                </div>
+                <!-- row -->
+              </div>
+            </div>
+            <hr>
+            <div class="container">
+              <a href="#">
+                <p> Do you have a voucher? </p>
+              </a>
+              <p>By making this product you agree to our <a href="#">terms and conditions</a>.
+              </p>
+
+
+              <button id="placeorder" type="submit" class="btn btn-primary btn-block text-center">Request for
+                rent</button>
+              <br>
+            </div>
+          </div>
+
+
+
+
+
+        </div>
+      </div>
+      <br>
+
+
+    </div>
+
+
+
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  <footer class="footer-distributed">
+
+    <div class="footer-left">
+
+      <h3>CashMyStash</h3>
+
+      <p class="footer-links">
+        <a href="#">Home</a>
+        ·
+        <a href="#">About</a>
+        ·
+        <a href="#">Faq</a>
+        ·
+        <a href="#">Contact</a>
+      </p>
+
+      <p class="footer-company-name">CashMyStash &copy; 2020</p>
+    </div>
+
+    <div class="footer-center">
+
+      <div>
+        <i class="fa fa-map-marker"></i>
+        <p><span>221b Baker Street</span> London, United Kingdom</p>
+      </div>
+
+      <div>
+        <i class="fas fa-phone"></i>
+        <p>+2211224</p>
+      </div>
+
+      <div>
+        <i class="far fa-envelope"></i>
+        <p><a href="#"></i>contact@cashmystash.com</a></p>
+      </div>
+
+    </div>
+
+    <div class="footer-right">
+
+      <p class="footer-company-about">
+        <span>About the company</span>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat voluptas deserunt voluptatum a tenetur quae
+        cupiditate ex repellat amet nobis laudantium, beatae mollitia alias eaque blanditiis natus architecto magni
+        itaque.
+      </p>
+
+      <div class="footer-icons">
+
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-github"></i></a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+
+
+
+  <script src="assets/js/slick.min.js"></script>
+
+
+  <script>
+    $(function () {
+      $('.pdt-gal1').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        asNavFor: '.pdt-thumb1',
+        autoplay: true,
+        pauseOnHover: true,
+      });
+
+      $('.pdt-thumb1').slick({
+        slidesToShow: 4,
+        infinite: true,
+        slidesToScroll: 1,
+        asNavFor: '.pdt-gal1',
+        focusOnSelect: true,
+        autoplay: false,
+        vertical: true,
+        verticalSwiping: true,
+        arrows: false,
+        centerMode: true,
+      });
+
+
+
+
+
+
+
+
+    });			
+  </script>
+
+
+  <!-- custom like -->
+
+  <script>
+    $(this).animate({ fontWeight: 'normal' });
+
+    $(".likes").click(function () {
+
+      $(this).find('.fa-heart').animate({ fontSize: '30px', fontWeight: '900' });
+
+
+    });
+
+
+  </script>
+
+
+  <!-- Shipping-pickup -->
+
+
+
+  <script>
+    $(document).ready(function () {
+
+      $("#my").attr('style', 'display:none;');
+
+      $("input[name=shipping]:radio").change(function () {
+
+
+        if ($('#ship').is(':checked')) {
+          $("#my").attr('style', 'display:block;');
+        } else {
+          $("#my").attr('style', 'display:none;');
+        }
+      });
+
+      //attr('checked', true);
+
+    });
+
+  </script>
+
+  <script>
+    $(document).ready(function () {
+
+      $("#mypick").attr('style', 'display:none;');
+
+      $("input[name=shipping]:radio").change(function () {
+
+
+        if ($('#pick').is(':checked')) {
+          $("#mypick").attr('style', 'display:block;');
+        } else {
+          $("#mypick").attr('style', 'display:none;');
+        }
+      });
+
+      //attr('checked', true);
+
+    });
+
+  </script>
+
+
+  <script>
+    $(document).ready(function () {
+
+      $(".cod-amount").attr('style', 'display:none;');
+
+      $("input[name=payment]:radio").change(function () {
+
+
+        if ($('#buy-cod').is(':checked')) {
+          $(".cod-amount").attr('style', 'display:block;');
+        } else {
+          $(".cod-amount").attr('style', 'display:none;');
+        }
+      });
+
+      //attr('checked', true);
+
+    });
+
+  </script>
+
+  <script>
+    $(document).ready(function () {
+
+      $(".card-form").attr('style', 'display:none;');
+
+      $("input[name=payment]:radio").change(function () {
+
+
+        if ($('#card').is(':checked')) {
+          $(".card-form").attr('style', 'display:block;');
+        } else {
+          $(".card-form").attr('style', 'display:none;');
+        }
+      });
+
+      //attr('checked', true);
+
+    });
+
+  </script>
+
+
+
+
+
+</body>
+
+</html>

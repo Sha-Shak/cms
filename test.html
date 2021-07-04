@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>CashMyStash</title>
+  <link rel="stylesheet" href="productlist.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- owl carousel -->
+  <link rel="stylesheet" href="./assets/js/owl.carousel.min.css">
+  <link rel="stylesheet" href="./assets/js/owl.theme.default.css">
+  <link rel="stylesheet" href=".assets/js/owl.carousels.css">
+  <script src="jq.js"></script>
+
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <link href="css/simple-sidebar.css" rel="stylesheet">
+  <script src="sidenav.js"></script>
+  <script>
+    $(document).ready(function () {
+      $(".notification_icon .fa-bell").click(function () {
+        $(".dropdown").toggleClass("active");
+      })
+    });
+  </script>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+    <a class="navbar-brand" href="#"> <img src="./img/logo.png" alt="" class="img-fluid"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="mr-auto" id="navbar-menu-ls">
+
+        <ul class="navbar-nav">
+
+          <input type="text" class="form-control" id="navsearch" placeholder="Search here">
+
+          <button class="btn btn-primary" style="margin-left: 3px;"> Search </i></button>
+
+        </ul>
+      </div>
+
+
+      <div id="navbar-menu-rs" style="float: left;">
+        <ul class="nav navbar-nav action-links">
+          <li class="nav-item ">
+            <a class="nav-link" href="#"><i class="fas fa-comments"></i> Chat<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-user"></i>My Account</a>
+          </li>
+
+          <li class="nav-item">
+            <div class="wrapper">
+              <div class="notification_wrap">
+                <a class="nav-link" href="#"> <i class="fas fa-bell">
+                    <div class="dropdown">
+                      <div class="notify_item">
+                        <div class="notify_img">
+                          <img src="./assets/images/pro.png" alt="profile_pic" style="width: 50px">
+                        </div>
+                        <div class="notify_info">
+                          <p>Alex commented on<span>Timeline Share</span></p>
+                          <span class="notify_time">10 minutes ago</span>
+                        </div>
+                      </div>
+
+                    </div>
+                  </i>
+                </a>
+              </div>
+            </div>
+
+
+          </li>
+        </ul>
+      </div>
+
+
+
+    </div>
+  </nav>
+  <br>
+
+  <!---end of nav-->
+
+
+
+  <div class="container">
+    <div class="row" ">
+           <div class=" col-md text-center">
+      <a href="#" id="top-bar" class="text-dark"> <i class="fas fa-file-signature"></i> Auction</a>
+    </div>
+    <div class="col-md text-center">
+      <a href="BuynSell.html" class="text-dark"> <i class="fas fa-shopping-basket"></i> Buy Sell</a>
+    </div>
+    <div class="col-md">
+      <a href="Exchange.html" class="text-dark"><i class="fas fa-sync"></i> Exchange</a>
+    </div>
+
+
+    <div class="col-md text-center">
+      <a href="#" class="text-dark"> <i class="fas fa-camera fa-3x"> </i> </a>
+    </div>
+    <div class="col-md text-center">
+
+      <a href="renting.html" class="text-dark"> <i class="fas fa-dollar-sign"></i>Rent</a>
+    </div>
+    <div class="col-md text-center">
+      <a href="#" class="text-dark"> <i class="fas fa-hand-holding-usd"></i></i> Donation</a>
+    </div>
+    <div class="col-md text-center">
+      <a href="#" class="text-dark"> <i class="fas fa-gift"></i>Giveaway</a>
+    </div>
+  </div>
+  </div>
+
+  <hr>
+
+
+  <div class="container">
+    <div class="card" id="rent-option">
+      <h5 class="c-header">Rent</h5>
+      <div class="container">
+
+        <div class="card-body">
+          <div class="row text-center" id="buttons">
+
+
+            <div class="col-sm">
+              <a href="#" class="btn btn-primary btn-block btn-dark">Rent for a
+                Day</a>
+            </div>
+            <div class="col-sm">
+              <a href="#" class="btn btn-primary active btn-block "
+                style="background-color: #e7e5e5 !important; border-color: #e7e5e5 !important; color:gray;">Rent
+                for a
+                week</a>
+            </div>
+            <div class="col-sm">
+              <a href="#" class="btn btn-primary btn-block "
+                style="background-color: #e7e5e5 !important; border-color: #e7e5e5 !important; color:gray;">Rent
+                for a
+                month</a>
+            </div>
+
+          </div>
+          <br>
+          <div class="container">
+            <div class="form-group row">
+              <label for="sdate" class="col col-form-label" style="margin-left: 20px;">Start
+                Date</label>
+              <div class="col-sm-4">
+                <input type="date" class="form-control" id="sdate" placeholder="DD/MM/YYYY/">
+              </div>
+              <label for="edate" class="col-2 col-form-label">End Date</label>
+              <div class="col-sm-4">
+                <input type="date" class="form-control" id="edate" placeholder="DD/MM/YYYY/">
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="text-center">
+
+
+            <br>
+            <h5>Other Renting Options</h5>
+            <br>
+            <div class="row">
+              <div class="col-sm-4">
+                <h6>Daily rental Fee</h6>
+                <a href="#">
+                  <h6>$35</h6>
+                </a>
+              </div>
+              <div class="col-sm-4">
+                <h6>Weekly Rental Fee</h6>
+                <a href="#">
+                  <h6>$185</h6>
+                </a>
+
+              </div>
+              <div class="col-sm-4">
+                <h6>Weekly Rental Fee</h6>
+                <a href="#">
+                  <h6>$485</h6>
+                </a>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+      <br>
+    </div>
+    <br>
+  </div>
+
+
+
+  <!--main content-->
+
+
+
+  <!-- Sidebar navigation -->
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <!-- carousel -->
+  <script src="./assets/js/jquery-3.1.1.min.js"></script>
+  <script src="./assets/js/owl.carousel.min.js"></script>
+  <script src="./assets/js/jquer.js"></script>
+</body>
+
+</html>

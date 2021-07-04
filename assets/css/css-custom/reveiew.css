@@ -1,0 +1,215 @@
+@font-face {
+  font-family: 'Gesta';
+  src: url("../fonts/bsigesta-light-webfont.ttf");
+  font-weight: 300;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Gesta';
+  src: url("../fonts/bsigesta-medium-webfont.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Gesta';
+  src: url("../fonts/bsigesta-webfont.ttf");
+  font-weight: 500;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Gesta';
+}
+h1, h2, h3, h4, h5 , p , a {
+   font-family: 'Gesta';
+}
+
+
+.signup{
+    padding: 5px 25px;
+}
+
+.signup:hover{
+    background-color: #F79320;
+}
+
+.reveiwe-areia{
+    border: 1px solid #e2e2e2;
+    padding: 10px;
+}
+
+.reveiwe-areia h4{
+     font-size: 34px;
+   font-weight: 400;
+    color: #F79320;
+}
+.tooltips{
+    margin-top: 3px;
+}
+
+
+.reveiwe-areia p{
+    font-weight: 400;
+      margin-top: 10px;
+    
+}
+
+.sub-text span{
+    font-weight: 400;
+    
+}
+
+#exampleTextarea{
+    height: 200px;
+    resize: none;
+}
+
+.reveiwe-areia button{
+    background-color: transparent;
+    border: none;
+    border: 1px solid  #F79320;
+    border-radius: 3px;
+    padding: 5px;
+    margin-top: 10px;
+     font-weight: 400;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    color: #F79320
+}
+
+.reveiwe-areia button:hover{
+    background-color:  #F79320;
+    color: white;
+}
+
+
+.guideline{
+    text-align: right;
+    margin-top: -3%;
+    font-size: 12px;
+    font-weight: 800;
+    
+}
+.guideline a{
+    color: #F79320;
+    text-decoration: none;
+    font-weight: 400
+}
+
+.review-right{
+    margin-left: 5%;
+}
+.right-proimg img{
+    height: 80px;
+    width: 80px;
+    border: 1px solid #F79320;
+    border-radius: 5px;
+}
+
+.recent-review h5{
+   
+    font-weight: 400;
+    color: #F79320;
+    margin-left: 5%;
+}
+
+.vinnie-review h6 a{
+ 
+    font-weight: 400;
+    color: #F79320;
+    text-decoration: none;
+}
+
+.vinnie-review p{
+    margin-top: -5px;
+    font-weight: 400;
+}
+
+.vinnie-review ul li{
+    display: inline-block;
+    
+}
+.vinnie-review ul li a{
+    color: gray;
+    text-decoration: none;
+    margin: 3px;
+}
+
+.vinnie-review ul li i{
+    color: #F79320;
+}
+
+.pro-icon img{
+    background-color: transparent;
+    border: none;
+    
+    
+}
+
+.rev-rating img{
+    height: 20px;
+}
+
+.rev-rating p{
+    font-weight: 400;
+    font-size: 14px;
+    margin-top: 10px;
+    line-height: 1.2;
+}
+
+._date{
+    margin-left: 25px;
+    font-weight: 400;
+}
+
+.rev-rating p span a{
+     color: #F79320;
+    text-decoration: none;
+    
+}
+
+
+
+
+
+@media (max-width: 320px) {
+    .guideline{
+    text-align: left;
+        margin-top: 3%;
+    
+}
+    .reveiwe-areia{
+    border:none;;
+    
+}
+    
+    
+    }
+
+@media (max-width: 575.98px) {
+      .reveiwe-areia{
+    border:none;;
+    
+}
+    .right-proimg img{
+        height: 200px;
+        width: 200px;
+    }
+    
+    }
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,96 @@
+@charset "utf-8";
+/* CSS Document */
+
+.content-base-margin {
+	padding: 40px 20px;
+}
+
+.section-divider {
+	margin-bottom: 8px;
+}
+.w-section-divider {
+	margin-bottom: 8px;
+	background-color: blue;
+}
+
+.section-nav {
+	background-color: #fff;
+	padding: 0 !important;
+}
+
+.section-nav .snav {
+	margin: 0!;
+	padding: 0;
+}
+
+.section-nav .snav a {
+	display: block;
+	padding: 0;
+	padding: 22px 0;
+	text-decoration: none;
+	color: #44546a;
+}
+
+.section-nav .snav a i {
+	font-size: 15px;
+}
+
+.section-nav .snav.active a {
+	background-color: #44546a;
+	color: #fff;
+}
+.section-nav .snav-camera {
+	bac: #fce0e0;
+}
+.section-nav .snav-camera a {
+	display: block;
+	padding-top: 15px;
+	padding-bottom: 10px;
+	color: #44546a;
+	border-radius: 50%;
+	background-color: #e7e5e5;
+	position: absolute;
+	width: 80px;
+	height: 80px;
+	top: -8px;
+	left: calc(50% - 35px);
+}
+
+@media (max-width: 768px) {
+	.section-nav .snav a span {
+		display: block;
+		margin: 0;
+		padding: 0;
+	}
+
+	.section-nav .snav a {
+		font-size: 14px;
+		padding: 10px 0;
+	}
+
+	.section-nav .snav-camera a {
+		padding-top: 16px;
+		padding-bottom: 0px;
+		font-size: 12px;
+		position: absolute;
+		width: 70px;
+		height: 70px;
+		top: -5px;
+	}
+}
+
+@media (max-width: 500px) {
+	.section-nav .snav a span {
+		display: none;
+	}
+
+	.section-nav .snav-camera a {
+		padding-top: 9px;
+		padding-bottom: 0px;
+		font-size: 10px;
+		position: absolute;
+		width: 50px;
+		height: 50px;
+		top: -5px;
+	}
+}

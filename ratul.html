@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: rgb(236, 240, 25);
+            border-radius: 5px;
+        }
+
+        li {
+            float: left;
+
+
+        }
+
+        .logo {
+            padding-left: 10px;
+        }
+
+        li a {
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 18px 22px;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            background-color: rgb(252, 252, 143);
+        }
+
+        .dropdown {
+            padding-left: 30px;
+            font-size: 18px;
+            color: rgb(15, 15, 15);
+
+        }
+
+        .col {
+            float: left;
+            width: 22%;
+            padding-top: 20px;
+
+        }
+
+        .row {
+            padding-left: 20px;
+        }
+
+        #dd {
+            padding: 5px;
+            border: 0.5px solid lightgray;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+
+        #s-date,
+        #e-date {
+            padding: 7px;
+            border: 0.5px solid lightgray;
+            border-radius: 5px;
+        }
+
+
+        #s-date-l,
+        #e-date-l {
+            padding: 7px;
+
+            font-size: 18px;
+        }
+
+        /* Table part */
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 40%;
+        }
+
+        td,
+        th {
+            border: 1px solid lightgray;
+            border-radius: 5px;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f7a4;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul>
+        <li> <img class="logo"
+                src="https://cdn.chaldal.net/asset/Egg.Grocery.Fabric/Egg.Grocery.Web/1.5.0+Release-1716/Default/components/header/Header/images/logo-small.png"
+                alt=""> </li>
+        <li><a class="active" href=""></a></li>
+
+    </ul>
+    <br>
+
+    <div class="content">
+
+        <div class="dropdown">
+            <label for="dd" id="dd-l">Choose Something:</label>
+
+            <select name="op" id="dd">
+                <option value="mob">Galaxy</option>
+                <option value="lap">MacBook</option>
+                <option value="car">Mercedes</option>
+                <option value="watch">Rolex</option>
+            </select>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <label for="s-date" id="s-date-l">
+                    Start Date:
+                </label>
+                <input type="date" name="s-date" id="s-date">
+            </div>
+            <div class="col">
+                <label for="e-date" id="e-date-l">
+                    End Date
+                </label>
+                <input type="date" name="e-date" id="e-date">
+            </div>
+        </div>
+    </div>
+
+
+    <!--TABLE PART-->
+    <div class="row">
+
+        <div class="tab">
+            <table>
+                <tr>
+                    <th> ID</th>
+                    <th>Name</th>
+                </tr>
+
+                <tr>
+                    <td>1</td>
+                    <td>Lambo</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Lambo</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Lambo</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Lambo</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</body>
+
+</html>

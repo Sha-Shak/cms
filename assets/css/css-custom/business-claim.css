@@ -1,0 +1,157 @@
+/* business-claim-part start*/
+
+.forbusiness-text p{
+    color: #F99F1C;
+    margin-top: 30px;
+    
+}
+
+#business-claim{
+    background-color: #E0CFBA;
+}
+
+.claimText h4{
+   margin-top: 50px;
+  
+}
+
+.claim-mailBox{
+    background-color: #F2F2F2;
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.claim-mailBox label{
+    
+}
+
+.claim-mailBox p{
+    font-size: 12px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.claim-mailBox button{
+    background-color: transparent;
+    border: none;
+    background-color: #F99F1C;
+    padding: 5px 60px;
+    cursor: pointer;
+    color: white;
+ margin-bottom: 10px;
+}
+
+.businessAcText{
+    text-align: center;
+    
+}
+
+.businessAcText p{
+    font-size: 14px;
+  margin-top: 20px;
+}
+
+.businessAcText h6 a{
+    color: black;
+    text-decoration: none;
+}
+
+.footerImage{
+    text-align: left;
+}
+
+.footer-text p{
+    text-align:left;
+    color: #b4b4b4;
+    font-size: 14px;
+    margin-top: 30px;
+}
+
+
+#footer ul.social li a, #footer ul.quick-links li a{
+    transition: 0.3s
+}
+
+#footer ul.social li a, #footer ul.quick-links li a:hover{
+    color:  #F99F1C
+}
+
+
+
+
+/* business-claim-media-part start*/
+
+@media (max-width:575px){
+    .forbusiness-text{
+        text-align: center;
+        margin-top: -30px;
+    }
+    
+    .claim-mailBox{
+        width: 100%;
+    }
+    
+        .footerImage{
+    text-align: center;
+}
+    
+    .footer-text p{
+    text-align:center;
+    
+}
+}
+
+@media (max-width:768px){
+     .forbusiness-text{
+        text-align: center;
+        margin-top: -30px;
+    }
+     .claim-mailBox{
+        width: 100%;
+    }
+}
+
+@media (max-width:990px){
+    .claim-mailBox{
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

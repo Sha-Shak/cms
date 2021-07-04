@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb18030">
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Now-CashMyStash</title>
+    <link rel="icon" href="./img/favicon.png" type="image/gif" sizes="50x12">
+    <link rel="stylesheet" href="assets/css/productlist.css">
+    <link rel="stylesheet" href="assets/css/side.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- CSS LIBRARY -->
+    <link rel="stylesheet" type="text/css" href="assets/css/slick.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css" />
+
+
+    <link rel="stylesheet" type="text/css" href="assets/css/bit-style.css" />
+    <link rel="stylesheet" href="./assets/css/n-style.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- Jquery CDN JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!-- custom JS -->
+    <script src="custom.js"></script>
+
+    <link rel="stylesheet" href="./assets/css/croppie.css">
+    <link rel="stylesheet" href="./assets/js/croppie.js">
+
+    <style>
+        body {
+            margin-top: 50px
+        }
+
+        label input[type="file"] {
+            display: none;
+        }
+
+        body {
+            background: black
+        }
+
+        .row {
+            margin-top: 10px
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="nav-top">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: white !important;">
+            <div class="col-3">
+                <a class="navbar-brand" href="index.html"> <img src="./assets/images/Nlogo.png" class="img-fluid" alt=""
+                        sty le="width: 100%;"> </a>
+            </div>
+
+            <div class="col-9">
+                <div class="row">
+                    <div class="col-9">
+                        <div class="mr-auto search-wrap" id="navbar-menu-ls">
+
+
+
+
+
+
+                            <input type="text" placeholder="Sarch here..." name="search-cms" maxlength="200"
+                                id="search-cms">
+                            <span class="fas fa-search  icon"></span>
+                            <!---input type="text" class="form-control" id="navsearch" placeholder="Search here">
+    
+                    <button class="btn btn-primary" style="margin-left: 3px;"> Search </button-->
+
+
+                        </div>
+
+                    </div>
+                    <div class="col-3">
+                        <div>
+                            <ul class="nav nav bar-nav d-flex action-links topbar-icon">
+                                <li class="nav-item  ">
+                                    <a class="nav-link" href="#"><i class="fas fa-comments" style="color: #44546a;"></i>
+                                        <span></span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><i class="fas fa-user" style="color: #44546a; "></i>
+                                        <span></span>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+
+                                    <a class="nav-link" href="javascript:void(0)" onclick="toggleNotifi()"><i
+                                            class="fas fa-bell"></i>
+                                    </a>
+                                </li>
+                                <div class="notifi-box" id="box">
+                                    <h2>Notifications <span>17</span></h2>
+                                    <div class="notifi-item">
+                                        <img id="upload-demo" src="img/avatar1.png" alt="img">
+                                        <div class="text">
+                                            <h4>Elias Abdurrahman</h4>
+                                            <p>@lorem ipsum dolor sit amet</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="notifi-item">
+                                        <img src="img/avatar2.png" alt="img">
+                                        <div class="text">
+                                            <h4>John Doe</h4>
+                                            <p>@lorem ipsum dolor sit amet</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="notifi-item">
+                                        <img src="img/avatar3.png" alt="img">
+                                        <div class="text">
+                                            <h4>Emad Ali</h4>
+                                            <p>@lorem ipsum dolor sit amet</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="notifi-item">
+                                        <img src="img/avatar4.png" alt="img">
+                                        <div class="text">
+                                            <h4>Ekram Abu </h4>
+                                            <p>@lorem ipsum dolor sit amet</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="notifi-item">
+                                        <img src="img/avatar5.png" alt="img">
+                                        <div class="text">
+                                            <h4>Jane Doe</h4>
+                                            <p>@lorem ipsum dolor sit amet</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+
+
+            </div>
+
+        </nav>
+        <br>
+    </div>
+
+    <!---end of nav-->
+
+
+    <div class="container">
+
+        <div class="row section-nav">
+
+            <div class="col snav snav-buysell text-center">
+                <a href="buy_sell.html"><i class="fas fa-shopping-basket"></i> <span>Buy Now</span></a>
+                <!--				<span class="snav-bottom-line"></span>-->
+            </div>
+            <div class="col snav snav-auction text-center">
+                <a href="auction.html" id="topbar"><i class="fas fa-file-signature"></i> <span>Auction</span></a>
+            </div>
+            <div class="col snav snav-exchange  text-center">
+                <a href="exchange.html"><i class="fas fa-sync"></i> <span>Exchange</span></a>
+            </div>
+
+
+            <div class="col snav-camera text-center">
+                <a href="post_category.html"><i class="fas fa-camera fa-3x"> </i> </a>
+            </div>
+            <div class="col snav snav-exchange text-center">
+
+                <a href="rent.html"> <i class="fas fa-dollar-sign"></i> <span>Rent</span></a>
+            </div>
+            <div class="col snav snav-donation text-center">
+                <a href="donation.html"><i class="fas fa-hand-holding-usd"></i> <span>Donation</span></a>
+            </div>
+            <div class="col snav snav-giveway text-center">
+                <a href="giveaway.html"><i class="fas fa-gift"></i> <span>Giveaway</span></a>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="section-divider"></div>
+
+
+
+
+
+
+    <div class="container" style="background-color:white; border-top:0px solid #44546A;">
+
+        <div class="content-base-margin">
+            <div class="container">
+
+
+                </label>
+
+                <div class="row">
+                    <div class="col-sm-2">
+                        <label for="uploadedhere">
+                            <input type="file" id="uploadedhere" onchange="myfun()">
+
+                            <img src="assets/images/upload.jpg" id="changeimage1" height="50" width="50">
+                        </label>
+                    </div>
+                    <!-- <div class="col-sm-2">
+                        <label for="uploadedhere">
+                            <input type="file" id="uploadedhere" onchange="myfun()">
+                            <img src="assets/images/upload.jpg" id="changeimage2" height="150" width="150">
+                        </label>
+                    </div>
+                    <div class="col-sm-2">
+                        <label for="uploadedhere">
+                            <input type="file" id="uploadedhere" onchange="myfun()">
+                            <img src="assets/images/upload.jpg" id="changeimage3" height="150" width="150">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-2">
+                        <label for="uploadedhere">
+                            <input type="file" id="uploadedhere" onchange="myfun()">
+                            <img src="assets/images/upload.jpg" id="changeimage4" height="150" width="150">
+                        </label>
+                    </div>
+                    <div class="col-sm-2">
+                        <label for="uploadedhere">
+                            <input type="file" id="uploadedhere" onchange="myfun()">
+                            <img src="assets/images/upload.jpg" id="changeimage5" height="150" width="150">
+                        </label>
+                    </div>
+                    <div class="col-sm-2">
+                        <label for="uploadedhere">
+                            <input type="file" id="uploadedhere" onchange="myfun()">
+                            <img src="assets/images/upload.jpg" id="changeimage6" height="150" width="150">
+                        </label>
+                    </div> -->
+                </div>
+
+                <br>
+
+                <input style="float: center;" type="submit" class="btn btn-primary">
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <!-- New Footer -->
+    <footer class="footer-distributed">
+
+        <div class="footer-left">
+
+            <h3>CashMyStash</h3>
+
+            <p class="footer-links">
+                <a href="#">Home</a>
+                .
+                <a href="#">About</a>
+                .
+                <a href="#">Faq</a>
+                .
+                <a href="#">Contact</a>
+            </p>
+
+            <p class="footer-company-name">CashMyStash &copy; 2020</p>
+        </div>
+
+        <div class="footer-center">
+
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p><span>221b Baker Street</span> London, United Kingdom</p>
+            </div>
+
+            <div>
+                <i class="fas fa-phone"></i>
+                <p>+2211224</p>
+            </div>
+
+            <div>
+                <i class="far fa-envelope"></i>
+                <p><a href="#">contact@cashmystash.com</a></p>
+            </div>
+
+        </div>
+
+        <div class="footer-right">
+
+            <p class="footer-company-about">
+                <span>About the company</span>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat voluptas deserunt voluptatum a
+                tenetur
+                quae cupiditate ex repellat amet nobis laudantium, beatae mollitia alias eaque blanditiis natus
+                architecto magni itaque.
+            </p>
+
+
+
+        </div>
+
+    </footer>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+    <!-- carousel -->
+
+    <script src="./assets/js/owl.carousel.min.js"></script>
+    <script src="./assets/js/jquer.js"></script>
+
+    <script src="assets/js/slick.min.js"></script>
+
+    <script src="./assets/js/n-script.js"></script>
+
+
+
+    <script>
+
+        var i = 0;
+        function myfun() {
+            i++;
+
+            var x = document.getElementById("uploadedhere").files[0];
+            var currentimage1 = document.getElementById("changeimage1");
+            var currentimage2 = document.getElementById("changeimage2");
+            var currentimage3 = document.getElementById("changeimage3");
+            var currentimage4 = document.getElementById("changeimage4");
+            var currentimage5 = document.getElementById("changeimage5");
+            var currentimage6 = document.getElementById("changeimage6");
+
+
+            var reader = new FileReader();
+
+            reader.onload = function () {
+
+                if (i == "1") {
+                    currentimage1.src = reader.result;
+                }
+
+                if (i == "2") {
+                    currentimage2.src = reader.result;
+                }
+                if (i == "3") {
+                    currentimage3.src = reader.result;
+                }
+                if (i == "4") {
+                    currentimage4.src = reader.result;
+                }
+                if (i == "5") {
+                    currentimage5.src = reader.result;
+                }
+                if (i == "6") {
+                    currentimage6.src = reader.result;
+                }
+
+
+            }
+
+
+
+
+            reader.readAsDataURL(x);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+    <script>
+
+        $uploadCrop = $('#changeimage1').croppie({
+            enableExif: true,
+            viewport: {
+                width: 200,
+                height: 200,
+                type: 'circle'
+            },
+            boundary: {
+                width: 300,
+                height: 300
+            }
+        });
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>

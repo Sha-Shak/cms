@@ -1,0 +1,172 @@
+.key-graph .graph-titles {
+  display: inline-block;
+  width: 120px;
+  vertical-align: top;
+  margin: 20px 0 20px;
+  padding:0;
+}
+.key-graph   .graph-title {
+    margin-bottom:1em;
+    width: 100%;
+    line-height: 30px;
+    overflow: hidden;
+  }
+.key-graph     .graph-title-name {
+      float:left;
+      
+    }
+.key-graph     .graph-title-count {
+      float:right;
+      padding: 0 8px;
+      height:30px;
+      border-radius: 50%;
+      color:#fff;
+	  font-size:12px;
+      margin-left: -20px;
+    }
+ 
+.key-graph .graph {
+  display: inline-block;
+  position:relative;
+  margin: 20px 20px 20px 10px;
+  padding:0;
+  width: 65%;
+}
+ 
+.key-graph .graph-bar {
+  display: block;
+  overflow:hidden;
+  margin-bottom:1em;
+}
+ 
+.key-graph .graph-bar-fragment {
+  width: 0;
+  height:30px;
+  float:left;
+  background-color: #ccc;
+  -webkit-transition: width .4s ease-in;
+}
+ 
+.key-graph .graph-bar-single {
+  height: 30px;
+  background-color: #ccc;
+  -webkit-transition: width .4s ease-in;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+ 
+.key-graph .graph-bar-fragment:last-child {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+ 
+.key-graph .urgent {
+background: #c9575e;
+background: -moz-linear-gradient(top,  #c9575e 0%, #c12e41 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c9575e), color-stop(100%,#c12e41));
+background: -webkit-linear-gradient(top,  #c9575e 0%,#c12e41 100%);
+background: -o-linear-gradient(top,  #c9575e 0%,#c12e41 100%);
+background: -ms-linear-gradient(top,  #c9575e 0%,#c12e41 100%);
+background: linear-gradient(to bottom,  #c9575e 0%,#c12e41 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c9575e', endColorstr='#c12e41',GradientType=0 );
+}
+ 
+.key-graph .active {
+background: #d6ac6e;
+background: -moz-linear-gradient(top,  #d6ac6e 0%, #cc9e52 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d6ac6e), color-stop(100%,#cc9e52));
+background: -webkit-linear-gradient(top,  #d6ac6e 0%,#cc9e52 100%);
+background: -o-linear-gradient(top,  #d6ac6e 0%,#cc9e52 100%);
+background: -ms-linear-gradient(top,  #d6ac6e 0%,#cc9e52 100%);
+background: linear-gradient(to bottom,  #d6ac6e 0%,#cc9e52 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6ac6e', endColorstr='#cc9e52',GradientType=0 );
+}
+ 
+.key-graph .newCount {
+  background: #6db683;
+  background: -moz-linear-gradient(top,  #6db683 0%, #569b6d 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#6db683), color-stop(100%,#569b6d));
+  background: -webkit-linear-gradient(top,  #6db683 0%,#569b6d 100%);
+  background: -o-linear-gradient(top,  #6db683 0%,#569b6d 100%);
+  background: -ms-linear-gradient(top,  #6db683 0%,#569b6d 100%);
+  background: linear-gradient(to bottom,  #6db683 0%,#569b6d 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6db683', endColorstr='#569b6d',GradientType=0 );
+}
+ 
+.key-graph .newFromBatch {
+  background: #7f8cc4;
+  background: -moz-linear-gradient(top,  #7f8cc4 0%, #6477ac 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7f8cc4), color-stop(100%,#6477ac));
+  background: -webkit-linear-gradient(top,  #7f8cc4 0%,#6477ac 100%);
+  background: -o-linear-gradient(top,  #7f8cc4 0%,#6477ac 100%);
+  background: -ms-linear-gradient(top,  #7f8cc4 0%,#6477ac 100%);
+  background: linear-gradient(to bottom,  #7f8cc4 0%,#6477ac 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7f8cc4', endColorstr='#6477ac',GradientType=0 );
+}
+ 
+.key-graph .markers {
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity .4s ease-in;
+}
+.key-graph .markers.loaded {
+  visibility: visible;
+  opacity: 1;
+}
+ 
+.key-graph .marker {
+  -webkit-box-sizing:border-box;
+  position: absolute;
+  bottom:-2em;
+  top:0;
+  border-left: 1px solid #e6e6e6;
+}
+ 
+.key-graph .marker-number{
+  position:absolute;
+  padding-left: .5em;
+  bottom:0;
+  text-align:right;
+  font-size:12px;
+}
+ 
+.key-graph .marker:last-child .marker-number {
+  right:0;
+  padding-left:0;
+  padding-right: .5em;
+}
+ 
+.key-graph .graph-key {
+  margin:20px 0 0 10px;
+}
+ 
+.key-graph .graph-key-item {
+  display: inline-block;
+  margin-right: 1.5em;
+}
+.key-graph .graph-key-dot {
+  display:inline-block;
+  width:1em;
+  height:1em;
+  border-radius:50%;
+  margin-right:.5em;
+}
+
+
+/* raihan */
+.panel .panel-body.key-graph{padding: 0!important; padding-left: 20px!important;}
+.key-graph .graph{margin: 0;margin-top: 20px; float: right;margin-left: -20px;z-index: 1;}
+.key-graph .graph-key{font-size: 12px; width: 100%; padding-top:10px!important; height:40px!important;}
+.key-graph .graph-key .graph-key-item{float: left;}
+ .key-graph .graph-titles{z-index:2;}
+ 
+ 
+ @media only screen and (max-width: 600px) {
+	.key-graph  .graph-container{transform: scale(0.8);}
+}
+ 

@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/slick-theme.css">
+    <link rel="stylesheet" href="../assets/css/slick.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+
+
+
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+
+    /* Float four columns side by side */
+    .column {
+        float: left;
+        width: 25%;
+        padding: 0 10px;
+    }
+
+    .ex-img {
+        max-width: 100px;
+        margin: 0px;
+    }
+
+    .ex-title {
+        margin: 0px;
+    }
+
+    .my-card {
+        margin-top: 50px;
+    }
+
+    /* Remove extra left and right margins, due to padding */
+    .row {
+        margin: 0 -5px;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /* Responsive columns */
+    @media screen and (max-width: 600px) {
+        .column {
+            width: 100%;
+            display: block;
+            margin-bottom: 20px;
+        }
+    }
+
+    /* Style the counter cards */
+    .w-card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        padding: 10px;
+        text-align: center;
+        background-color: white;
+
+    }
+
+    .title-col {
+        padding: 0px;
+        margin: 0px 2px;
+    }
+
+    .img-col {
+        padding: 0px;
+        margin: 0px 2px;
+    }
+
+    .w-card.row {
+        margin: 5px 0px;
+    }
+
+
+    .ex-img {
+        max-width: 98px;
+        max-height: 90px;
+        margin: 2px;
+
+    }
+
+    .ex-card {
+        max-width: 103px;
+        border: 0.5px solid lightblue;
+
+    }
+
+    .card-title {
+        font-size: small;
+        padding: 0px;
+        line-height: 1;
+    }
+
+    .ex-card-body {
+        padding: 5px;
+        max-width: 100px;
+    }
+
+    .ex-row {
+        padding: 5px 10px;
+    }
+
+    button.slick-next.slick-arrow {
+        background: lightgray;
+        padding-top: 1px;
+    }
+
+    button.slick-prev.slick-arrow {
+        background: lightgray;
+        padding-top: 1px;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+
+    /* Float four columns side by side */
+    .column {
+        float: left;
+        width: 25%;
+        padding: 0 10px;
+    }
+
+    /* Remove extra left and right margins, due to padding */
+    .row {
+        margin: 0 -5px;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /* Responsive columns */
+    @media screen and (max-width: 600px) {
+        .column {
+            width: 100%;
+            display: block;
+            margin-bottom: 20px;
+        }
+    }
+
+    /* Style the counter cards */
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        padding: 5px;
+        text-align: center;
+        background-color: white;
+    }
+
+    .ex-form-img {
+        width: 123px;
+    }
+
+    .column .card p {
+        margin: 0px;
+        margin-top: 2px;
+    }
+
+
+
+    .modal-dialog {
+        max-width: 730px;
+    }
+
+    .wrap-modal-slider {
+        padding: 0 30px;
+        opacity: 0;
+        transition: all 0.3s;
+    }
+
+    .wrap-modal-slider.open {
+        opacity: 1;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+        color: rgb(255, 255, 255);
+        border-radius: 50%;
+    }
+</style>
+
+<body>
+    <!-- <div class="container">
+        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Modal body text goes here.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div> -->
+
+
+    <div class="container row">
+        <div class="slider-arrow">
+            <div class="next-arrow">
+
+            </div>
+            <div class="prev-arrow"></div>
+        </div>
+        <div class=" seller-btn">
+            <a href="" data-toggle="modal" data-target="#addModal" style="color: #44546a !important;">+add
+                details</a>
+
+            <div class="modal fade" id="addModal" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Place your exchange offer</h4>
+                            <button type="button" class="closer" data-dismiss="modal">&times;
+                            </button>
+
+                        </div>
+                        <form>
+                            <div class="modal-body ex-modal">
+
+
+
+
+
+                                <h6>Existing Posts</h6>
+                                <hr>
+
+                                <div class="old-ex-offer">
+                                    <div class="my-card row">
+                                        <div class="column">
+                                            <div class="card">
+
+                                                <img class="ex-form-img" src="../assets/images/smith3.jpg" alt="">
+
+                                                <p>Some text1</p>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="column">
+                                            <div class="card">
+
+                                                <img class="ex-form-img" src="../assets/images/smith3.jpg" alt="">
+
+                                                <p>Some text 2</p>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="column">
+                                            <div class="card">
+
+                                                <img class="ex-form-img" src="../assets/images/smith3.jpg" alt="">
+
+                                                <p>Some text 3</p>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="column">
+                                            <div class="card">
+
+                                                <img class="ex-form-img" src="../assets/images/smith3.jpg" alt="">
+
+                                                <p>Some text 4</p>
+
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+
+                                </div>
+
+                                <!--  <div class="row my-card"> 
+
+                            <div class="column">
+                                <div class="w-card row">
+                                    <div class="col-6 img-col">
+                                        <h3><img class="ex-img img-fluid" src="../assets/images/smith2.jpg" alt="">
+                                        </h3>
+                                    </div>
+                                    <div class="col-5 title-col">
+                                        <span class="ex-title">Some text</span>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="w-card row">
+                                    <div class="col-6 img-col">
+                                        <h3><img class="ex-img img-fluid" src="../assets/images/smith2.jpg" alt="">
+                                        </h3>
+                                    </div>
+                                    <div class="col-5 title-col">
+                                        <span class="ex-title">Some text</span>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="w-card row">
+                                    <div class="col-6 img-col">
+                                        <h3><img class="ex-img img-fluid" src="../assets/images/smith2.jpg" alt="">
+                                        </h3>
+                                    </div>
+                                    <div class="col-5 title-col">
+                                        <span class="ex-title">Some text</span>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+                    </div> -->
+
+
+
+
+                                <div class="new-ex-offer">
+                                    <div class="ups-img">
+                                        <div class="post-header">
+                                            <h6>New Exchange Offer</h6>
+                                        </div>
+                                        <hr>
+
+
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-1 ex-cam-col">
+                                            <label for="ex-file" class="custom-file-upload">
+                                                <i class="fas fa-camera"></i>
+                                            </label>
+                                            <input id="ex-file" name="attachmentexc" type="file" multiple value="Upload"
+                                                hidden>
+
+                                        </div>
+                                        <div class="col-6 ex-prd-col">
+
+                                            <input type="text" name="name" class="form-control"
+                                                placeholder="Product Name" id="ex-name" value="">
+                                        </div>
+
+                                        <div class="col-5 ex-prc-col">
+
+                                            <input type="number" name="amount" class="form-control" id="ex-value"
+                                                Placeholder="Product Value" value="">
+                                        </div>
+                                    </div>
+                                    <div id="ex-offer-preview"></div>
+
+
+
+                                    <br>
+
+                                    <textarea name="details" id="contact-sell" cols="37" rows="2" value=""
+                                        placeholder="Add description">
+
+                                        </textarea>
+                                    <br>
+                                    <div class="pay-ex-offer">
+                                        <br>
+                                        <div class="post-header">
+                                            <h6>Offer Cash</h6>
+                                        </div>
+                                        <hr class="hr-notop">
+                                        <input type="radio" id="ex-pay-y" name="ex-pay-ag" value="1">
+                                        <label for="ex-pay-y">Yes</label>
+                                        <input type="radio" id="ex-pay-n" name="ex-pay-ag" value="0">
+                                        <label for="ex-pay-n">No</label>
+                                        <br>
+                                        <input type="radio" id="cash" name="ex-pay" value="1">
+                                        <label for="cash">Cash</label>
+                                        <input type="radio" id="card" name="ex-pay" value="2">
+                                        <label for="card">Online</label>
+
+                                        <input type="number" name="addamount" class="form-control" id="ex-value"
+                                            Placeholder="Offer your price to exchange" value="">
+
+                                    </div>
+
+
+                                    <div class="modal-footer ex-modal-footer">
+                                        <button type="button" class="btn btn-primary btn-block" id="excbtn"> Submit
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- <div id="contact2" role="tabpanel" aria-labelledby="contact-tab" class="tab-pane fade px-4 py-5"> -->
+
+
+
+
+
+
+
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+                </di v>
+
+
+
+
+            </div>
+        </div>
+
+
+
+        <button type="button" class="button btn btn-primary" data-toggle="modal" data-target="#ex-modal">
+            +add details
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="ex-modal" tabindex="-1" role="dialog" aria-labelledby="ex-modal-title"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ex-modal-title">Place Your Exchange Offer</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="wrap-modal-slider">
+                            <div class="ex-class">
+                                <div class="column">
+                                    <div class="card">
+
+                                        <img class="ex-form-img" src="../assets/images/smith3.jpg" alt="">
+
+                                        <p>Some text 3</p>
+
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div class="card">
+
+                                        <img class="ex-form-img" src="../assets/images/smith3.jpg" alt="">
+
+                                        <p>Some text 3</p>
+
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div class="card">
+
+                                        <img class="ex-form-img" src="../assets/images/smith3.jpg" alt="">
+
+                                        <p>Some text 3</p>
+
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div class="card">
+
+                                        <img class="ex-form-img" src="../assets/images/smith3.jpg" alt="">
+
+                                        <p>Some text 3</p>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="new-ex-offer">
+                                <div class="ups-img">
+                                    <div class="post-header">
+                                        <h6>New Exchange Offer</h6>
+                                    </div>
+                                    <hr>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-1 ex-cam-col">
+                                        <label for="ex-file" class="custom-file-upload">
+                                            <i class="fas fa-camera"></i>
+                                        </label>
+                                        <input id="ex-file" name="attachmentexc" type="file" multiple value="Upload"
+                                            hidden>
+
+                                    </div>
+                                    <div class="col-6 ex-prd-col">
+
+                                        <input type="text" name="name" class="form-control" placeholder="Product Name"
+                                            id="ex-name" value="">
+                                    </div>
+
+                                    <div class="col-5 ex-prc-col">
+
+                                        <input type="number" name="amount" class="form-control" id="ex-value"
+                                            Placeholder="Product Value" value="">
+                                    </div>
+                                </div>
+                                <div id="ex-offer-preview"></div>
+
+
+
+                                <br>
+
+                                <textarea name="details" id="contact-sell" cols="37" rows="2" value=""
+                                    placeholder="Add description">
+
+                            </textarea>
+                                <br>
+                                <div class="pay-ex-offer">
+                                    <br>
+                                    <div class="post-header">
+                                        <h6>Offer Cash</h6>
+                                    </div>
+                                    <hr class="hr-notop">
+                                    <input type="radio" id="ex-pay-y" name="ex-pay-ag" value="1">
+                                    <label for="ex-pay-y">Yes</label>
+                                    <input type="radio" id="ex-pay-n" name="ex-pay-ag" value="0">
+                                    <label for="ex-pay-n">No</label>
+                                    <br>
+                                    <input type="radio" id="cash" name="ex-pay" value="1">
+                                    <label for="cash">Cash</label>
+                                    <input type="radio" id="card" name="ex-pay" value="2">
+                                    <label for="card">Online</label>
+
+                                    <input type="number" name="addamount" class="form-control" id="ex-value"
+                                        Placeholder="Offer your price to exchange" value="">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary btn-block" id="excbtn"> Submit </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--EXCHANGE IMAGE -->
+
+
+
+
+
+        <script src="../assets/js/jquery-3.4.1.js"></script>
+        <script src="../assets/js/bootstrap.min.js"></script>
+        <script src="../assets/js/slick.min.js"></script>
+        <script src="../assets/js/fontawesome.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js"></script>
+
+
+        <script>
+
+            function previewImages() {
+
+                var $pre = $('#ex-offer-preview').empty();
+                if (this.files) $.each(this.files, readAndPreview);
+
+                function readAndPreview(i, file) {
+
+                    if (!/\.(jpe?g|png|gif)$/i.test(file.name)) {
+                        return alert(file.name + " is not an image");
+                    } // else...
+
+                    var reader = new FileReader();
+
+                    $(reader).on("load", function () {
+                        $pre.append($("<img/>", { src: this.result, height: 100 }));
+                    });
+
+                    reader.readAsDataURL(file);
+
+                }
+
+            }
+
+            $('#ex-file').on("change", previewImages);
+
+        </script>
+
+
+
+        <script>
+            $(document).ready(function () {
+                $('.my-card').slick({
+                    infinite: true,
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    arrows: true
+                    //prevArrow: '<button class="slide-arrow prev-arrow"></button>',
+                    //nextArrow: '<button class="slide-arrow next-arrow"></button>'"
+                });
+            });
+
+
+
+
+
+        </script>
+
+        <script>
+            $(document).ready(function () {
+                $('.ex-class').slick({
+                    infinite: true,
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    dots: true
+                });
+            });
+
+            $('.modal').on('shown.bs.modal', function (e) {
+                $('.ex-class').slick('setPosition');
+                $('.wrap-modal-slider').addClass('open');
+            })
+
+
+        </script>
+
+        <!-- Initialize Swiper -->
+
+
+</body>
+
+</html>

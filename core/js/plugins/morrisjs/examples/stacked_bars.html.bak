@@ -1,0 +1,32 @@
+<!doctype html>
+<head>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
+  <script src="../morris.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.js"></script>
+  <script src="lib/example.js"></script>
+  <link rel="stylesheet" href="lib/example.css">
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.css">
+  <link rel="stylesheet" href="../morris.css">
+</head>
+<body>
+<h1>Stacked Bars chart</h1>
+<div id="graph"></div>
+<pre id="code" class="prettyprint linenums">
+// Use Morris.Bar
+Morris.Bar({
+  element: 'graph',
+  data: [
+    {x: 'Raihan', y: 30, z: 20, a: 30},
+    {x: 'Samiul', y: 20, z: 20, a: 10},
+    {x: 'Mamun', y: 10, z: 20, a: 40},
+    {x: 'Rashed', y: 20, z: 40, a: 30}
+  ],
+  xkey: 'x',
+  ykeys: ['y', 'z', 'a'],
+  labels: ['Y', 'Z', 'A'],
+  horizontal: true,
+  stacked: true
+});
+</pre>
+</body>

@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+
+
+    <style>
+        body {
+            width: 100%;
+            height: 100vh;
+
+            background: rgb(122, 188, 255);
+            background: -moz-linear-gradient(-45deg, rgba(122, 188, 255, 1) 0%, rgba(96, 171, 248, 1) 44%, rgba(64, 150, 238, 1) 100%);
+            background: -webkit-linear-gradient(-45deg, rgba(122, 188, 255, 1) 0%, rgba(96, 171, 248, 1) 44%, rgba(64, 150, 238, 1) 100%);
+            background: linear-gradient(135deg, rgba(122, 188, 255, 1) 0%, rgba(96, 171, 248, 1) 44%, rgba(64, 150, 238, 1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7abcff', endColorstr='#4096ee', GradientType=1);
+        }
+
+        .container {
+            margin-top: 100px;
+        }
+
+        .multistep-container {
+            width: auto;
+            margin: 0 auto;
+        }
+
+        .multistep-container .active-button {
+            display: table;
+            margin: auto;
+            padding-left: 0;
+            overflow: hidden;
+            margin-bottom: 25px;
+        }
+
+        .multistep-container .active-button li {
+            display: inline-block;
+            width: 180px;
+        }
+
+        .multistep-container .active-button li .round-btn {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #ccc;
+            display: block;
+            color: #000;
+            text-align: center;
+            font-family: 'poppins';
+            font-weight: 500;
+            line-height: 30px;
+            max-width: 100%;
+            margin: auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .multistep-container .active-button li.active .round-btn {
+            background-color: var(--blue);
+            color: var(--white);
+        }
+
+        .multistep-container .active-button li:not(:first-child) .round-btn:before {
+            position: absolute;
+            content: '';
+            width: 354px;
+            height: 3px;
+            background-color: #ccc;
+            left: -150px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: -1;
+        }
+
+        .multistep-container .active-button li.active:not(:first-child) .round-btn:before {
+            background-color: var(--blue)
+        }
+
+        .multistep-container .mutistep-form-area {
+            background-color: var(--white);
+            margin-top: 30px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+            position: relative;
+            overflow: hidden;
+            min-height: 544px;
+            max-height: 544px;
+        }
+
+        .multistep-container .mutistep-form-area .form-box {
+            position: absolute;
+            top: 25px;
+            left: 25px;
+        }
+
+        .multistep-container .mutistep-form-area .form-box h4 {
+            font-family: 'montserrat';
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .multistep-container .mutistep-form-area .form-box label {
+            font-family: 'roboto';
+            font-weight: 500;
+            font-size: 15px;
+        }
+
+        .multistep-container .mutistep-form-area .form-box:nth-child(2),
+        .multistep-container .mutistep-form-area .form-box:nth-child(3) {
+            display: none;
+        }
+
+        .multistep-container .mutistep-form-area .form-box .button-row .next,
+        .multistep-container .mutistep-form-area .form-box .button-row .previous,
+        .multistep-container .mutistep-form-area .form-box .button-row .submit {
+            background-color: var(--blue);
+            border: 0;
+            box-shadow: none;
+            padding: 7px 30px;
+            min-width: 100px;
+            border-radius: 20px;
+            color: var(--white);
+            font-family: 'roboto';
+            font-weight: 500;
+        }
+
+        .multistep-container .mutistep-form-area .form-box .button-row .submit {
+            background-color: var(--purple);
+        }
+
+        .multistep-container .mutistep-form-area .form-box .button-row {
+            display: table;
+            margin: auto;
+            margin-top: 20px;
+        }
+    </style>
+
+
+
+
+    <title>Post ad-CashMyStash</title>
+    <link rel="icon" href="./img/favicon.png" type="image/gif" sizes="50x16">
+    <link rel="stylesheet" href="./assets/css/productlist.css">
+    <link rel="stylesheet" href="./assets/css/side.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/bit-style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- CSS LIBRARY -->
+
+
+
+
+    <style>
+        .sell-op,
+        .auc-box .don-op {
+            display: none;
+        }
+
+        .rent-box {
+            display: none;
+        }
+
+        .up-im {
+            padding: 10px;
+        }
+
+        .gallery-im {
+            width: 100px;
+            margin: 10px;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        #attachment1 {
+            display: none;
+        }
+
+        .post-pic-title {
+            color: #44546a;
+        }
+
+        #quantity {
+            margin-left: 15px;
+        }
+
+        .req-sign {
+            color: red;
+        }
+
+        .post-title-photo {
+            padding-left: 0px;
+        }
+
+        .post-pg-title {
+            color: #44546a;
+
+        }
+
+        #non-neg {
+            margin-left: 10px;
+        }
+
+        .post-method-1,
+        .post-method-2,
+        .post-method-3 {
+            margin-bottom: 5px;
+            z-index: 1000px;
+        }
+
+        #post-des,
+        #post-pay {
+            margin-bottom: 0px !important;
+
+        }
+    </style>
+
+
+
+
+
+
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+
+                <div class="multistep-container">
+
+                    <div class="mutistep-form-area">
+
+                        <!--  -->
+                        <div class="form-box">
+
+                            <!--  -->
+                            <ul class="active-button">
+                                <li class="active">
+                                    <span class="round-btn">1</span>
+                                </li>
+                                <li>
+                                    <span class="round-btn">2</span>
+                                </li>
+                                <li>
+                                    <span class="round-btn">3</span>
+                                </li>
+                            </ul>
+                            <!--  -->
+
+
+                            <!-- <h4>Personal Details</h4>
+                            <form action="">
+
+                                <div class="form-group">
+                                    <label for="">First Name</label>
+                                    <input type="text" name="" placeholder="First Name" id="" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Last Name</label>
+                                    <input type="text" name="" placeholder="Last Name" id="" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Date Of Birth</label>
+                                    <input type="text" name="" placeholder="D. O. B." id="" class="form-control">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="">Gender</label>
+                                    <select class="custom-select myinput" name="class" id="class">
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                    </select>
+                                </div>
+
+                                <div class="button-row">
+                                    <input type="button" value="Next" class="next">
+                                </div>
+
+                            </form> -->
+                            <div class="col-sm-12 col-md-12 post-title-photo ">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h3><input type="text" class="" name="title" id="title"
+                                                placeholder="Add a Title" maxlength="40" required></h3>
+                                        <br>
+
+                                    </div>
+                                </div>
+
+                                <br>
+                                <!--	<div class="col-sm-12">
+                                                               <h4 class="post-pic-title ">Add Picture</h4>
+                                                               <hr class="form-hr">
+                                                             </div>
+                                                             -->
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <h6 class="post-pic-title "> Add Featured Picture <span class="req-sign">*</span>
+                                    </h6>
+                                    <hr>
+                                    <div class="input-group">
+                                        <label class="input-group-btn">
+                                            <span class="btn btn-primary btn-file btn-file">
+                                                <i class="fa fa-upload"></i><input type="file" name="attachment1"
+                                                    id="attachment1" style="display:none;" onchange="loadFile(event)">
+                                            </span>
+                                        </label>
+                                        <!-- <input type="text" class="form-control" readonly> -->
+                                    </div>
+                                    <span class="help-block form-text text-muted">
+                                        Upload only one picture.
+                                    </span>
+                                </div>
+                                <ul class="product-picture-preview">
+                                    <li style="none"><img id="output" width="150" alt="" src="">
+                                        <?php if($isfeature==1){?><span class="featured-images-badge">Featured</span>
+                                        <?php }?>
+                                        <!--<span class="glyphicon glyphicon-remove"></span></li> -->
+
+
+                                        <!--	<?php   
+                                                                         $gqryinv="SELECT id,`image` FROM `productimage` where `product`='".$code."' and imagetype=2";  //echo $gqryinv;die;
+                                                                         $gresultinv = $conn->query($gqryinv); if ($gresultinv->num_rows > 0) {while($growinv = $gresultinv->fetch_assoc()){
+                                                                           
+                                                                           $gimgid=$growinv["id"]; $gimg=$growinv["image"];$gphoto="../assets/images/product/70_75/".$gimg;
+                                                                           $setdelurl="common/delobj.php?obj=productimage&ret=product&mod=1&id=".$gimgid."&prid=".$aid;
+                                                                         ?>
+                                                                        <li style="none"><img  src="<?php echo $gphoto;?>" data-imgid="$gimg"  data-id="$gimgid" width="150" alt=""> <a href="<?php echo $setdelurl; ?>" onclick="javascript:confirmationDelete($(this));return false;" class="remove-photo" title="Remove Photo" ><span class="glyphicon glyphicon-remove"></span></a></li> 
+                                                                         <?php }}?> 
+                                                                         -->
+
+
+                                        <!--<li><img src="images/placeholder.png" width="150" alt=""><span class="glyphicon glyphicon-remove"></span></li>
+                                                                         <li><img src="images/placeholder.png" width="150" alt=""><span class="glyphicon glyphicon-remove"></span></li>
+                                                                         <li><img src="images/placeholder.png" width="150" alt=""><span class="glyphicon glyphicon-remove"></span></li>
+                                                                         <li><img id="thumbnil" style="width:20%; margin-top:10px;"  src="" alt="image"/></li>-->
+                                </ul>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <h6 class="post-pg-title">Add Gallery Pictures</h6>
+                                    <hr>
+                                    <div class="input-group">
+                                        <label class="input-group-btn">
+                                            <span class="btn btn-primary btn-file btn-file">
+                                                <i class="fa fa-upload"></i> <input type="file" name="attachment2[]" i
+                                                    d="attachment2" style="display: none;" id="gallery-photo-add"
+                                                    multiple>
+                                            </span>
+                                        </label>
+                                        <!--	<input type="text" class="form-control" readonly> -->
+                                    </div>
+                                    <span class="help-block form-text text-muted">
+                                        Upload multiple pictures.
+                                    </span>
+                                </div>
+
+                                <div class="col-lg-12">
+                                    <div class="well">
+
+                                        <div class="gallery"></div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--  -->
+
+                        <!--  -->
+                        <div class="form-box">
+
+                            <!--  -->
+                            <ul class="active-button">
+                                <li class="active">
+                                    <span class="round-btn">1</span>
+                                </li>
+                                <li class="active">
+                                    <span class="round-btn">2</span>
+                                </li>
+                                <li>
+                                    <span class="round-btn">3</span>
+                                </li>
+                            </ul>
+                            <!--  -->
+
+                            <h4>Contact Detail</h4>
+                            <form action="">
+
+                                <div class="form-group">
+                                    <label for="">Country</label>
+                                    <input type="text" name="" placeholder="Country" id="" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">State</label>
+                                    <input type="text" name="" placeholder="State" id="" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">City</label>
+                                    <input type="text" name="" placeholder="City" id="" class="form-control">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="">Phone</label>
+                                    <input type="text" name="" placeholder="Phone" id="" class="form-control">
+                                </div>
+
+
+                                <div class="button-row">
+                                    <input type="button" value="Previous" class="previous">
+                                    <input type="button" value="Next" class="next">
+                                </div>
+
+                            </form>
+
+                        </div>
+                        <!--  -->
+
+                        <!--  -->
+                        <div class="form-box">
+
+
+                            <!--  -->
+                            <ul class="active-button">
+                                <li class="active">
+                                    <span class="round-btn">1</span>
+                                </li>
+                                <li class="active">
+                                    <span class="round-btn">2</span>
+                                </li>
+                                <li class="active">
+                                    <span class="round-btn">3</span>
+                                </li>
+                            </ul>
+                            <!--  -->
+
+                            <h4>Login Detail</h4>
+                            <form action="">
+
+
+                                <div class="form-group">
+                                    <label for="">Username</label>
+                                    <input type="text" name="" placeholder="Username" id="" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Email Address</label>
+                                    <input type="text" name="" placeholder="Email Address" id="" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Password</label>
+                                    <input type="text" name="" placeholder="Password" id="" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Facebook</label>
+                                    <input type="text" name="" placeholder="Facebook" id="" class="form-control">
+                                </div>
+
+
+                                <div class="button-row">
+                                    <input type="button" value="Previous" class="previous">
+                                    <input type="submit" value="Submit" class="submit">
+                                </div>
+
+                            </form>
+
+                        </div>
+                        <!--  -->
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="code.js"></script>
+
+</body>
+
+</html>
+
+<script>
+    $(document).ready(function () {
+
+        $(".multistep-container .form-box .button-row .next").click(function () {
+            $(this).parents(".form-box").fadeOut('fast');
+            $(this).parents(".form-box").next().fadeIn('fast');
+        });
+        $(".multistep-container .form-box .button-row .previous").click(function () {
+            $(this).parents(".form-box").fadeOut('fast');
+            $(this).parents(".form-box").prev().fadeIn('fast');
+        });
+
+    });
+
+
+</script>
